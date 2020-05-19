@@ -19,9 +19,10 @@
 }
 
 .releaseblock {
-  position: absolute;
+  position: fixed;
   right: 20rpx;
   top: 20rpx;
+  z-index: 1000;
 }
 
 .release {

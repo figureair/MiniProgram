@@ -4,22 +4,22 @@
 	<!-- 顶部图片与发布按钮 -->
 	<image src="/images/work.jpg" class="top_pic"></image>
 	<view class="releaseblock">
-		<view class="release">
+		<view class="release" bindtap="toRelease">
 			<image src="/images/add.png" class="add"></image>
 			<text class="fabu">发布</text>
 		</view>
 	</view>
 	<!-- 官方非官方栏 -->
 	<view class="switch">
-		<view class="case">
+		<view class="case" bindtap="toOfficial">
 			<text class="{{ is_official ? 'chosen' : '' }}">官方</text>
 		</view>
-		<view class="case">
+		<view class="case" bindtap="toNotOfficial">
 			<text class="{{ is_official ? '' : 'chosen'}}">非官方</text>
 		</view>
 	</view>
 	<!-- 卡片 -->
-	<view class="card" wx:for="{{ is_official ? official_recruits :  non_official_recruits}}">
+	<view class="card" wx:for="{{ is_official ? official_recruits :  non_official_recruits}}" enable-flex="true">
 		<view style="display:flex">
 			<view class="headAndName">
 				<image src="{{ item.head }}" class="head"></image>
@@ -34,6 +34,6 @@
       </text>
 		</view>
 		<view class="urgent" wx:if="{{ item.urgent }}">加急</view>
-		<view class="signup">马上报名</view>
+		<view class="signup" bindtap="signUp">马上报名</view>
 	</view>
 </scroll-view>

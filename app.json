@@ -5,14 +5,14 @@
     "pages/logs/logs",
     "pages/activities/activities",
     "pages/history/history",
-    "pages/information/information"
+    "pages/information/information",
+    "pages/releaseRecruits/releaseRecruits"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-    
   },
   "tabBar": {
     "list": [
