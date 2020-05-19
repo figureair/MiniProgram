@@ -1,13 +1,48 @@
 {
-  "pages":[
+  "pages": [
+    "pages/recruit/recruit",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/activities/activities",
+    "pages/history/history",
+    "pages/information/information"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+    
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/recruit/recruit",
+        "text": "招募",
+        "iconPath": "images/fireGrey.png",
+        "selectedIconPath": "images/fireOrange.png"
+      },
+      {
+        "pagePath": "pages/activities/activities",
+        "text": "活动",
+        "iconPath": "images/starGrey.png",
+        "selectedIconPath": "images/starOrange.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/clockGrey.png",
+        "selectedIconPath": "images/clockOrange.png"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "text": "个人信息",
+        "iconPath": "images/faceGrey.png",
+        "selectedIconPath": "images/faceOrange.png"
+      }
+    ],
+    "color": "#B8B8B8",
+    "selectedColor": "#FFAC0D"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,39 @@
+<!--招募页-->
+
+<scroll-view scroll-y="true" class="scroll">
+	<!-- 顶部图片与发布按钮 -->
+	<image src="/images/work.jpg" class="top_pic"></image>
+	<view class="releaseblock">
+		<view class="release">
+			<image src="/images/add.png" class="add"></image>
+			<text class="fabu">发布</text>
+		</view>
+	</view>
+	<!-- 官方非官方栏 -->
+	<view class="switch">
+		<view class="case">
+			<text class="{{ is_official ? 'chosen' : '' }}">官方</text>
+		</view>
+		<view class="case">
+			<text class="{{ is_official ? '' : 'chosen'}}">非官方</text>
+		</view>
+	</view>
+	<!-- 卡片 -->
+	<view class="card" wx:for="{{ is_official ? official_recruits :  non_official_recruits}}">
+		<view style="display:flex">
+			<view class="headAndName">
+				<image src="{{ item.head }}" class="head"></image>
+				<view class="name">{{item.name}}</view>
+			</view>
+			<text class="detail">工作：{{ item.work }}
+        时间：{{ item.time }}
+        地点：{{ item.place }}
+        报酬：{{ item.reword }}
+        联系方式：{{ item.tel }}
+        备注：{{ item.more }}
+      </text>
+		</view>
+		<view class="urgent" wx:if="{{ item.urgent }}">加急</view>
+		<view class="signup">马上报名</view>
+	</view>
+</scroll-view>
