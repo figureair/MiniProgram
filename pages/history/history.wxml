@@ -1,3 +1,39 @@
 <!--pages/history/history.wxml-->
 <!-- 历史页面 -->
-<text>pages/history/history.wxml</text>
+
+
+<scroll-view scroll-y="true" class="scroll">
+	<!-- 顶部图片 -->
+	<image src="/images/history.jpg" class="top_pic"></image>
+
+	<!-- 我参加的 我发布的 栏 -->
+	<view class="switch">
+		<view class="case" bindtap="toMyParticipation">
+			<view class="line" animation="{{ ani }}"></view>
+			<text class="{{ is_MyParticipation ? 'chosen' : '' }}" z-index = "10">我参加的</text>
+		</view>
+		<view class="case" bindtap="toMyRelease">
+			<text class="{{ is_MyParticipation ? '' : 'chosen'}}">我发布的</text>
+		</view>
+	</view>
+
+	<!-- 卡片 -->
+	<view class="card" wx:for="{{ is_MyParticipation ? participations : releases }}" enable-flex="true">
+		<view class="content">
+			<view class="name">{{item.name}}</view>
+			<text class="detail">工作：{{ item.work }}
+        时间：{{ item.time }}
+        地点：{{ item.place }}
+        报酬：{{ item.reword }}
+        联系方式：{{ item.tel }}
+        备注：{{ item.more }}
+      </text>
+		</view>
+
+		<!-- 性质,状态,退出报名与详细信息 -->
+		<view class="status {{ item.status=='进行中' ? 'yellow' : (item.status=='已退出' ? 'red' : 'green')}}">{{ item.sort }}：{{ item.status }}</view>
+		<view class="btn" style="bottom: 134rpx" bindtap="signUp">详情</view>
+		<view class="btn" bindtap="signUp">退出活动</view>
+
+	</view>
+</scroll-view>

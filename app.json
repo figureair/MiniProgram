@@ -1,17 +1,17 @@
 {
   "pages": [
+    "pages/history/history",
     "pages/recruit/recruit",
+    "pages/activities/activities",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/activities/activities",
-    "pages/history/history",
     "pages/information/information",
     "pages/releaseRecruits/releaseRecruits"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "南大公告牌",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

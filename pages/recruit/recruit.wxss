@@ -12,9 +12,13 @@
   flex-direction: column;
 }
 
+/*以下为顶部头片和发布按钮*/
 .top_pic {
-  width: 100%;
+  width: 750rpx;
+  height: 421rpx;
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
   position: relative;
 }
 
@@ -30,7 +34,7 @@
   width: 156rpx;
   height: 80rpx;
   border-radius: 50rpx;
-  box-shadow: 2rpx 2rpx 6rpx 2rpx rgba(255, 168, 0, 1);
+  box-shadow: 2rpx 2rpx 10rpx 2rpx rgba(255, 168, 0, 1);
   margin: 10rpx;
   position: relative;
 }
@@ -50,15 +54,17 @@
   top: 20rpx;
   left: 70rpx;
 }
+/*以上为顶部头片和发布按钮*/
 
+/*以下为官方非官方选择栏*/
 .switch {
   background-color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
   height: 74rpx;
-  margin-top: -5rpx;
-
+  margin-top:-9rpx;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
 }
 
 .case {
@@ -66,16 +72,28 @@
   height: 74rpx;
   line-height: 74rpx;
   text-align: center;
+  font-size: 27rpx;
   color: #7A7A7A;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .chosen {
+  font-size: 28rpx;
   color: #FFA800;
   display: inline-block;
-  width: 120rpx;
-  border-bottom: 5rpx solid #FFA800;
 }
 
+.line{
+  left: 129rpx;
+  height: 70rpx;
+  width: 120rpx;
+  border-bottom: 5rpx solid #FFA800;
+  position: absolute;
+}
+/*以上为官方非官方选择栏*/
+
+/*以下为卡片版式*/
 .card {
   background-color: white;
   width: 700rpx;

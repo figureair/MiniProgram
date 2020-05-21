@@ -12,7 +12,8 @@
 	<!-- 官方非官方栏 -->
 	<view class="switch">
 		<view class="case" bindtap="toOfficial">
-			<text class="{{ is_official ? 'chosen' : '' }}">官方</text>
+			<view class="line" animation="{{ ani }}"></view>
+			<text class="{{ is_official ? 'chosen' : '' }}" z-index = "10">官方</text>
 		</view>
 		<view class="case" bindtap="toNotOfficial">
 			<text class="{{ is_official ? '' : 'chosen'}}">非官方</text>

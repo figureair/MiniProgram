@@ -1,1 +1,156 @@
 /* pages/activities/activities.wxss */
+
+.scroll{
+  width: 100%;
+  height: 100vh;
+  left: 0rpx;
+  right: 0rpx;
+  top: 0rpx;
+  margin-bottom: 0rpx;
+  padding-bottom: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*以下为顶部头片和发布按钮*/
+.top_pic {
+  width: 750rpx;
+  height: 421rpx;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  position: relative;
+}
+
+.releaseblock {
+  position: fixed;
+  right: 20rpx;
+  top: 20rpx;
+  z-index: 1000;
+}
+
+.release {
+  background-color: #FFA800;
+  width: 156rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  box-shadow: 2rpx 2rpx 10rpx 2rpx rgba(255, 168, 0, 1);
+  margin: 10rpx;
+  position: relative;
+}
+
+.add {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 26rpx;
+  top: 24rpx
+}
+
+.fabu {
+  font-size: 30rpx;
+  color: white;
+  position: absolute;
+  top: 20rpx;
+  left: 70rpx;
+}
+/*以上为顶部头片和发布按钮*/
+
+.list_prompt{
+  background-color: white;
+  width: 100%;
+  height: 74rpx;
+  margin-top:-9rpx;
+  margin-bottom: 10rpx;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+  line-height: 74rpx;
+  text-align: center;
+  font-size: 27rpx;
+  color: #FFA800;
+  padding-top: 0;
+}
+
+/*以下为卡片版式*/
+.card {
+  background-color: white;
+  width: 700rpx;
+  height: 400rpx;
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+  border: 1px solid rgba(255, 255, 255, 0);
+  position: relative;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.poster{
+  height: 405rpx;
+  width: 300rpx;
+  border-radius: 12px;
+  padding-right: 20rpx;
+  margin-top: -2rpx;
+  margin-left: -1rpx;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  height: 400rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  position: relative;
+}
+
+.headAndName{
+  width : 400rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.head{
+  border-radius: 50%;
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.name{
+  color: rgba(0, 0, 0, 1);
+  font-size: 28rpx;
+  font-family: 方正兰亭黑-标准;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  width: 270rpx;
+  margin-bottom: 20rpx;
+}
+
+.actname{
+  font-size: 28rpx;
+  color: #434343;
+  font-family: PingFangSC-regular;
+  margin-top: 10rpx;
+  line-height: 60rpx;
+  font-weight: 200rpx;
+}
+
+.detail{
+  font-size: 24rpx;
+  color: #6E6E6E;
+  font-family: PingFangSC-regular;
+}
+
+.signup{
+  background-color: #FFAE13 ;
+  color: white;
+  text-align: center;
+  height: 72rpx;
+  width: 210rpx;
+  line-height: 72rpx;
+  position: absolute;
+  border-radius: 18rpx;
+  bottom: 40rpx;
+  left: 20%;
+}

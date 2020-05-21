@@ -5,62 +5,98 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    is_MyParticipation : true, 
+    participations:[
+      {
+        status: "进行中", // 已退出，已完成，进行中
+        urgent : true,//加急状态
+        sort: "活动", //种类，包括“活动”和“招募”
+        name : "很神奇的凑字数的南大团委",
+        work : "新年音乐会场务",
+        time : "12月30日 19：00 - 22：00",
+        place : "仙林校区大活",
+        reword : "20元饭票",
+        tel : "12345677899",
+        more : "搬搬道具，听现场指挥就行"
+      },
+      {
+        status: "已退出", // 已退出，已完成，进行中
+        urgent : true,//加急状态
+        sort: "活动", //种类，包括“活动”和“招募”
+        name : "南大团委",
+        work : "新年音乐会场务",
+        time : "12月30日 19：00 - 22：00",
+        place : "仙林校区大活",
+        reword : "20元饭票",
+        tel : "12345677899",
+        more : "搬搬道具，听现场指挥就行"
+      },
+      {
+        status: "已完成", // 已退出，已完成，进行中
+        urgent : true,//加急状态
+        sort: "活动", //种类，包括“活动”和“招募”
+        name : "南大团委",
+        work : "新年音乐会场务",
+        time : "12月30日 19：00 - 22：00",
+        place : "仙林校区大活",
+        reword : "20元饭票",
+        tel : "12345677899",
+        more : "搬搬道具，听现场指挥就行"
+      },
+    ],
+    releases:[
+      {
+        status: "已完成", // 已退出，已完成，进行中
+        urgent : true,//加急状态
+        sort: "招募", //种类，包括“活动”和“招募”
+        name : "南大团委",
+        work : "海报制作招募",
+        time : "5月30日 22：00前完成",
+        place : "无",
+        reword : "100元",
+        tel : "12345677899",
+        more : "听我指挥"
+      },
+      {
+        status: "已完成", // 已退出，已完成，进行中
+        urgent : true,//加急状态
+        sort: "招募", //种类，包括“活动”和“招募”
+        name : "南大团委",
+        work : "海报制作招募",
+        time : "5月30日 22：00前完成",
+        place : "无",
+        reword : "100元",
+        tel : "12345677899",
+        more : "听我指挥"
+      },
+    ]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
+  //转化为我参加的
+  toMyParticipation : function(e){
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease',
+    });
+    animation.translate(0, 0).step()
+    this.setData({
+      is_MyParticipation : true,
+      ani : animation.export()
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //转化为我发布的
+  toMyRelease : function(e){
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    });
+    var systemInfo = wx.getSystemInfoSync(); //下面转化为rpx用
+    animation.translate(375 / 750 * systemInfo.windowWidth, 0).step()
+    this.setData({
+      is_MyParticipation : false,
+      ani: animation.export()
+    })
   }
 })

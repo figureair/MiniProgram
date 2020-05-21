@@ -1,3 +1,33 @@
 <!--pages/activities/activities.wxml-->
 <!-- 活动页面 -->
-<text>pages/activities/activities.wxml</text>
+
+<scroll-view scroll-y="true" class="scroll">
+	<!-- 顶部图片与发布按钮 -->
+	<image src="/images/run.jpg" class="top_pic"></image>
+	<view class="releaseblock">
+		<view class="release" bindtap="toRelease">
+			<image src="/images/add.png" class="add"></image>
+			<text class="fabu">发布</text>
+		</view>
+	</view>
+	<!-- 列表提示栏 -->
+	<view class="list_prompt">
+			<text>活动列表（点击海报可查看详情）</text>
+	</view>
+	<!-- 卡片 -->
+	<view class="card" wx:for="{{ activities }}" enable-flex="true">
+    <image class="poster" src="{{ item.poster }}" data-idx="{{ index }}" bindtap="toDetail"></image>
+		<view class="info" >
+			<view class="headAndName">
+				<image src="{{ item.head }}" class="head"></image>
+				<view class="name">{{item.name}}</view>
+			</view>
+      <text class="actname">{{ item.actname }}</text>
+			<text class="detail">时间：{{ item.time }}
+        面向对象：{{ item.target }}
+      </text>
+      <view class="signup" bindtap="signUp">马上报名</view>
+		</view>
+		
+	</view>
+</scroll-view>
