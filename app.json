@@ -1,13 +1,16 @@
 {
   "pages": [
+    "pages/releaseActivities/releaseActivities",
     "pages/history/history",
-    "pages/recruit/recruit",
     "pages/activities/activities",
+    "pages/situation/situation",
+    "pages/recruit/recruit",
     "pages/index/index",
     "pages/logs/logs",
     "pages/information/information",
     "pages/releaseRecruits/releaseRecruits",
-    "pages/changeInformation/changeInformation"
+    "pages/changeInformation/changeInformation",
+    "pages/amendActInfor/amendActInfor"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -11,11 +11,11 @@
 	</view>
 	<!-- 官方非官方栏 -->
 	<view class="switch">
-		<view class="case" bindtap="toOfficial">
-			<view class="line" animation="{{ ani }}"></view>
+		<view class="line" animation="{{ ani }}"></view>
+		<view class="case" catchtap="toOfficial">
 			<text class="{{ is_official ? 'chosen' : '' }}" z-index = "10">官方</text>
 		</view>
-		<view class="case" bindtap="toNotOfficial">
+		<view class="case" catchtap="toNotOfficial">
 			<text class="{{ is_official ? '' : 'chosen'}}">非官方</text>
 		</view>
 	</view>

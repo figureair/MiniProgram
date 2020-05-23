@@ -132,7 +132,7 @@
   color: #434343;
   font-family: PingFangSC-regular;
   margin-top: 10rpx;
-  line-height: 60rpx;
+  line-height: 42rpx;
   font-weight: 200rpx;
 }
 

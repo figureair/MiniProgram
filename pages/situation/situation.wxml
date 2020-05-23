@@ -1,0 +1,30 @@
+<!--pages/actInfor/actInfor.wxml-->
+<!-- 活动/招募报名人信息 -->
+
+
+
+<scroll-view class="scroll">
+<view class="top" z-index="0">
+  <view class="totalInfor" >
+    <text>报名总人数: {{ total }}</text> 
+    <text class="chosenNum">已选定人数：{{ totalchosen }}</text>
+  </view>
+</view>
+
+  <view class="card" wx:for="{{ people }}">
+    <view class="content">
+      <text class="name">{{ item.name }}</text>
+      <view class="line"></view>
+      <text class="info">手机号：{{ item.tel }}
+        邮箱:{{ item.email }}
+      </text>
+    </view>
+    <image wx:if="{{ item.chosen }}" class="gou" src="/images/gou.png"></image>
+    <view class="btn">
+      <view class="choose" wx:if="{{ ! item.chosen }}" data-idx="{{ index }}" bindtap="choose">选定</view>
+      <view class="choose" wx:else bindtap="cancel" data-idx="{{ index }}">取消选定</view>
+    </view>
+  </view>
+
+  <view class="bottom">已经到底了噢~</view>
+</scroll-view>

@@ -8,8 +8,8 @@
 
 	<!-- 我参加的 我发布的 栏 -->
 	<view class="switch">
+		<view class="line" animation="{{ ani }}"></view>
 		<view class="case" bindtap="toMyParticipation">
-			<view class="line" animation="{{ ani }}"></view>
 			<text class="{{ is_MyParticipation ? 'chosen' : '' }}" z-index = "10">我参加的</text>
 		</view>
 		<view class="case" bindtap="toMyRelease">
@@ -21,19 +21,31 @@
 	<view class="card" wx:for="{{ is_MyParticipation ? participations : releases }}" enable-flex="true">
 		<view class="content">
 			<view class="name">{{item.name}}</view>
-			<text class="detail">工作：{{ item.work }}
+			<text class="detail" wx:if="{{ item.sort=='招募' }}">工作：{{ item.work }}
         时间：{{ item.time }}
         地点：{{ item.place }}
         报酬：{{ item.reword }}
         联系方式：{{ item.tel }}
         备注：{{ item.more }}
       </text>
+			<text class="detail" wx:if="{{ item.sort=='活动' }}">
+			  活动：{{ item.actname }}
+				时间：{{ item.time }}
+				面向对象：{{ item.target }}
+			</text>
 		</view>
 
-		<!-- 性质,状态,退出报名与详细信息 -->
+		<!-- 性质,状态 -->
 		<view class="status {{ item.status=='进行中' ? 'yellow' : (item.status=='已退出' ? 'red' : 'green')}}">{{ item.sort }}：{{ item.status }}</view>
-		<view class="btn" style="bottom: 134rpx" bindtap="signUp">详情</view>
-		<view class="btn" bindtap="signUp">退出活动</view>
-
+		<!-- 我参加的相关按钮:退出报名与详细信息 -->
+		<view wx:if="{{is_MyParticipation }}">
+			<view wx:if="{{ item.sort == '活动' }}" class="btn detailbtn" data-idx="{{index}}" bindtap="toDetail">详情</view>
+			<view class="btn" bindtap="cancel" data-idx="{{index}}">退出</view>
+		</view>
+		<!-- 我发布的相关按钮:修改和报名情况 -->
+		<view wx:if="{{ ! is_MyParticipation }}">
+			<view class="btn detailbtn" data-idx="{{index}}" bindtap="amend">修改</view>
+			<view class="btn" bindtap="showSituation" data-idx="{{index}}">报名情况</view>
+		</view>
 	</view>
 </scroll-view>

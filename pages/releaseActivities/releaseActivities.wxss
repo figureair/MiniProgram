@@ -1,0 +1,58 @@
+/* pages/releaseActivities/releaseActivities.wxss */
+
+.content{
+  margin: 30rpx;
+}
+
+.prompt{
+  color: #B0B0B0;
+  font-size: 26rpx;
+  text-align: center;
+  margin: 25rpx;
+}
+
+.poster{
+
+}
+
+
+.inputview{
+  border: 2rpx solid #BBBBBB;
+  border-radius: 18rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.time{
+
+}
+
+
+.input{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 100%;
+}
+
+.plas{
+  color: #888888;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.submit{
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.word{
+  color: #282727;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}

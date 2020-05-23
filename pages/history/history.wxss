@@ -67,7 +67,7 @@
 
 .content{
   margin: 44rpx;
-
+  width: 400rpx;
 }
 
 .name{
@@ -122,6 +122,7 @@
 .btn{
   background-color: #FFAE13 ;
   color: white;
+  font-size: 28rpx;
   text-align: center;
   height: 72rpx;
   width: 210rpx;
@@ -130,4 +131,9 @@
   border-radius: 18rpx;
   bottom: 44rpx;
   right: 25rpx;
+}
+
+.detailbtn{
+  bottom: 134rpx;
+  
 }

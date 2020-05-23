@@ -71,6 +71,8 @@ Page({
 
   //转化为官方栏
   toOfficial : function(e){
+    console.log('触发1');
+    
     var animation = wx.createAnimation({
       duration: 300,
       timingFunction: 'ease',
@@ -84,6 +86,8 @@ Page({
 
   //转化为非官方栏信息
   toNotOfficial : function(e){
+    console.log('触发2');
+    
     var animation = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease',

@@ -1,0 +1,6 @@
+<!--pages/amendActInfor/amendActInfor.wxml-->
+<!-- 修改活动信息页 -->
+<text>pages/amendActInfor/amendActInfor.wxml</text>
+
+
+<button bindtap="return">返回历史</button>
