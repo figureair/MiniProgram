@@ -1,0 +1,91 @@
+/* pages/changeInformation.wxss */
+
+/* 修改项 */
+.entry {
+  width: 100%;
+  border-top: thin solid #ffa800;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 25rpx;
+}
+
+.wideEntryText {
+  width: 200rpx;
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+  margin-top: 80rpx;
+  margin-left: 50rpx;
+}
+
+.narrowEntryText {
+  width: 200rpx;
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+  margin-top: 40rpx;
+  margin-left: 50rpx;
+}
+
+/* 修改头像 */
+.entryAvatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 300rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+/* 修改性别的选项框 */
+.picker {
+  width: 100rpx;
+  text-align: right;
+  font-size: 32rpx;
+  font-style: initial;
+  color: gray;
+  margin-top: 40rpx;
+  margin-left: 350rpx;
+  margin-bottom: 40rpx;
+}
+
+.textArea {
+  height: 110rpx;
+  width: 300rpx;
+  font-size: 32rpx;
+  font-style: initial;
+  text-align: right;
+  color: gray;
+  margin-left: 150rpx;
+  margin-top: 50rpx;
+  margin-bottom: 40rpx;
+}
+
+.entryInput {
+  width: 300rpx;
+  text-align: right;
+  font-size: 32rpx;
+  font-style: initial;
+  color: gray;
+  margin-top: 40rpx;
+  margin-left: 150rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 保存按钮 */
+.save {
+  background-color: #ffae13;
+  color: white;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  height: 80rpx;
+  margin-left: 25rpx;
+  margin-top: 50rpx;
+  border-radius: 18rpx;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+}

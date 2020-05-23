@@ -1,0 +1,34 @@
+<!--pages/changeInformation.wxml-->
+<view class="entry">
+	<text class="wideEntryText">修改头像</text>
+	<image class="entryAvatar" src="{{user.avatarUrl}}" bindtap="changeAvatar"></image>
+</view>
+
+<view class="entry">
+	<text class="narrowEntryText">修改昵称</text>
+	<input class="entryInput" bindblur="bindChangeNickname" placeholder="{{user.nickname}}"></input>
+</view>
+
+<view class="entry">
+	<text class="narrowEntryText">修改性别</text>
+	<picker class="picker" bindchange="bindPickerChange" value="{{user.gender}}" range="{{genderArray}}">
+		<view>{{genderArray[user.gender]}}</view>
+	</picker>
+</view>
+
+<view class="entry">
+	<text class="wideEntryText">修改简介</text>
+	<textarea class="textArea" bindblur="bindDescriptionChange" placeholder="{{user.description}}"></textarea>
+</view>
+
+<view class="entry">
+	<text class="narrowEntryText">换绑手机</text>
+	<input class="entryInput" type="number" bindblur="bindChangePhoneNumber" placeholder="{{user.phoneNumber}}"></input>
+</view>
+
+<view class="entry">
+	<text class="narrowEntryText">换绑邮箱</text>
+	<input class="entryInput" bindblur="bindChangeEmailAddress" placeholder="{{user.emailAddress}}"></input>
+</view>
+
+<button class="save" style="width: 700rpx" bindtap="saveChanges">保存</button>

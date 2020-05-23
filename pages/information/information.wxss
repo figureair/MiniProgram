@@ -1,1 +1,178 @@
 /* pages/information/information.wxss */
+
+/* 顶部个人信息卡片 */
+.card {
+  background-color: white;
+  width: 700rpx;
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+  border: 1px solid rgba(255, 255, 255, 0);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+
+.combination {
+  margin-top: 40rpx;
+  margin-left: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatarView {
+  margin-left: 20rpx;
+}
+
+/* 用户头像 */
+.avatar {
+  border-radius: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  background-color: rgb(200, 200, 200);
+}
+
+.textView {
+  margin-left: 60rpx;
+  width: 300rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 昵称 */
+.nickname {
+  color: black;
+  font-size: 36rpx;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 20rpx;
+}
+
+/* 学号 */
+.studentID {
+  font-size: 32rpx;
+  font-weight: bold;
+  font-style: normal;
+  color: rgb(88, 88, 88);
+  margin-top: 30rpx;
+}
+
+.descriptionView {
+  margin-left: 100rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  width: 540rpx;
+}
+
+/* 简介 */
+.description {
+  font-size: 30rpx;
+  font-style: oblique;
+  color: gray;
+  text-align: center;
+}
+
+/* 区域标题 */
+.areaTitle {
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.titleText {
+  font-size: 36rpx;
+  font-style: initial;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+  color: black;
+}
+
+/* 选项条目 */
+.option {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.optionIcon {
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.optionTextView {
+  margin-left: 40rpx;
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionText {
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+  margin-top: 20rpx;
+}
+
+.optionText1 {
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+}
+
+.optionText2 {
+  font-style: normal;
+  font-size: 24rpx;
+  color: gray;
+  margin-top: 5rpx;
+}
+
+.functions {
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: row;
+  width: 700rpx;
+  position: relative;
+}
+
+/* 功能块 */
+.function {
+  margin-right: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.funcIcon {
+  height: 70rpx;
+  width: 70rpx;
+  margin-left: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.funcText {
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+  margin-left: 15rpx;
+}
+
+/* 登出按钮 */
+.logout {
+  background-color: #ffae13;
+  color: white;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  height: 80rpx;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  border-radius: 18rpx;
+  box-shadow: 0px 0px 5px 0px rgba(201, 201, 201, 1);
+}
