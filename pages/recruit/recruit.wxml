@@ -1,4 +1,4 @@
-<!--招募页-->
+<!--招募页 author: zzn-->
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片与发布按钮 -->

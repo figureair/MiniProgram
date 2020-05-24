@@ -1,4 +1,5 @@
 // pages/recruit/recruit.js
+//author: zzn
 //有待补充代码:signUp()
 Page({
 

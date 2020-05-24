@@ -1,4 +1,5 @@
 // pages/actInfor/actInfor.js
+//author: zzn
 //choose(),cancel()待实现
 Page({
 

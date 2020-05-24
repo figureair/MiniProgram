@@ -1,4 +1,5 @@
 // pages/activities/activities.js
+//author: zzn
 // toDeail()和signUp()待实现
 
 Page({
@@ -56,9 +57,12 @@ Page({
     var idx = e.currentTarget.dataset.idx
     var url = this.data.activities[idx].detail
     console.log(url);
-    
-    wx.navigateTo({
-      url: url,
+    wx.showModal({
+      title: '提示',
+      content: '由于开发者的权限问题，该部分功能尚未开放，敬请期待~',
+      confirmText: '好的',
+      confirmColor: '#71CD63',
+      showCancel: false
     })
   },
 

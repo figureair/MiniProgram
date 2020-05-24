@@ -1,22 +1,60 @@
 <!--pages/releaseActivities/releaseActivities.wxml-->
-<!-- 活动发布页 -->
+<!-- 活动发布页 author: zzn-->
+
 <view class="content">
   <view class="prompt">填写信息尽量简洁哦~</view>
-  <view class="poster">
-    <view class="word">海报（比例为4：3）：</view>
-  </view>
-  <view class="word">活动名称：</view>
-  <view class="inputview">
-    <input class="input" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" bindinput="actnameInput"></input>
-  </view>
-  <view class="time">
-    <view class="word">活动时间：</view>
-    <input ></input>
-  </view>
-  <view class="word">面向对象：</view>
-  <view class="inputview">
-    <input class="input" placeholder="输入活动面向对象，限25字" placeholder-class="plas" maxlength="25" bindinput="targetInput"></input>
+
+  <view class="word">海报（比例为4：3）：</view>
+  <view class="poster" bindtap="addPoster">
+    <image src="/images/addgrey.png" id="add" wx:if="{{poster == ''}}"></image>
+    <text id="upload" wx:if="{{poster == ''}}">上传图片</text>
+    <image class="posterimg" src="{{poster}}" wx:if="{{poster != ''}}"></image>
   </view>
 
-  <image class="submit" src="/images/plane.png"></image>
+  <view class="word">活动名称：</view>
+  <view class="inputview">
+    <input class="input" type="text" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" bindinput="actnameInput"></input>
+  </view>
+
+  <view class="word">活动时间：</view>
+  <!-- 选择开始结束时间 -->
+  <view class="settime">
+    <!-- 选择开始时间 -->
+    <view class="setstart">
+      <view class="timeTitle">开始</view>
+      <picker class="showchoice" mode="date" value="{{startDate}}" start="2020-05-01" end="2030-09-01" bindchange="bindStartDateChange">
+        <view>
+          {{startDate}}
+        </view>
+      </picker>
+      <picker class="showchoice" mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+        <view>
+          {{startTime}}
+        </view>
+      </picker>
+    </view>
+    <!-- 分割线 -->
+    <view class="line"></view>
+    <!-- 选择结束时间 -->
+    <view class="setend">
+      <view class="timeTitle">结束</view>
+      <picker class="showchoice" mode="date" value="{{endDate}}" start="2020-05-20" end="2030-05-20" bindchange="bindEndDateChange">
+        <view>
+          {{endDate}}
+        </view>
+      </picker>
+      <picker class="showchoice" mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+        <view>
+          {{endTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="word">面向对象：</view>
+  <view class="inputview">
+    <input class="input" type="text" placeholder="输入活动面向对象，限25字" placeholder-class="plas" maxlength="25" bindinput="targetInput"></input>
+  </view>
+
+  <image class="submit" src="/images/plane.png" bindtap="submit"></image>
 </view>

@@ -1,4 +1,5 @@
 /* pages/recruit/recruit.wxss */
+/*author: zzn*/
 
 .scroll{
   width: 100%;

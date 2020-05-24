@@ -1,4 +1,5 @@
 // pages/history/history.js
+//author: zzn
 //toDetail(),cancel()待完成
 Page({
 
@@ -128,8 +129,14 @@ Page({
   //点击详情按钮跳转到活动对应的微信推文
   toDetail : function(e){
     var idx = e.currentTarget.dataset.idx
-    console.log(idx);
     //跳转到活动的微信推文，待实现
+    wx.showModal({
+      title: '提示',
+      content: '由于开发者的权限问题，该部分功能尚未开放，敬请期待~',
+      confirmText: '好的',
+      confirmColor: '#71CD63',
+      showCancel: false
+    })
   },
 
   //点击"退出"按钮退出该活动
@@ -177,16 +184,18 @@ Page({
 
   //我发布的 点击修改按钮 进入修改页面
   amend: function(e){
+    //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/amendActInfor/amendActInfor',
     })
   },
 
   //我发布的 点击报名情况 进入报名情况页面
   showSituation: function(e){
+    //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/situation/situation',
     })
   }

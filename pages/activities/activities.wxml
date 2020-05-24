@@ -1,5 +1,5 @@
 <!--pages/activities/activities.wxml-->
-<!-- 活动页面 -->
+<!-- 活动页面 author: zzn-->
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片与发布按钮 -->
@@ -12,7 +12,7 @@
 	</view>
 	<!-- 列表提示栏 -->
 	<view class="list_prompt">
-			<text>活动列表（点击海报可查看详情）</text>
+			<text>活动列表（点击海报可进入活动推文）</text>
 	</view>
 	<!-- 卡片 -->
 	<view class="card" wx:for="{{ activities }}" enable-flex="true">

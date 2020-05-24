@@ -1,9 +1,13 @@
 /* pages/releaseActivities/releaseActivities.wxss */
-
+/* author: zzn */
 .content{
   margin: 30rpx;
+  width: 690rpx;
+  height: 1350rpx;
+  position: relative;
 }
 
+/*顶部提示*/
 .prompt{
   color: #B0B0B0;
   font-size: 26rpx;
@@ -12,12 +16,36 @@
 }
 
 .poster{
-
+  height: 320rpx;
+  width: 240rpx;
+  background-color: #DCDCDC;
+  border: 2rpx dashed #B0B0B0;
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.posterimg{
+  height: 320rpx;
+  width: 240rpx;
+}
 
+#add{
+  height: 80rpx;
+  width: 80rpx;
+  margin-bottom: 50rpx;
+}
+
+#upload{
+  color: #515151;
+  font-size: 32rpx;
+}
+
+/*以下为输入框样式，仅活动名称和面向对象*/
 .inputview{
-  border: 2rpx solid #BBBBBB;
+  border: 2rpx solid #DCDCDC;
   border-radius: 18rpx;
   height: 80rpx;
   line-height: 80rpx;
@@ -29,15 +57,11 @@
   justify-content: center;
 }
 
-.time{
-
-}
-
-
 .input{
   margin-left: 30rpx;
   margin-right: 30rpx;
   width: 100%;
+  color: #282727 ;
 }
 
 .plas{
@@ -45,14 +69,68 @@
   text-align: center;
   font-size: 28rpx;
 }
+/*以上为输入框样式*/
+
+/*以下为时间选择*/
+.settime{/*总框*/
+  width: 625rpx;
+  border: 2rpx solid #DCDCDC;
+  border-radius: 18rpx;
+  background-color: white;
+  padding: 30rpx;
+  padding-left: 30rpx;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 50rpx;
+  font-size: 30rpx;
+}
+
+.setstart{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.showchoice{
+  width: 33%;
+  color: #888888;
+  height: 100%;
+}
+
+.line{
+  border-bottom: solid 2rpx #DCDCDC;
+}
+
+.setend{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.timeTitle{
+  margin-right: 10%;
+  color: #888888;
+}
+/*以上为时间选择*/
 
 .submit{
-  height: 80rpx;
-  width: 80rpx;
+  height: 100rpx;
+  width: 100rpx;
+  margin-bottom: 50rpx;
+  position: absolute;
+  right: 40rpx;
+  bottom: 0rpx;
 }
 
 .word{
   color: #282727;
   font-size: 32rpx;
   margin-bottom: 20rpx;
+  width: 100%;
 }

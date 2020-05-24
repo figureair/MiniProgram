@@ -1,7 +1,5 @@
 <!--pages/actInfor/actInfor.wxml-->
-<!-- 活动/招募报名人信息 -->
-
-
+<!-- 活动/招募报名人信息 author: zzn-->
 
 <scroll-view class="scroll">
 <view class="top" z-index="0">
