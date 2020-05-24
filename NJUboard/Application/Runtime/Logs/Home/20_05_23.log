@@ -1,0 +1,1249 @@
+[ 2020-05-23T15:21:16+08:00 ] 127.0.0.1 /NJUboard/index.php/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+ERR: 非法操作:index
+
+[ 2020-05-23T15:21:38+08:00 ] 127.0.0.1 /NJUboard/index.php/Home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000476s ]
+
+[ 2020-05-23T15:42:58+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+ERR: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+
+[ 2020-05-23T15:43:23+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+NOTIC: [8] Undefined index: recordid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001705s ]
+
+[ 2020-05-23T15:43:44+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Undefined index: recordid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2020-05-23T15:44:06+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2020-05-23T15:44:32+08:00 ] 127.0.0.1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+NOTIC: [8] Undefined index: recordid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2020-05-23T15:44:38+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2020-05-23T15:45:15+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000295s ]
+
+[ 2020-05-23T15:45:25+08:00 ] 127.0.0.1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+NOTIC: [8] Undefined index: recordid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 12 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2020-05-23T15:45:38+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2020-05-23T15:46:19+08:00 ] 127.0.0.1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Undefined index: recordid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000382s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2020-05-23T15:47:00+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+
+[ 2020-05-23T15:47:49+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+ERR: syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+
+[ 2020-05-23T15:48:59+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001385s ]
+NOTIC: [8] Undefined index: userid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 21 行.
+
+[ 2020-05-23T15:57:50+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: userid D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 21 行.
+
+[ 2020-05-23T15:57:57+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `record` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T15:58:43+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `record` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2020-05-23T16:04:16+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T16:06:28+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0161s ]
+
+[ 2020-05-23T16:06:34+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+NOTIC: [8] Undefined index: record_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 12 行.
+
+[ 2020-05-23T16:06:46+08:00 ] ::1 /NJUboard/index.php/Home/User/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `record` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T16:11:47+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+ERR: 无法加载控制器:Record
+
+[ 2020-05-23T16:12:11+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001366s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `record` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T16:27:57+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.1152s ]
+
+[ 2020-05-23T16:30:35+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0024s ]
+
+[ 2020-05-23T16:35:00+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0006s ]
+
+[ 2020-05-23T16:35:18+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0004s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T16:36:52+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0003s ]
+
+[ 2020-05-23T16:36:53+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0002s ]
+
+[ 2020-05-23T16:42:14+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0004s ]
+
+[ 2020-05-23T16:42:27+08:00 ] ::1 /NJUboard/index.php/Home/Record/exit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: UPDATE `record` SET `state`='2' WHERE `id` = 1 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `record` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2020-05-23T16:55:46+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001648s ]
+ERR: 非法操作:findactivity
+
+[ 2020-05-23T16:56:17+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:56:29+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:56:38+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:56:41+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:57:31+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:57:31+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:57:32+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:57:47+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] Undefined variable: POST D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 13 行.
+
+[ 2020-05-23T16:58:48+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T16:59:45+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T17:00:41+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T20:26:00+08:00 ] ::1 /NJUboard/index.php/Home/Activity/findactivity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T20:36:22+08:00 ] ::1 /NJUboard/index.php/Home/Activity/find_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2020-05-23T20:52:08+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+ERR: syntax error, unexpected '；' (T_STRING)
+
+[ 2020-05-23T20:53:48+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [8] Undefined index: activity_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 65 行.
+
+[ 2020-05-23T20:54:07+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2020-05-23T20:54:12+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: user_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 81 行.
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 82 行.
+NOTIC: [8] Undefined index: user_face D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 83 行.
+NOTIC: [8] Undefined index: activity_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 84 行.
+NOTIC: [8] Undefined index: activity_type D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 85 行.
+NOTIC: [8] Undefined index: state D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 86 行.
+NOTIC: [8] Undefined index: starttime D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 87 行.
+NOTIC: [8] Undefined index: endtime D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 88 行.
+NOTIC: [8] Undefined index: place D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 89 行.
+NOTIC: [8] Undefined index: reward D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 90 行.
+NOTIC: [8] Undefined index: phone D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 91 行.
+NOTIC: [8] Undefined index: picture D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 92 行.
+NOTIC: [8] Undefined index: audience D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 93 行.
+NOTIC: [8] Undefined index: other D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 94 行.
+ERR: 1048:Column 'user_id' cannot be null
+ [ SQL语句 ] : UPDATE `activity` SET `user_id`=NULL,`user_name`=NULL,`user_face`=NULL,`activity_name`=NULL,`activity_type`=NULL,`state`=NULL,`starttime`=NULL,`endtime`=NULL,`place`=NULL,`reward`=NULL,`phone`=NULL,`picture`=NULL,`audience`=NULL,`other`=NULL WHERE `id` = 1
+ERR: 1048:Column 'user_id' cannot be null
+ [ SQL语句 ] : UPDATE `activity` SET `user_id`=NULL,`user_name`=NULL,`user_face`=NULL,`activity_name`=NULL,`activity_type`=NULL,`state`=NULL,`starttime`=NULL,`endtime`=NULL,`place`=NULL,`reward`=NULL,`phone`=NULL,`picture`=NULL,`audience`=NULL,`other`=NULL WHERE `id` = 1
+
+[ 2020-05-23T20:58:12+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+
+[ 2020-05-23T20:58:43+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+
+[ 2020-05-23T20:58:44+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+
+[ 2020-05-23T20:59:39+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 126 行.
+NOTIC: [8] Undefined index: user_face D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 127 行.
+NOTIC: [8] Undefined index: place D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 133 行.
+NOTIC: [8] Undefined index: reward D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 134 行.
+NOTIC: [8] Undefined index: phone D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 135 行.
+NOTIC: [8] Undefined index: picture D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 136 行.
+NOTIC: [8] Undefined index: audience D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 137 行.
+NOTIC: [8] Undefined index: other D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 138 行.
+SQL: UPDATE `activity` SET `user_id`='1',`user_name`=NULL,`user_face`=NULL,`activity_name`='1',`activity_type`='1',`state`='1',`starttime`='123',`endtime`='321',`place`=NULL,`reward`=NULL,`phone`=NULL,`picture`=NULL,`audience`=NULL,`other`=NULL WHERE `id` = 1 [ RunTime:0.0003s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T20:59:50+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `activity` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 126 行.
+NOTIC: [8] Undefined index: user_face D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 127 行.
+NOTIC: [8] Undefined index: place D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 133 行.
+NOTIC: [8] Undefined index: reward D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 134 行.
+NOTIC: [8] Undefined index: phone D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 135 行.
+NOTIC: [8] Undefined index: picture D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 136 行.
+NOTIC: [8] Undefined index: audience D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 137 行.
+NOTIC: [8] Undefined index: other D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\ActivityController.class.php 第 138 行.
+SQL: UPDATE `activity` SET `user_id`='1',`user_name`=NULL,`user_face`=NULL,`activity_name`='1',`activity_type`='1',`state`='1',`starttime`='123',`endtime`='321',`place`=NULL,`reward`=NULL,`phone`=NULL,`picture`=NULL,`audience`=NULL,`other`=NULL WHERE `id` = 1 [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:00:47+08:00 ] ::1 /NJUboard/index.php/Home/Activity/update_activity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+
+[ 2020-05-23T21:35:07+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] Undefined index: phone D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 16 行.
+
+[ 2020-05-23T21:35:20+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [8] Undefined index: user_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 8 行.
+
+[ 2020-05-23T21:35:35+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: phone D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 16 行.
+
+[ 2020-05-23T21:35:41+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Undefined index: password D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 24 行.
+
+[ 2020-05-23T21:35:49+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined index: user_sno D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 31 行.
+
+[ 2020-05-23T21:35:56+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+
+[ 2020-05-23T21:36:00+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:36:33+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 47 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 51 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 52 行.
+NOTIC: [8] Undefined index: mailbox D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 53 行.
+SQL: UPDATE `user` SET `user_name`=NULL,`phone`='1',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`=NULL WHERE `id` = 1 [ RunTime:0.0011s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2020-05-23T21:36:50+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 47 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 51 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 52 行.
+SQL: UPDATE `user` SET `user_name`=NULL,`phone`='1',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1 [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2020-05-23T21:40:36+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 47 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 51 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 52 行.
+ERR: 1062:Duplicate entry '3' for key 'phone'
+ [ SQL语句 ] : UPDATE `user` SET `user_name`=NULL,`phone`='3',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1
+ERR: 1062:Duplicate entry '3' for key 'phone'
+ [ SQL语句 ] : UPDATE `user` SET `user_name`=NULL,`phone`='3',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1
+
+[ 2020-05-23T21:43:05+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 47 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 51 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 52 行.
+SQL: UPDATE `user` SET `user_name`=NULL,`phone`='1',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1 [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:43:11+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 47 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 51 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 52 行.
+ERR: 1062:Duplicate entry '3' for key 'phone'
+ [ SQL语句 ] : UPDATE `user` SET `user_name`=NULL,`phone`='3',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1
+ERR: 1062:Duplicate entry '3' for key 'phone'
+ [ SQL语句 ] : UPDATE `user` SET `user_name`=NULL,`phone`='3',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1
+
+[ 2020-05-23T21:50:14+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:50:31+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 4 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:51:38+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:51:42+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2020-05-23T21:53:24+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2020-05-23T21:53:41+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:54:40+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:55:47+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:55:48+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:55:48+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T21:55:49+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2020-05-23T21:55:50+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2020-05-23T21:57:22+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 71 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 75 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 76 行.
+SQL: UPDATE `user` SET `user_name`=NULL,`phone`='2',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1 [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T21:57:25+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_name D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 71 行.
+NOTIC: [8] Undefined index: description D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 75 行.
+NOTIC: [8] Undefined index: face_url D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\UserController.class.php 第 76 行.
+SQL: UPDATE `user` SET `user_name`=NULL,`phone`='2',`password`='2',`user_sno`='3',`description`=NULL,`face_url`=NULL,`mailbox`='afww' WHERE `id` = 1 [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:09:05+08:00 ] ::1 /NJUboard/index.php/Home/User/update_user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `phone` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user` WHERE `user_sno` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:28:31+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+NOTIC: [8] Undefined index: activity_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 99 行.
+
+[ 2020-05-23T22:28:48+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined index: user_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 107 行.
+
+[ 2020-05-23T22:28:58+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] Undefined index: state D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 115 行.
+
+[ 2020-05-23T22:29:03+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0011s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0006s ]
+
+[ 2020-05-23T22:29:34+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0012s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:33:08+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0002s ]
+
+[ 2020-05-23T22:33:12+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:33:13+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:33:35+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:33:36+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:38:19+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:39:52+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:40:10+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:40:29+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:42:01+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0004s ]
+NOTIC: [2] Illegal string offset 'id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 155 行.
+NOTIC: [2] Illegal string offset 'user_id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 156 行.
+NOTIC: [2] Illegal string offset 'activity_id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 157 行.
+NOTIC: [2] Illegal string offset 'state' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 158 行.
+
+[ 2020-05-23T22:42:48+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `record` (`activity_id`,`user_id`,`state`) VALUES ('1','1','1') [ RunTime:0.0002s ]
+NOTIC: [2] Illegal string offset 'id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 156 行.
+NOTIC: [2] Illegal string offset 'user_id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 157 行.
+NOTIC: [2] Illegal string offset 'activity_id' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 158 行.
+NOTIC: [2] Illegal string offset 'state' D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 159 行.
+
+[ 2020-05-23T22:44:51+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2020-05-23T22:44:52+08:00 ] ::1 /NJUboard/index.php/Home/Record/user_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `activity` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:52:38+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+NOTIC: [8] Undefined index: activity_id D:\phpstudy_pro\WWW\NJUboard\Application\Home\Controller\RecordController.class.php 第 67 行.
+
+[ 2020-05-23T22:52:52+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0003s ]
+
+[ 2020-05-23T22:53:42+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0013s ]
+
+[ 2020-05-23T22:54:13+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0003s ]
+
+[ 2020-05-23T23:00:00+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T23:01:13+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2020-05-23T23:01:36+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2020-05-23T23:02:11+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T23:03:05+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2020-05-23T23:03:31+08:00 ] ::1 /NJUboard/index.php/Home/Record/activity_signup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `record` WHERE `activity_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
