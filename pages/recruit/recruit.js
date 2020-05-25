@@ -8,8 +8,7 @@ Page({
     is_official : true, 
     official_recruits:[
       {
-        goingon: true,//正在进行
-        urgent : true,//加急状态
+        state: 3,//加急
         head : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4064142245,3232604835&fm=26&gp=0.jpg",
         name : "很神奇的凑字数的南大团委",
         work : "新年音乐会场务",
@@ -20,8 +19,7 @@ Page({
         more : "搬搬道具，听现场指挥就行"
       },
       {
-        goingon: true,//正在进行
-        urgent : true,//加急状态
+        state: 3,
         head : "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3085317021,500690793&fm=26&gp=0.jpg",
         name : "街舞社",
         work : "找人录像",
@@ -32,8 +30,7 @@ Page({
         more : "帮忙录个像，很简单的！"
       },
       {
-        goingon: true,//正在进行
-        urgent : true,//加急状态
+        state: 1,//正在进行
         head : "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=253073685,3587850098&fm=15&gp=0.jpg",
         name : "南京大学学生会",
         work : "音乐作品征集比赛海报设计",
@@ -46,7 +43,7 @@ Page({
     ],
     non_official_recruits:[
       {
-        urgent : true,
+        state: 3,
         head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588314029275&di=763dff5ec910ce77155cf285e9da125f&imgtype=0&\src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg",
         name : "一位大佬",
         work : "找人做栋梁奖学金答辩视频",
@@ -57,7 +54,7 @@ Page({
         more : "需要有点技术，把个人作品发到181250006@smail.nju.edu.cn我看看吧"
       },
       {
-        urgent : false,
+        state: 1,
         head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588321392410&di=808f39e737ae40b465d6203f649d56bd&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F7405829970%2F0",
         name : "一位渣渣",
         work : "找人教我数据科学",

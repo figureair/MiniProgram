@@ -34,7 +34,7 @@
         备注：{{ item.more }}
       </text>
 		</view>
-		<view class="urgent" wx:if="{{ item.urgent }}">加急</view>
+		<view class="urgent" wx:if="{{ item.state == 3 }}">加急</view>
 		<view class="signup" bindtap="signUp">马上报名</view>
 	</view>
 </scroll-view>

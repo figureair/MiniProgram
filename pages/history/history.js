@@ -1,6 +1,6 @@
 // pages/history/history.js
 //author: zzn
-//toDetail(),cancel()待完成
+//toDetail(),cancel()，amend(),showSituation()待完成
 Page({
 
   /**
