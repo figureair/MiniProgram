@@ -8,7 +8,7 @@ class RecordController extends BaseController {
      * 退出指定活动与招募
      * @return [type] [description]
      */
-    public function exit(){
+    public function exit_activity(){
         if(!$_POST['record_id']){
         	
         	$return_data=array();
