@@ -1,6 +1,6 @@
 // pages/amendActInfor/amendActInfor.js
 //author: zzn
-//submit()函数待补充
+//submit(),end(),cancel(),handlesubmit()函数待补充
 
 var util = require('../../utils/util.js');
 Page({
@@ -9,7 +9,9 @@ Page({
    */
   data: {
     chooseEnd: false,//是否选择结束。页面数据，不需保存
-    status: '进行中',//活动状态，‘进行中’或‘已结束’
+    chooseUrgent: false,//是否选择加急。页面数据，不需保存
+    chooseCancel: false,//是否选择取消活动。页面数据，不需保存
+    state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
     poster: '',//海报链接
     actname: '',//活动名
     startDate: '',//开始年月日,格式yyyy-mm-dd
@@ -44,23 +46,31 @@ Page({
 
   },
 
-  //选择结束
-  cancel: function(e){
-    this.setData({
-      chooseEnd: ! this.data.chooseEnd,
-    })
+  //选择状态，注:此处不改变活动的state，只改变选中的按钮，在提交修改submit()中才修改活动state
+  changeState: function(e){
+    var totype = e.currentTarget.dataset.totype
+    if(totype == 'end'){
+      this.setData({ 
+        chooseEnd: true,
+        chooseCancel: false,
+        chooseUrgent: false
+      })
+    }
+    else if(totype == 'urgent'){
+      this.setData({ 
+        chooseEnd: false,
+        chooseCancel: false,
+        chooseUrgent: true
+      })
+    }
+    else if(totype == 'cancel'){
+      this.setData({ 
+        chooseEnd: false,
+        chooseCancel: true,
+        chooseUrgent: false
+      })
+    }
   },
-
-  //获取用户输入的活动名称
-  actnameInput: function(e){
-    this.data.actname = e.detail.value 
-  },
-
-  //获取用户输入的活动面向对象
-  targetInput: function(e){
-    this.data.target = e.detail.value 
-  },
-
 
   //上传图片
   addPoster: function(e){
@@ -76,6 +86,16 @@ Page({
         })
       }
     })
+  },
+
+  //获取用户输入的活动名称
+  actnameInput: function(e){
+    this.data.actname = e.detail.value 
+  },
+
+  //获取用户输入的活动面向对象
+  targetInput: function(e){
+    this.data.target = e.detail.value 
   },
 
   //获得输入的开始日期
@@ -99,33 +119,16 @@ Page({
     this.setData({endTime: et})
   },
 
-  //点击保存修改，提交
-  submit : function(e){
+  //点击保存修改
+  clickSubmit : function(e){
     var that = this
-    //是否结束活动
     if(this.data.chooseEnd == true){
-      wx.showModal({
-        title: '确认结束活动？',
-        content: '结束的活动将不在活动公布栏中展示，且本次修改的其他信息不生效',
-        cancelText: '再想想',
-        cancelColor: '#6E6E6E',
-        confirmText: '是的！',
-        confirmColor: '#71CD63',
-        success : function(res){
-          if(res.confirm){
-            wx.showLoading({title: '结束中'})
-            that.setData({status: '已结束'})
-            //此处待补充，将结束信息发送给服务器
-            setTimeout(function () {
-              wx.hideLoading()
-              wx.showToast({title: '结束成功',icon: 'success',duration: 1000})
-            }, 2000)
-          }
-        }
-      })
+      this.end()
     }
-    //不结束活动
-    else{
+    else if(this.data.chooseCancel == true){
+      this.cancel()
+    }
+    else {
       //检查是否遗漏输入
       if(this.data.poster == ''){
         wx.showModal({
@@ -136,8 +139,6 @@ Page({
         return
       }
       else if(this.data.actname == ''){
-        console.log(this.data.actname);
-        
         wx.showModal({
           showCancel: false,
           title: '提示',
@@ -181,36 +182,93 @@ Page({
         })
         return
       }
-      
-      //询问是否确认提交并做处理
-      wx.showModal({
-        title: '确认',
-        content: '确认修改活动信息？',
-        cancelText: '再想想',
-        cancelColor: '#6E6E6E',
-        confirmText: '是的！',
-        confirmColor: '#71CD63',
-        success (res) {
-          if (res.confirm) {
-            wx.showLoading({
-              title: '修改中'
-            })
-            //此处待补充，将报名者信息发送给服务器
-            setTimeout(function () {
-              wx.hideLoading()
-              wx.showToast({
-                title: '修改成功',
-                icon: 'success',
-                duration: 1000
-              })
-            }, 2000)
-          }
-        }
-      })
+      //用户输入正确，则询问是否确认提交并做处理
+      this.handleSubmit()
     }
+
   },
   
-  //辅助函数，给定两个时间t1,t2，若t1在t2之后，返回false ,时间格式为yyyy-mm-dd hh:mm
+  //submit()的辅助函数，当选中完结（活动状态改为结束）时执行
+  end: function(){
+    var that = this
+    wx.showModal({
+      title: '确认结束活动？',
+      content: '结束的活动将不在活动公布栏中展示，且本次修改的其他信息不生效',
+      cancelText: '再想想',
+      cancelColor: '#6E6E6E',
+      confirmText: '是的！',
+      confirmColor: '#71CD63',
+      success : function(res){
+        if(res.confirm){
+          wx.showLoading({title: '结束中'})
+          that.setData({state: 2})
+          //此处待补充，将结束信息发送给服务器
+          setTimeout(function () {
+            wx.hideLoading()
+            wx.showToast({title: '结束成功',icon: 'success',duration: 1500})
+          }, 2000)
+          setTimeout(function(){wx.navigateBack({})}, 3500)
+        }
+      }
+    })
+  },
+
+  //submit()的辅助函数，当选中取消时执行
+  cancel: function(){
+    var that = this
+    wx.showModal({
+      title: '确认取消活动？',
+      content: '取消的活动将不在活动公布栏中展示，且本次修改的其他信息不生效',
+      cancelText: '再想想',
+      cancelColor: '#6E6E6E',
+      confirmText: '是的！',
+      confirmColor: '#71CD63',
+      success : function(res){
+        if(res.confirm){
+          wx.showLoading({title: '取消中'})
+          that.setData({state: 4})
+          //待补充，将取消信息发送给服务器
+          setTimeout(function () {
+            wx.hideLoading()
+            wx.showToast({title: '取消成功',icon: 'success',duration: 1500})
+          }, 2000)
+          setTimeout(function(){wx.navigateBack({})}, 3500)
+        }
+      }
+    })
+  },
+
+  //submit()的辅助函数，当用户确定修改信息时执行
+  handleSubmit(){
+    var that = this
+    wx.showModal({
+      title: '确认',
+      content: '确认修改活动信息？',
+      cancelText: '再想想',
+      cancelColor: '#6E6E6E',
+      confirmText: '是的！',
+      confirmColor: '#71CD63',
+      success (res) {
+        if (res.confirm) {
+          wx.showLoading({title: '修改中'})
+          //是否加急
+          if(that.data.chooseUrgent){ that.setData({ state: 3 }) }
+          //将报名者信息发送给服务器
+
+          setTimeout(function () {
+            wx.hideLoading()
+            wx.showToast({
+              title: '修改成功',
+              icon: 'success',
+              duration: 1000
+            })
+          }, 2000)
+        }
+      }
+    })
+  },
+
+  //submit()的辅助函数，给定两个时间t1,t2，若t1在t2之后，返回false ,时间格式为yyyy-mm-dd hh:mm
   isCorrectTime: function(t1, t2){
     var year1 = t1.substr(0,4)
     var month1 = t1.substr(5,2)

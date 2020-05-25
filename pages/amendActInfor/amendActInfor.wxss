@@ -27,9 +27,10 @@
   border-radius: 18rpx;
   margin-bottom: 50rpx;
   font-size: 28rpx;
+  margin-right: 30rpx;
 }
 
-.chooseEnd{
+.chosen{
   background-color: #FFAE13;
   color: white;
 }

@@ -89,7 +89,7 @@
 }
 
 /*以下为状态信息的展示*/
-.status{
+.state{
   width: 210rpx;
   height: 50rpx;
   font-size: 25rpx;
@@ -103,7 +103,7 @@
   right: 25rpx;
 }
 
-.yellow{
+.orange{
   color: #FF9615;
   border-color: #FF9615;
 }
@@ -117,6 +117,7 @@
   color: #FE5959;
   border-color: #FE5959;
 }
+
 /*以上为状态信息的展示*/
 
 

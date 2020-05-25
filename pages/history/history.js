@@ -7,12 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    paStatus: ['','进行中','已完结','已退出','已取消'],  //参加的项目的状态
+    reStatus: ['','进行中','已完结','加急','已取消'],  //发布的项目的状态 
+    statecolor: ['','orange','green','red','red'],
+    acttype: ['','活动','招募'],
     is_MyParticipation : true, 
-    participations:[
+    participations:[ //我参加的
       {
-        status: "进行中", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "招募", //种类，包括“活动”和“招募”
+        state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
+        activity_type: 2, //种类，1:活动 2:招募
         name : "很神奇的凑字数的南大团委",
         work : "新年音乐会场务",
         time : "12月30日 19：00 - 22：00",
@@ -22,9 +25,8 @@ Page({
         more : "搬搬道具，听现场指挥就行"
       },
       {
-        status: "已退出", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "活动", //种类，包括“活动”和“招募”
+        state: 2, //已完成
+        activity_type: 1,
         name : "南京大学学生会",
         actname : "十大歌手总决赛",
         time : "5月28日",
@@ -32,9 +34,17 @@ Page({
         detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        status: "已完成", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "活动", //种类，包括“活动”和“招募”
+        state: 3, //已退出
+        activity_type: 1, 
+        name : "南大团委",
+        actname : "十大歌手总决赛",
+        time : "5月28日",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+      },
+      {
+        state: 4, //已取消
+        activity_type: 1, 
         name : "南大团委",
         actname : "十大歌手总决赛",
         time : "5月28日",
@@ -44,21 +54,24 @@ Page({
     ],
     releases:[
       {
-        status: "已完成", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "招募", //种类，包括“活动”和“招募”
+        state: 3, // 1 为进行中，2 为已完成，3为加急，4为取消
+        activity_type: 2, //种类，包括“活动”和“招募”
+        //以下为招募专属信息
         name : "南大团委",
         work : "海报制作招募",
         time : "5月30日 22：00前完成",
         place : "无",
         reword : "100元",
         tel : "12345677899",
-        more : "听我指挥"
+        more : "听我指挥",
+        //以下为活动信息
+        actname : "",
+        target : "",
+        detail: "",
       },
       {
-        status: "已完成", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "活动", //种类，包括“活动”和“招募”
+        state: 2, // 已完成
+        activity_type: 1, //种类，包括“活动”和“招募”
         name : "南大团委",
         time : "5月30日 22：00前完成",
         //以下为招募专属信息
@@ -73,9 +86,8 @@ Page({
         detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        status: "已完成", // 已退出，已完成，进行中
-        urgent : true,//加急状态
-        sort: "活动", //种类，包括“活动”和“招募”
+        state: 1, // 加急
+        activity_type: 1, //种类，包括“活动”和“招募”
         name : "南大团委",
         time : "5月30日 22：00前完成",
         //以下为招募专属信息
@@ -89,6 +101,22 @@ Page({
         target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
         detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
+      {
+        state: 4, // 已取消
+        activity_type: 1, //种类，包括“活动”和“招募”
+        name : "南大团委",
+        time : "5月30日 22：00前完成",
+        //以下为招募专属信息
+        work : "",
+        place : "",
+        reword : "",
+        tel : "",
+        more : "",
+        //以下为活动信息
+        actname : "十大歌手总决赛",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+      },
     ]
   },
 
@@ -99,7 +127,7 @@ Page({
     
   },
 
-  //转化为我参加的
+  //转为我参加的
   toMyParticipation : function(e){
     var animation = wx.createAnimation({
       duration: 300,
@@ -112,7 +140,7 @@ Page({
     })
   },
 
-  //转化为我发布的
+  //转为我发布的
   toMyRelease : function(e){
     var animation = wx.createAnimation({
       duration: 500,
@@ -129,7 +157,7 @@ Page({
   //点击详情按钮跳转到活动对应的微信推文
   toDetail : function(e){
     var idx = e.currentTarget.dataset.idx
-    //跳转到活动的微信推文，待实现
+    //跳转到活动的微信推文，暂不实现
     wx.showModal({
       title: '提示',
       content: '由于开发者的权限问题，该部分功能尚未开放，敬请期待~',
@@ -142,7 +170,7 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    if(this.data.participations[idx].status=="已退出"){
+    if(this.data.participations[idx].state==3){
       wx.showToast({
         icon: 'none',
         duration: 1000,
@@ -164,9 +192,9 @@ Page({
           })
           //此处待补充，将退出信息发送给服务器
 
-          var participations = 'participations[' + idx + '].status';
+          var participations = 'participations[' + idx + '].state';
           that.setData({
-            [participations] : '已退出'
+            [participations] : 3
           })
           setTimeout(function () {
             wx.hideLoading()
@@ -186,9 +214,20 @@ Page({
   amend: function(e){
     //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
-    wx.navigateTo({
-      url: '/pages/amendActInfor/amendActInfor',
-    })
+    var list = this.data.is_MyParticipation ? this.data.participations : this.data.releases
+    if(list[idx].state == 2 || list[idx].state == 4){
+      wx.showModal({
+        title: '提示',
+        content: '已完结/已取消的活动不能修改信息哦！',
+        showCancel: false,
+        confirmText: "我知道了",
+      })
+    }
+    else{
+      wx.navigateTo({
+        url: '/pages/amendActInfor/amendActInfor',
+      })
+    }
   },
 
   //我发布的 点击报名情况 进入报名情况页面

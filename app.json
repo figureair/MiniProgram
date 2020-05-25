@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/activities/activities",
+    "pages/history/history",
     "pages/amendActInfor/amendActInfor",
+    "pages/activities/activities",
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
-    "pages/history/history",
     "pages/situation/situation",
     "pages/index/index",
     "pages/logs/logs",
