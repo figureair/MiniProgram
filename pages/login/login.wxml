@@ -1,0 +1,43 @@
+<!--pages/login/login.wxml-->
+
+<view class="container"> 
+
+  <image class='back' src='/images/login.gif'></image>
+
+  <view class="login-from">  
+  <form bindsubmit="formSubmit" class='form'>
+  <view class="inputview">
+    <!-- 学号 -->
+      <view class="weui-cell weui-cell_input">
+         <view class="weui-cell__hd">
+          </view> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" type=''name="sno" type='number' bindinput="stunoinput" value='{{sno}}' placeholder="请输入学号" />
+          </view>
+      </view>
+    </view>
+  <view class="inputview">
+      <!-- 密码 -->
+      <view class="weui-cell weui-cell_input">
+     <view class="weui-cell__hd">
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input" text-align:center type="password" name="pwd" bindinput="passwordinput" placeholder="请输入密码" value='{{password}}'/>
+          </view>
+      </view>
+    </view>
+
+     <!--按钮-->  
+  <view class="submit" bindtap="submit">确认登录</view>
+    <view class="register" bindtap="gotoregister">
+      没有账号？前往注册!
+    </view>
+
+    </form>
+  </view>  
+
+
+
+
+
+</view>

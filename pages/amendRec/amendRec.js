@@ -150,7 +150,7 @@ Page({
   /**
    * 提交函数
    */ 
-  submit(){    
+  clickSubmit(){    
     this.data.activity_type=2;
     if(this.data.activity_name==''){
       wx.showModal({

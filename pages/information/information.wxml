@@ -55,4 +55,4 @@
 	</view>
 </view>
 
-<button class="logout" style="width: 700rpx">退出登录</button>
+<button class="logout" bindtap='logout' style="width: 700rpx">退出登录</button>

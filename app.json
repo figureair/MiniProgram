@@ -1,16 +1,21 @@
 {
-  "pages": [
-    "pages/history/history",
-    "pages/amendActInfor/amendActInfor",
-    "pages/activities/activities",
+  "usingComponents": {
+  },
+  "pages": ["pages/information/information",
+    "pages/login/login",
+    "pages/register/register",
+    
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
+    "pages/history/history",
     "pages/situation/situation",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/information/information",
+    "pages/changeInformation/changeInformation",
+    "pages/amendActInfor/amendActInfor",
     "pages/releaseRecruits/releaseRecruits",
-    "pages/changeInformation/changeInformation"
+    "pages/amendRec/amendRec",
+    "pages/activities/activities"
   ],
   "window": {
     "backgroundTextStyle": "light",

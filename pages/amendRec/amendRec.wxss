@@ -123,7 +123,7 @@
   height: 100rpx;
   width: 100rpx;
   position: absolute;
-  top:1600rpx;
+  top:1450rpx;
   right: 40rpx;
 }
 label{
@@ -144,7 +144,7 @@ label{
  margin: 0 5rpx;
  justify-content: center;
  margin-top: 20rpx;
- border: 2rpx solid #DCDCDC;
+
 }
 .is_checked {
   background-color: #FFA800;
@@ -160,6 +160,19 @@ label{
  color: red;
 }
 
+.submit{
+  background-color: #FFAE13 ;
+  color: white;
+  text-align: center;
+  height: 80rpx;
+  width: 100%;
+  position: relative;
+  line-height: 72rpx;
+  top: 30rpx;
+  left: 3rpx;
+  margin-bottom: 30rpx;
+  border-radius: 18rpx;
+}
 .word{
   color: #282727;
   font-size: 32rpx;

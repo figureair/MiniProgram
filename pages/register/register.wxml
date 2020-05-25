@@ -1,0 +1,61 @@
+<!--招募页-->
+<view class="container"> 
+  <image class='back' src='/images/login.gif'></image>
+  <view class="login-from">  
+  <form bindsubmit="formSubmit" class='form'>
+    <view class="inputview">
+    <!-- 学号 -->
+      <view class="weui-cell weui-cell_input">
+         <view class="weui-cell__hd">
+             
+          </view> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" name="sno" type='number'bindinput="snoinput" value='{{sno}}' placeholder="请输入学号" />
+          </view>
+      </view>
+    </view>
+    <view class="inputview">
+    <!-- 手机号 -->
+      <view class="weui-cell weui-cell_input">
+         <view class="weui-cell__hd">
+             
+          </view> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" name=" sno" type='number' bindinput="phoneinput" value='{{phone}}' placeholder="请输入手机号" />
+          </view>
+      </view>
+    </view>
+    <view class="inputview">
+        <!-- 密码 -->
+      <view class="weui-cell weui-cell_input">
+         <view class="weui-cell__hd">
+             
+          </view> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" type='password' name="sno" bindinput="passwordinput" value='{{password}}' placeholder="请输入密码" />
+          </view>
+      </view>
+    </view>
+    <view class="inputview">
+      <!-- 密码 -->
+      <view class="weui-cell weui-cell_input">
+     <view class="weui-cell__hd">
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input" text-align:center type="password" name="pwd" bindinput="confirminput" placeholder="请确认密码" value='{{confirm}}'/>
+          </view>
+      </view>
+    </view>
+ 
+     <!--按钮-->  
+
+  
+    </form>
+      <view class="submit" bindtap="submit">确认注册</view>
+  </view>  
+
+
+
+
+
+</view>

@@ -224,9 +224,16 @@ Page({
       })
     }
     else{
-      wx.navigateTo({
-        url: '/pages/amendActInfor/amendActInfor',
-      })
+      if(list[idx].activity_type==1){
+        wx.navigateTo({
+          url: '/pages/amendActInfor/amendActInfor',
+        })
+      }
+      else if(list[idx].activity_type==2){
+        wx.navigateTo({
+          url: '/pages/amendRec/amendRec',
+        })
+      }
     }
   },
 
