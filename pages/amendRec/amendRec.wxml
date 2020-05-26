@@ -71,8 +71,8 @@
   </view>
 
       <view class="word">备注：</view>
-  <view class='textview'>
-    <textarea   type="text" placeholder="请输入工作备注，限200字" placeholder-class="center" maxlength="200" bindinput="moreinput" value="{{other}}"></textarea>
+  <view class="inputview">
+    <input class="input" type="text" placeholder="请输入工作备注，限25字" placeholder-class="plas" maxlength="25" bindinput="moreinput"></input>
   </view>
   
  <view class="submit" bindtap="clickSubmit">保存修改</view>

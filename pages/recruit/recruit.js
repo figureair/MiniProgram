@@ -67,6 +67,56 @@ Page({
     ]
   },
 
+  onLoad: function(options){
+    var that=this
+
+    wx.showModal({
+      title: '加载中',
+    })
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
+      data: {},
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(res){
+        console.log(res.data)
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            non_official_recruits: res.data.data
+          })
+          console.log(that.data.official_recruits)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '你这网不行啊~',
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
+    }),
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+  },
+
   //转化为官方栏
   toOfficial : function(e){
     console.log('触发1');

@@ -124,24 +124,66 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
   },
 
   //转为我参加的
   toMyParticipation : function(e){
+    var that =this
     var animation = wx.createAnimation({
       duration: 300,
       timingFunction: 'ease',
     });
     animation.translate(0, 0).step()
-    this.setData({
+    that.setData({
       is_MyParticipation : true,
       ani : animation.export()
+    }),
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            participations: res.data.data
+          })
+          console.log(that.data.participations)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
     })
   },
 
   //转为我发布的
   toMyRelease : function(e){
+    var that = this
     var animation = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease',
@@ -151,6 +193,47 @@ Page({
     this.setData({
       is_MyParticipation : false,
       ani: animation.export()
+    }),
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            releases: res.data.data
+          })
+          console.log(that.data.releases)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
     })
   },
 
@@ -170,13 +253,11 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    var state = this.data.participations[idx].state
-    if(state==3 || state == 2 || state == 4){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content:  '只能退出进行中的活动或招募哦~',
-        confirmColor: '#71CD63',
+    if(this.data.participations[idx].state==3){
+      wx.showToast({
+        icon: 'none',
+        duration: 1000,
+        title: '您已经退出了哟~',
       })
       return
     }

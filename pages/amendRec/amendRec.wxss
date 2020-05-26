@@ -136,56 +136,22 @@ label{
   margin-bottom: 50rpx;
 }
 .check label {
-  height: 72rpx;
-  width: 160rpx;
+ width: 120rpx;
+ height: 60rpx;
  border-radius: 15rpx;
  display: flex;
  align-items: center;
  margin: 0 5rpx;
  justify-content: center;
  margin-top: 20rpx;
- font-size: 28rpx;
+
 }
 .is_checked {
   background-color: #FFA800;
   color: white;
   border: 2rpx solid #DCDCDC;
-  
-}
-.inputview{
-  border: 2rpx solid #DCDCDC;
-  border-radius: 18rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  background-color: white;
-  margin-bottom: 50rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-textarea {
-  width: 700rpx;
-  padding: 25rpx 0;
-}
-
-.center{
-  text-align: center;
-}
-.textview{
-  border: 2rpx solid #DCDCDC;
-  border-radius: 18rpx;
-  padding: 0 25rpx;
-  background-color: #fff;
-  margin-bottom: 50rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 .unchecked {
-  height: 72rpx;
-  width: 200rpx;
   background-color: white;
   color: rgb(138, 138, 138);
   border: 2rpx solid #DCDCDC;
@@ -204,7 +170,7 @@ textarea {
   line-height: 72rpx;
   top: 30rpx;
   left: 3rpx;
-  margin-bottom: 80rpx;
+  margin-bottom: 30rpx;
   border-radius: 18rpx;
 }
 .word{

@@ -3,7 +3,7 @@
 .content{
   margin: 30rpx;
   width: 690rpx;
-  height: 1380rpx;
+  height: 1350rpx;
   position: relative;
 }
 
