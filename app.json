@@ -4,7 +4,6 @@
   "pages": ["pages/information/information",
     "pages/login/login",
     "pages/register/register",
-    
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
     "pages/history/history",
