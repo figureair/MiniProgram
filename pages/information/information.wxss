@@ -76,8 +76,8 @@
 /* 区域标题 */
 .areaTitle {
   margin-left: 25rpx;
-  margin-top: 25rpx;
-  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 
 .titleText {
@@ -105,17 +105,16 @@
 
 .optionTextView {
   margin-left: 40rpx;
-  margin-top: 15rpx;
+  margin-top: 10rpx;
   display: flex;
   flex-direction: column;
 }
 
-.optionText {
-  font-size: 32rpx;
-  font-style: normal;
-  font-weight: bold;
-  color: black;
-  margin-top: 20rpx;
+.optionTextView1 {
+  margin-left: 40rpx;
+  margin-top: 25rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .optionText1 {
@@ -129,7 +128,6 @@
   font-style: normal;
   font-size: 24rpx;
   color: gray;
-  margin-top: 5rpx;
 }
 
 .functions {

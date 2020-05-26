@@ -38,8 +38,8 @@
 	</view>
 	<view class="option" bindtap="changeInformation">
 		<image src="/images/set.png" class="optionIcon"></image>
-		<view class="optionTextView">
-			<text class="optionText">修改信息</text>
+		<view class="optionTextView1">
+			<text class="optionText1">修改信息</text>
 		</view>
 	</view>
 </view>
