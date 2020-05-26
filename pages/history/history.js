@@ -170,11 +170,13 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    if(this.data.participations[idx].state==3){
-      wx.showToast({
-        icon: 'none',
-        duration: 1000,
-        title: '您已经退出了哟~',
+    var state = this.data.participations[idx].state
+    if(state==3 || state == 2 || state == 4){
+      wx.showModal({
+        showCancel: false,
+        title: '提示',
+        content:  '只能退出进行中的活动或招募哦~',
+        confirmColor: '#71CD63',
       })
       return
     }
