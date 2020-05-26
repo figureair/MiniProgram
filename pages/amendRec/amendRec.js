@@ -24,7 +24,7 @@ Page({
 
     checks: [
       { name: "进行中", value: '0', checked: true},
-      { name: "已完成", value: '1', checked: false },
+      { name: "已完结", value: '1', checked: false },
       { name: "加急", value: '2', checked: false },
       { name: "取消", value: '3', checked: false },
     ],

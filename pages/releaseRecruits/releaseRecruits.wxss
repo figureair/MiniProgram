@@ -25,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 28rpx;
 }
 
 .posterimg{
@@ -44,6 +45,9 @@
 }
 
 /*以下为输入框样式，仅活动名称和面向对象*/
+.center{
+  text-align: center;
+}
 .inputview{
   border: 2rpx solid #DCDCDC;
   border-radius: 18rpx;
@@ -56,13 +60,31 @@
   align-items: center;
   justify-content: center;
 }
-
+textarea {
+  width: 700rpx;
+  padding: 25rpx 0;
+}
+.plas{
+  text-align: center;
+}
+.textview{
+  border: 2rpx solid #DCDCDC;
+  border-radius: 18rpx;
+  padding: 0 25rpx;
+  background-color: #fff;
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .input{
   margin-left: 30rpx;
   margin-right: 30rpx;
   width: 100%;
   color: #282727 ;
 }
+
 
 .plas{
   color: #888888;
@@ -123,7 +145,8 @@
   height: 100rpx;
   width: 100rpx;
   position: absolute;
-  top:1600rpx;
+  top:1900rpx;
+  margin-bottom: 70rpx;
   right: 40rpx;
 }
 label{
@@ -136,8 +159,8 @@ label{
   margin-bottom: 50rpx;
 }
 .check label {
- width: 120rpx;
- height: 60rpx;
+  height: 72rpx;
+  width: 200rpx;
  border-radius: 15rpx;
  display: flex;
  align-items: center;
@@ -159,7 +182,6 @@ label{
 .is_checked>checkbox {
  color: red;
 }
-
 .word{
   color: #282727;
   font-size: 32rpx;
