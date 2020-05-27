@@ -12,30 +12,19 @@ Page({
     chooseCancel: false,//是否选择取消活动。页面数据，不需保存
     state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
     poster: '',//海报链接
-    actname: '',//活动名
-    startDate: '',//开始年月日,格式yyyy-mm-dd
-    startTime: '',//开始时分,格式hh:mm
-    endDate: '',
-    endTime: '',
-    target: '',//目标人群
+    actname: '十大歌手',//活动名
+    startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
+    startTime: '23：00',//开始时分,格式hh:mm
+    endDate: '2020-06-16',
+    endTime: '23：00',
+    target: '所有本科生',//目标人群
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
-    //设置默认开始,结束年月日
-    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
-    var ed = sd
-    var et = "23:59"
-    this.setData({
-      startDate: sd,
-      startTime: st,
-      endDate: ed,
-      endTime: et,
-    })
+    
   },
 
   /**
