@@ -74,7 +74,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
       data: {},
       method: "POST",
       header: {
@@ -93,7 +93,7 @@ Page({
           })
         }else{
           that.setData({
-            non_official_recruits: res.data.data
+            official_recruits: res.data.data
           })
           console.log(that.data.official_recruits)
         }
