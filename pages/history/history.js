@@ -14,6 +14,7 @@ Page({
     is_MyParticipation : true, 
     participations:[ //我参加的
       {
+        record_id:1,
         state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
         activity_type: 2, //种类，1:活动 2:招募
         name : "很神奇的凑字数的南大团委",
@@ -273,20 +274,56 @@ Page({
           wx.showLoading({
             title: '退出中'
           })
-          //此处待补充，将退出信息发送给服务器
-
-          var participations = 'participations[' + idx + '].state';
-          that.setData({
-            [participations] : 3
+          //将退出信息发送给服务器
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/exit_activity', //接口地址
+            data: {
+              record_id: that.data.participations[idx].record_id
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '退出成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                  complete:function(res){
+                    //重新刷新页面
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '欸~',
+                content: '你这网不行啊~',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            complete:function(res){
+              wx.hideLoading()
+            }
           })
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({
-              title: '退出成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }, 2000)
         }
       }
     })
