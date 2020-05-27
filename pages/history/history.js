@@ -313,8 +313,8 @@ Page({
             },
             fail:function(res){
               wx.showModal({
-                title: '欸~',
-                content: '你这网不行啊~',
+                title: '提示！',
+                content: '亲，网络不好哦',
                 showCancel:false,
                 success: function(res){
                   if(res.confirm) console.log('用户选择确定')

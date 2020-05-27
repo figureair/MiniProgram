@@ -57,7 +57,7 @@ Page({
     },
 
     activity_name:'',
-    activity_type:'',
+    activity_type:'2',
     state:'',
     place:'',
     reward:'',
@@ -67,7 +67,65 @@ Page({
     startTime: '',//开始时分秒,格式hh:mm:ss
     endDate: '',
     endTime: '',
+    user_id:'',
+    user_face:'',
+    user_name:'',
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that=this
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
+      data: {
+        activity_id: that.activity_id
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+          })
+        }
+        else{
+          console.log(res.data)
+          that.setData({
+            activity_id:res.data.data.activity_id,
+            activity_name:res.data.data.activity_name,
+            state:res.data.data.state,
+            reward:res.data.data.reward,
+            startDate:res.data.data.starttime.substr(0,10),
+            startTime:res.data.data.starttime.substr(11,5),
+            endDate:res.data.data.endtime.substr(0,10),
+            endTime:res.data.data.endtime.substr(11,5),
+            user_name:res.data.data.user_name,
+            user_id:res.data.data.user_id,
+            user_face:res.data.data.user_face
+          })
+        }
+      },
+      fail:function(res){
+        wx.showModal({
+          title: '提示！',
+          content: '亲，网络不好哦',
+          showCancel:false,
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+          },
+        })
+      },
+    })
+  },
+
   //时间-当值变化时触发的事件start
   onInput(event) {
     var newTime = new Date(event.detail);

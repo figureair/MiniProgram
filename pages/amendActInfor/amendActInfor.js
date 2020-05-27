@@ -15,11 +15,11 @@ Page({
     poster: '',//海报链接
     actname: '123',//活动名
     startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
-    startTime: '23：00',//开始时分,格式hh:mm
+    startTime: '23:00',//开始时分,格式hh:mm
     endDate: '2020-06-16',
-    endTime: '23：00',
+    endTime: '23:00',
     target: '所有本科生',//目标人群
-    user_id:'',
+    user_id:'1',
     user_face:'',
     user_name:''
   },
@@ -28,7 +28,56 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that=this
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
+      data: {
+        activity_id: that.activity_id
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+          })
+        }
+        else{
+          console.log(res.data)
+          that.setData({
+            activity_id:res.data.data.activity_id,
+            actname:res.data.data.activity_name,
+            state:res.data.data.state,
+            poster:res.data.data.picture,
+            startDate:res.data.data.starttime.substr(0,10),
+            startTime:res.data.data.starttime.substr(11,5),
+            endDate:res.data.data.endtime.substr(0,10),
+            endTime:res.data.data.endtime.substr(11,5),
+            target:res.data.data.audience,
+            user_name:res.data.data.user_name,
+            user_id:res.data.data.user_id,
+            user_face:res.data.data.user_face
+          })
+        }
+      },
+      fail:function(res){
+        wx.showModal({
+          title: '提示！',
+          content: '亲，网络不好哦',
+          showCancel:false,
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+          },
+        })
+      },
+    })
   },
 
   /**
@@ -188,7 +237,10 @@ Page({
           wx.showLoading({title: '结束中'})
           that.setData({state: 2})
           //将结束信息发送给服务器
-
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -196,8 +248,8 @@ Page({
               activity_name:that.data.actname,
               activity_type:1,
               state:that.data.state,
-              starttime:that.data.startDate,
-              endtime:that.data.endDate,
+              starttime:starttime,
+              endtime:endtime,
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
@@ -235,8 +287,8 @@ Page({
             },
             fail:function(res){
               wx.showModal({
-                title: '欸~',
-                content: '你这网不行啊~',
+                title: '提示！',
+                content: '亲，网络不好哦',
                 showCancel:false,
                 success: function(res){
                   if(res.confirm) console.log('用户选择确定')
@@ -268,6 +320,10 @@ Page({
           wx.showLoading({title: '取消中'})
           that.setData({state: 4})
           //将取消信息发送给服务器
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -275,8 +331,8 @@ Page({
               activity_name:that.data.actname,
               activity_type:1,
               state:that.data.state,
-              starttime:that.data.startDate,
-              endtime:that.data.endDate,
+              starttime:starttime,
+              endtime:endtime,
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
@@ -314,8 +370,8 @@ Page({
             },
             fail:function(res){
               wx.showModal({
-                title: '欸~',
-                content: '你这网不行啊~',
+                title: '提示！',
+                content: '亲，网络不好哦',
                 showCancel:false,
                 success: function(res){
                   if(res.confirm) console.log('用户选择确定')
@@ -348,7 +404,10 @@ Page({
           //是否加急
           if(that.data.chooseUrgent){ that.setData({ state: 3 }) }
           //将报名者信息发送给服务器
-
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -356,8 +415,8 @@ Page({
               activity_name:that.data.actname,
               activity_type:1,
               state:that.data.state,
-              starttime:that.data.startDate,
-              endtime:that.data.endDate,
+              starttime:starttime,
+              endtime:endtime,
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
@@ -395,8 +454,8 @@ Page({
             },
             fail:function(res){
               wx.showModal({
-                title: '欸~',
-                content: '你这网不行啊~',
+                title: '提示！',
+                content: '亲，网络不好哦',
                 showCancel:false,
                 success: function(res){
                   if(res.confirm) console.log('用户选择确定')
