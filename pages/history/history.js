@@ -1,6 +1,7 @@
 // pages/history/history.js
 //author: zzn
 //toDetail(),cancel()，amend(),showSituation()待完成
+//cancel()刷新页面需要完成
 Page({
 
   /**
