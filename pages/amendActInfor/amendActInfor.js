@@ -253,7 +253,8 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target
+              audience:that.data.target,
+              picture:that.data.poster
             },
             method: "POST",
             header: {
@@ -336,7 +337,8 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target
+              audience:that.data.target,
+              picture:that.data.poster
             },
             method: "POST",
             header: {
@@ -420,7 +422,8 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target
+              audience:that.data.target,
+              picture:that.data.poster
             },
             method: "POST",
             header: {
