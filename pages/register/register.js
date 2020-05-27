@@ -74,12 +74,11 @@ Page({
     console.log(e);
     that.setData({ disabled: true});console.log(that.data.phone);
     wx.request({
-      
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
       data: {
-        user_sno: that.data.sno,
+        sno: that.data.sno,
         phone:that.data.phone,
-        password: that.data.password
+        password: that.data.password,
       },
       method: "POST",
       header: {
@@ -106,7 +105,7 @@ Page({
             success(res){},
             complete: function(res){
               wx.reLaunch({
-                url: '/pages/activities/activities',
+                url: 'pages/activities/activities',
               })
             }
           })
