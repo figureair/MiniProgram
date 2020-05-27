@@ -254,11 +254,11 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    if(this.data.participations[idx].state==3){
+    if(this.data.participations[idx].state != 1 ){
       wx.showToast({
         icon: 'none',
-        duration: 1000,
-        title: '您已经退出了哟~',
+        duration: 1500,
+        title: '只能退出进行中的活动哦~',
       })
       return
     }
