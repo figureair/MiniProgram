@@ -126,20 +126,14 @@ Page({
   onShow: function () {
   },
 
-  //转为我参加的
-  toMyParticipation : function(e){
+  /**
+   * 页面加载
+   */
+  onLoad: function(){
     var that =this
-    var animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease',
-    });
-    animation.translate(0, 0).step()
-    that.setData({
-      is_MyParticipation : true,
-      ani : animation.export()
-    }),
+
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
       },
@@ -160,12 +154,12 @@ Page({
           })
         }else{
           that.setData({
-            participations: res.data.data
+            participations: re.data.data
           })
           console.log(that.data.participations)
         }
       },
-      fail: function(res){
+      fail: function(re){
         wx.showModal({
           title: '欸~',
           content: '网络不在状态',
@@ -175,7 +169,62 @@ Page({
           }
         })
       },
-      complete: function(res){
+      complete: function(re){
+        wx.hideLoading()
+      }
+    })
+  },
+
+  //转为我参加的
+  toMyParticipation : function(e){
+    var that =this
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease',
+    });
+    animation.translate(0, 0).step()
+    that.setData({
+      is_MyParticipation : true,
+      ani : animation.export()
+    }),
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            participations: re.data.data
+          })
+          console.log(that.data.participations)
+        }
+      },
+      fail: function(re){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(re){
         wx.hideLoading()
       }
     })
@@ -195,7 +244,7 @@ Page({
       ani: animation.export()
     }),
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
       },
@@ -216,12 +265,12 @@ Page({
           })
         }else{
           that.setData({
-            releases: res.data.data
+            releases: re.data.data
           })
           console.log(that.data.releases)
         }
       },
-      fail: function(res){
+      fail: function(re){
         wx.showModal({
           title: '欸~',
           content: '网络不在状态',
@@ -231,7 +280,7 @@ Page({
           }
         })
       },
-      complete: function(res){
+      complete: function(re){
         wx.hideLoading()
       }
     })

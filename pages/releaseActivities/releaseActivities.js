@@ -168,7 +168,7 @@ Page({
           else if(that.isCorrectTime(that.systime, that.edt)) that.state=1;//已开始
           else that.state=2;//已结束
           wx.request({
-            url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
             data: {
               user_id: getApp().globalData.userInfo.user_id,
               activity_name: that.actname,

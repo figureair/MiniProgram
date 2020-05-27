@@ -10,13 +10,6 @@
 </view>
 
 <view class="entry">
-	<text class="narrowEntryText">修改性别</text>
-	<picker class="picker" bindchange="bindPickerChange" value="{{user.gender}}" range="{{genderArray}}">
-		<view>{{genderArray[user.gender]}}</view>
-	</picker>
-</view>
-
-<view class="entry">
 	<text class="wideEntryText">修改简介</text>
 	<textarea class="textArea" bindblur="bindDescriptionChange" placeholder="{{user.description}}"></textarea>
 </view>

@@ -15,6 +15,7 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
 Page({
 
   /**
@@ -23,7 +24,7 @@ Page({
   data: {
 
     checks: [
-      { name: "进行中", value: '0', checked: true},
+      { name: "进行中", value: '0', checked: false},
       { name: "已完成", value: '1', checked: false },
       { name: "加急", value: '2', checked: false },
       { name: "取消", value: '3', checked: false },
@@ -57,9 +58,9 @@ Page({
     },
 
     activity_name:'',
-    activity_type:'',
+    activity_type:'2',
     state:'',
-    place:'',
+    place:123,
     reward:'',
     phone:'',
     other:'',
@@ -67,7 +68,83 @@ Page({
     startTime: '',//开始时分秒,格式hh:mm:ss
     endDate: '',
     endTime: '',
+    user_id:'',
+    user_face:'',
+    user_name:'',
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
+    //设置默认开始,结束年月日
+    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
+    var st = systime.substr(11,2)+':'+systime.substr(14,2)
+    var ed = sd
+    var et = "23:59"
+    this.setData({
+      startDate: sd,
+      startTime: st,
+      endDate: ed,
+      endTime: et,
+    })
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
+      data: {
+        activity_id: that.activity_id
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+          })
+        }
+        else{
+          console.log(res.data)
+          that.setData({
+            activity_id:res.data.data.activity_id,
+            activity_name:res.data.data.activity_name,
+            state:res.data.data.state,
+            reward:res.data.data.reward,
+            startDate:res.data.data.starttime.substr(0,10),
+            startTime:res.data.data.starttime.substr(11,5),
+            endDate:res.data.data.endtime.substr(0,10),
+            endTime:res.data.data.endtime.substr(11,5),
+            user_name:res.data.data.user_name,
+            user_id:res.data.data.user_id,
+            user_face:res.data.data.user_face
+          })
+        if(this.data.state==3){
+            this.data.checks[2].checked=true
+        }
+        else{
+          this.data.checks[0].checked=true;
+        }
+        }
+      },
+      fail:function(res){
+        wx.showModal({
+          title: '提示！',
+          content: '亲，网络不好哦',
+          showCancel:false,
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+          },
+        })
+      },
+    })
+  },
+
   //时间-当值变化时触发的事件start
   onInput(event) {
     var newTime = new Date(event.detail);
@@ -247,20 +324,7 @@ Page({
       complete: (res) => {'发布中...'},
     })
   },
-  onLoad: function (options) {
-    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
-    //设置默认开始,结束年月日
-    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
-    var ed = sd
-    var et = "23:59"
-    this.setData({
-      startDate: sd,
-      startTime: st,
-      endDate: ed,
-      endTime: et,
-    })
-  },
+
   isCorrectTime: function(t1, t2){
     var year1 = t1.substr(0,4)
     var month1 = t1.substr(5,2)

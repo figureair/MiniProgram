@@ -99,7 +99,7 @@ Page({
     })
     console.log(e);
     wx.request({   
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/User/login', //接口地址
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/login', //接口地址
       data: {//数据为stuno password
         stuno: this.data.stuno,
         password: this.data.password

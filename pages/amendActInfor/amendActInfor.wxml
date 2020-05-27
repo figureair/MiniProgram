@@ -7,7 +7,6 @@
   <view class="word">活动状态：</view>
   <view style="display : flex">
     <view class="btn {{chooseEnd? 'chosen' : ''}}" data-totype="end" bindtap="changeState">完结</view>
-    <view class="btn {{chooseUrgent? 'chosen' : ''}}" data-totype="urgent" bindtap="changeState">加急</view>
     <view class="btn {{chooseCancel? 'chosen' : ''}}" data-totype="cancel" bindtap="changeState">取消</view>
   </view>
   <view class="word">海报（比例为4：3）：</view>
@@ -19,21 +18,21 @@
 
   <view class="word">活动名称：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" bindinput="actnameInput"></input>
+    <input class="input" type="text" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" value="{{ actname }}" bindinput="actnameInput"></input>
   </view>
 
-  <view class="word">活动时间：</view>
+  <view class="word">活动时间：（只能修改结束时间）</view>
   <!-- 选择开始结束时间 -->
   <view class="settime">
     <!-- 选择开始时间 -->
     <view class="setstart">
       <view class="timeTitle">开始</view>
-      <picker class="showchoice" mode="date" value="{{startDate}}" start="2020-05-01" end="2030-09-01" bindchange="bindStartDateChange">
+      <picker disabled="true" class="showchoice" mode="date" value="{{startDate}}" start="2020-05-01" end="2030-09-01" bindchange="bindStartDateChange">
         <view>
           {{startDate}}
         </view>
       </picker>
-      <picker class="showchoice" mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+      <picker disabled="true" class="showchoice" mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
         <view>
           {{startTime}}
         </view>
@@ -59,7 +58,7 @@
 
   <view class="word">面向对象：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="输入活动面向对象，限25字" placeholder-class="plas" maxlength="25" bindinput="targetInput"></input>
+    <input class="input" type="text" placeholder="输入活动面向对象，限25字" placeholder-class="plas" maxlength="25" value="{{target}}" bindinput="targetInput"></input>
   </view>
 
   <view class="submit" bindtap="clickSubmit">保存修改</view>

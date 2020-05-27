@@ -2,11 +2,12 @@
   "usingComponents": {
   },
   "pages": [
+    "pages/history/history",
     "pages/login/login",
     "pages/register/register",
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
-    "pages/history/history",
+    
     "pages/situation/situation",
     "pages/index/index",
     "pages/logs/logs",

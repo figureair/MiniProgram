@@ -8,34 +8,75 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activity_id:'1',
     chooseEnd: false,//是否选择结束。页面数据，不需保存
-    chooseUrgent: false,//是否选择加急。页面数据，不需保存
     chooseCancel: false,//是否选择取消活动。页面数据，不需保存
     state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
     poster: '',//海报链接
-    actname: '',//活动名
-    startDate: '',//开始年月日,格式yyyy-mm-dd
-    startTime: '',//开始时分,格式hh:mm
-    endDate: '',
-    endTime: '',
-    target: '',//目标人群
+    actname: '123',//活动名
+    startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
+    startTime: '23:00',//开始时分,格式hh:mm
+    endDate: '2020-06-16',
+    endTime: '23:00',
+    target: '所有本科生',//目标人群
+    user_id:'1',
+    user_face:'',
+    user_name:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
-    //设置默认开始,结束年月日
-    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
-    var ed = sd
-    var et = "23:59"
-    this.setData({
-      startDate: sd,
-      startTime: st,
-      endDate: ed,
-      endTime: et,
+    var that=this
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
+      data: {
+        activity_id: that.activity_id
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+          })
+        }
+        else{
+          console.log(res.data)
+          that.setData({
+            activity_id:res.data.data.activity_id,
+            actname:res.data.data.activity_name,
+            state:res.data.data.state,
+            poster:res.data.data.picture,
+            startDate:res.data.data.starttime.substr(0,10),
+            startTime:res.data.data.starttime.substr(11,5),
+            endDate:res.data.data.endtime.substr(0,10),
+            endTime:res.data.data.endtime.substr(11,5),
+            target:res.data.data.audience,
+            user_name:res.data.data.user_name,
+            user_id:res.data.data.user_id,
+            user_face:res.data.data.user_face
+          })
+        }
+      },
+      fail:function(res){
+        wx.showModal({
+          title: '提示！',
+          content: '亲，网络不好哦',
+          showCancel:false,
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+          },
+        })
+      },
     })
   },
 
@@ -54,13 +95,6 @@ Page({
         chooseEnd: true,
         chooseCancel: false,
         chooseUrgent: false
-      })
-    }
-    else if(totype == 'urgent'){
-      this.setData({ 
-        chooseEnd: false,
-        chooseCancel: false,
-        chooseUrgent: true
       })
     }
     else if(totype == 'cancel'){
@@ -202,12 +236,71 @@ Page({
         if(res.confirm){
           wx.showLoading({title: '结束中'})
           that.setData({state: 2})
-          //此处待补充，将结束信息发送给服务器
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({title: '结束成功',icon: 'success',duration: 1500})
-          }, 2000)
-          setTimeout(function(){wx.navigateBack({})}, 3500)
+          //将结束信息发送给服务器
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
+            data: {
+              activity_id:that.data.activity_id,
+              activity_name:that.data.actname,
+              activity_type:1,
+              state:that.data.state,
+              starttime:starttime,
+              endtime:endtime,
+              user_id:that.data.user_id,
+              user_face:that.data.user_face,
+              user_name:that.data.user_name,
+              audience:that.data.target,
+              picture:that.data.poster
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '完结成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                  complete:function(res){
+                    wx.navigateBack()
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '提示！',
+                content: '亲，网络不好哦',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            // complete:function(res){
+            //   wx.hideLoading(),
+            //   wx.navigateBack()
+            // }
+          })
         }
       }
     })
@@ -227,12 +320,71 @@ Page({
         if(res.confirm){
           wx.showLoading({title: '取消中'})
           that.setData({state: 4})
-          //待补充，将取消信息发送给服务器
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({title: '取消成功',icon: 'success',duration: 1500})
-          }, 2000)
-          setTimeout(function(){wx.navigateBack({})}, 3500)
+          //将取消信息发送给服务器
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
+            data: {
+              activity_id:that.data.activity_id,
+              activity_name:that.data.actname,
+              activity_type:1,
+              state:that.data.state,
+              starttime:starttime,
+              endtime:endtime,
+              user_id:that.data.user_id,
+              user_face:that.data.user_face,
+              user_name:that.data.user_name,
+              audience:that.data.target,
+              picture:that.data.poster
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '取消成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                  complete:function(res){
+                    wx.navigateBack()
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '提示！',
+                content: '亲，网络不好哦',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            // complete:function(res){
+            //   wx.hideLoading(),
+            //   wx.navigateBack()
+            // }
+          })
         }
       }
     })
@@ -254,15 +406,70 @@ Page({
           //是否加急
           if(that.data.chooseUrgent){ that.setData({ state: 3 }) }
           //将报名者信息发送给服务器
-
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({
-              title: '修改成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }, 2000)
+          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var starttime=startdate.valueOf()
+          var endtime=enddate.valueOf()
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
+            data: {
+              activity_id:that.data.activity_id,
+              activity_name:that.data.actname,
+              activity_type:1,
+              state:that.data.state,
+              starttime:starttime,
+              endtime:endtime,
+              user_id:that.data.user_id,
+              user_face:that.data.user_face,
+              user_name:that.data.user_name,
+              audience:that.data.target,
+              picture:that.data.poster
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '修改成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                  complete:function(res){
+                    wx.navigateBack()
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '提示！',
+                content: '亲，网络不好哦',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            // complete:function(res){
+            //   wx.hideLoading(),
+            //   wx.navigateBack()
+            // }
+          })
         }
       }
     })

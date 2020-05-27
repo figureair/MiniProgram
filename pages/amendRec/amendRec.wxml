@@ -16,7 +16,7 @@
 
   <view class="word">工作名称：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput"></input>
+    <input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput" value="{{activity_name}}"></input>
   </view>
 
   <view class="word">工作时间：</view>
@@ -41,7 +41,7 @@
     <!-- 选择结束时间 -->
     <view class="setend">
       <view class="timeTitle">结束</view>
-      <picker class="showchoice" mode="date" value="{{endDate}}" start="2020-05-20" end="2030-05-20" bindchange="bindEndDateChange">
+      <picker class="showchoice" mode="date" value="{{endDate}}" start="2020-05-20" end="2030-05-20" bindchange="bindEndDateChange" >
         <view>
           {{endDate}}
         </view>
@@ -56,23 +56,23 @@
 
   <view class="word">工作地点：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" bindinput="placeinput"></input>
+    <input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" value="{{place}}" bindinput="placeinput"></input>
   </view>
 
   <view class="word">工作报酬：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" bindinput="rewordinput"></input>
+    <input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" value="{{reward}}" bindinput="rewordinput"></input>
   </view>
   
 
     <view class="word">联系方式：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" bindinput="telinput"></input>
+    <input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" value="{{tel}}" bindinput="telinput"></input>
   </view>
 
       <view class="word">备注：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作备注，限25字" placeholder-class="plas" maxlength="25" bindinput="moreinput"></input>
+  <view class='textview'>
+    <textarea   type="text" placeholder="请输入工作备注，限200字" placeholder-class="center" maxlength="200" bindinput="moreinput" value="{{other}}"></textarea>
   </view>
   
  <view class="submit" bindtap="clickSubmit">保存修改</view>

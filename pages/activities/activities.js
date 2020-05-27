@@ -62,7 +62,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
       data: {},
       method: "POST",
       header: {

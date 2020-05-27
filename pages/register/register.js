@@ -74,7 +74,7 @@ Page({
     console.log(e);
     that.setData({ disabled: true});console.log(that.data.phone);
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
       data: {
         sno: that.data.sno,
         phone:that.data.phone,
