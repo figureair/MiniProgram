@@ -1,12 +1,13 @@
 {
   "usingComponents": {
   },
-  "pages": ["pages/information/information",
+  "pages": [
+    "pages/history/history",
     "pages/login/login",
     "pages/register/register",
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
-    "pages/history/history",
+    
     "pages/situation/situation",
     "pages/index/index",
     "pages/logs/logs",
@@ -14,7 +15,8 @@
     "pages/amendActInfor/amendActInfor",
     "pages/releaseRecruits/releaseRecruits",
     "pages/amendRec/amendRec",
-    "pages/activities/activities"
+    "pages/activities/activities",
+    "pages/information/information"
   ],
   "window": {
     "backgroundTextStyle": "light",

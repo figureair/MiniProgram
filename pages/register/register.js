@@ -42,6 +42,7 @@ Page({
 
   },
   submit: function(e){
+    var that=this
     if(this.data.sno.length!=9||this.data.sno[0]!=1){
       wx.showModal({
         showCancel: false,
@@ -71,46 +72,54 @@ Page({
       title: '注册中...',
     })
     console.log(e);
-    this.setData({ disabled: true});console.log(this.data.phone);
+    that.setData({ disabled: true});console.log(that.data.phone);
     wx.request({
-      url: '', //接口地址
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
       data: {
-        sno: this.data.sno,
-        phone:this.data.phone,
-        password: this.data.password,
+        sno: that.data.sno,
+        phone:that.data.phone,
+        password: that.data.password,
       },
+      method: "POST",
       header: {
-        'content-type': 'application/json' 
+        'content-type': 'application/x-www-form-urlencoded' 
       },
       success: function (res) {
-        console.log(res);
-        if (res.statusCode == 200) {//request success 
-          if (res.data.error == true) {
-            wx.showToast({//信息错误 
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            })
-          } else {
-            wx.setStorageSync('student', res.data.data);
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'success',
-              duration: 2000
-            })
-          }
-        }else{
-          wx.showToast({
-            title: '服务器出现错误',
-            icon: 'none',
-            duration: 2000
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+              else console.log('用户选择取消')
+            },
+          })
+        }
+        else{
+          getApp().globalData.user=res.data.data
+          console.log(getApp().globalData.user)
+          wx.showModal({
+            title: '恭喜！',
+            content: '注册成功',
+            showCancel: false,
+            success(res){},
+            complete: function(res){
+              wx.reLaunch({
+                url: 'pages/activities/activities',
+              })
+            }
           })
         }
       },
       fail:function(res){
-            wx.redirectTo({
-         url: '/pages/login/login',
-    })
+        wx.showModal({
+          title: '欸~',
+          content: '你这网不行啊~',
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+            else console.log('用户选择取消')
+          },
+        })
       }
     })
 
