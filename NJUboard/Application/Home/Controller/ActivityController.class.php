@@ -86,7 +86,7 @@ class ActivityController extends BaseController {
         $data['other']=$_POST['other'];
         $data['user_name']=$_POST['user_name'];
         $data['user_face']=$_POST['user_face'];
-
+        $data['official']=$_POST['official'];
         //插入数据
         $result=$Activity->add($data);
 
@@ -110,7 +110,7 @@ class ActivityController extends BaseController {
             $return_data['data']['other']=$_POST['other'];
             $return_data['data']['user_face']=$_POST['user_face'];
             $return_data['data']['user_name']=$_POST['user_name'];
-
+            $return_data['data']['official']=$_POST['official'];//添加官方属性
 
             $this->ajaxReturn($return_data);
         }
