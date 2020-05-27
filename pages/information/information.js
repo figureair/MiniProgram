@@ -5,19 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: {
-      nickname: "蓝小鲸",
-      studentID: "181250000",
-      avatarUrl: "/images/defaultAvatar.png",
-      description: "本人尚未添加描述哦~",
-      phoneNumber: "12312341234",
-      emailAddress: "123@mail.com",
-    }
+    user_name: "蓝小鲸",
+    user_id: "181250000",
+    face_url: "/images/defaultAvatar.png",
+    description: "本人尚未添加描述哦~",
+    phone: "12312341234",
+    mailbox: "123@mail.com",
   },
 
   changeInformation: function (e) {
     wx.setStorage({
-      data: this.data.user,
+      data: this.data,
       key: 'rawInf',
     })
     wx.navigateTo({
@@ -56,11 +54,11 @@ Page({
     var inf = wx.getStorageSync('newInf');
     if (inf) {
       this.setData({
-        'user.nickname': inf.nickname,
-        'user.avatarUrl': inf.avatarUrl,
-        'user.description': inf.description,
-        'user.phoneNumber': inf.phoneNumber,
-        'user.emailAddress': inf.emailAddress
+        user_name: inf.user_name,
+        face_url: inf.face_url,
+        description: inf.description,
+        phone: inf.phone,
+        mailbox: inf.mailbox
       })
     }
   },

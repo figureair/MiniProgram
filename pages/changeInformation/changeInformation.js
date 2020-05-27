@@ -5,13 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: {
-      nickname: '蓝小鲸',
-      avatarUrl: '/images/defaultAvatar.png',
-      description: '本人尚未添加描述哦~',
-      phoneNumber: 12312341234,
-      emailAddress: '123@mail.com'
-    },
+    user_name: '蓝小鲸',
+    face_url: '/images/defaultAvatar.png',
+    description: '本人尚未添加描述哦~',
+    phone: 12312341234,
+    mailbox: '123@mail.com'
   },
 
   // 修改头像
@@ -25,7 +23,7 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         var img = res.tempFilePaths
         that.setData({
-          'user.avatarUrl': img[0]
+          face_url: img[0]
         })
       }
     })
@@ -34,43 +32,36 @@ Page({
   // 修改昵称
   bindChangeNickname: function (e) {
     this.setData({
-      'user.nickname': e.detail.value
+      user_name: e.detail.value
     })
 
-  },
-
-  // 修改性别，依据返回的索引
-  bindPickerChange: function (e) {
-    this.setData({
-      'user.gender': e.detail.value
-    })
   },
 
   // 修改简介
   bindDescriptionChange: function (e) {
     this.setData({
-      'user.description': e.detail.value
+      description: e.detail.value
     })
   },
 
   // 修改绑定的手机号
   bindChangePhoneNumber: function (e) {
     this.setData({
-      'user.phoneNumber': e.detail.value
+      phoneNumber: e.detail.value
     })
   },
 
   // 修改绑定的邮箱
   bindChangeEmailAddress: function (e) {
     this.setData({
-      'user.emailAddress': e.detail.value
+      mailbox: e.detail.value
     })
   },
 
   // 保存修改
   saveChanges: function () {
     wx.setStorage({
-      data: this.data.user,
+      data: this.data,
       key: 'newInf',
     })
     wx.switchTab({
@@ -85,11 +76,11 @@ Page({
     var inf = wx.getStorageSync('rawInf');
     if (inf) {
       this.setData({
-        'user.nickname': inf.nickname,
-        'user.avatarUrl': inf.avatarUrl,
-        'user.description': inf.description,
-        'user.phoneNumber': inf.phoneNumber,
-        'user.emailAddress': inf.emailAddress
+        user_name: inf.user_name,
+        face_url: inf.face_url,
+        description: inf.description,
+        phone: inf.phone,
+        mailbox: inf.mailbox
       })
     }
   },
