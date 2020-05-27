@@ -20,7 +20,7 @@ Page({
         detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
       },
       {
-        state: 1,//该活动正在进行
+        state: 0,//该活动正在进行
         poster: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589972393115&di=9498157ada15fcdd5cabd376af9fead0&imgtype=0&src=http%3A%2F%2Fimg.sccnn.com%2Fbimg%2F337%2F25500.jpg',
         head : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3881515574,3022954722&fm=26&gp=0.jpg",
         name : "书法社",
@@ -50,6 +50,59 @@ Page({
         detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
       },
     ]
+  },
+
+  /*
+  页面加载函数
+  */
+  onLoad: function(options){
+    var that=this
+
+    wx.showModal({
+      title: '加载中',
+    })
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
+      data: {},
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(res){
+        console.log(res.data)
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            activities: res.data.data
+          })
+          console.log(that.data.activities)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '你这网不行啊~',
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
+    }),
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
   },
 
   //点击海报查看推文，尚未实现，有待商量

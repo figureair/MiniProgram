@@ -1,5 +1,6 @@
 <!--pages/activities/activities.wxml-->
 <!-- 活动页面 author: zzn-->
+<!--activities列表的条件化筛选展示 lbh-->
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片与发布按钮 -->
@@ -15,7 +16,8 @@
 			<text>活动列表（点击海报可进入活动推文）</text>
 	</view>
 	<!-- 卡片 -->
-	<view class="card" wx:for="{{ activities }}" enable-flex="true">
+	<view wx:for="{{ activities }}" >
+	<view class="card" enable-flex="true" wx:if="{{item.state==1}}">
     <image class="poster" src="{{ item.poster }}" data-idx="{{ index }}" bindtap="toDetail"></image>
 		<view class="info" >
 			<view class="headAndName">
@@ -28,6 +30,6 @@
       </text>
       <view class="signup" bindtap="signUp">马上报名</view>
 		</view>
-		
+	</view>
 	</view>
 </scroll-view>

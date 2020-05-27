@@ -1,7 +1,7 @@
 {
   "usingComponents": {
   },
-  "pages": ["pages/information/information",
+  "pages": [
     "pages/login/login",
     "pages/register/register",
     "pages/releaseActivities/releaseActivities",
@@ -14,7 +14,8 @@
     "pages/amendActInfor/amendActInfor",
     "pages/releaseRecruits/releaseRecruits",
     "pages/amendRec/amendRec",
-    "pages/activities/activities"
+    "pages/activities/activities",
+    "pages/information/information"
   ],
   "window": {
     "backgroundTextStyle": "light",

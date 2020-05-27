@@ -150,7 +150,8 @@ Page({
   /**
    * 提交函数
    */ 
-  submit(){    
+  submit(){  
+    var that=this  
     this.data.activity_type=2;
     if(this.data.activity_name==''){
       wx.showModal({
@@ -231,11 +232,80 @@ Page({
    
     console.log(toreleaserecruit);
     //{toreleaserecruit}传到后端  与后端交互
-
-
     wx.showLoading({
     title: '发布中...',
     })
+
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+        activity_name: that.actname,
+        activity_type: 2,
+        state: that.state,
+        starttime: that.startDate + that.startTime,
+        endtime: that.endDate + that.endTime,
+        place: that.place,
+        phone: that.phone,
+        picture: '',
+        audience: '',
+        other: that.other,
+        user_name: getApp().globalData.userInfo.user_name,
+        user_face: getApp().globalData.userInfo.user_face,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          getApp.globalData.user=re.data.data,
+          wx.showModal({
+            title: '恭喜',
+            content: '注册成功',
+            showCancel: false,
+            success(re){},
+            complete: function(re){
+              wx.reLaunch({
+                url: '/pages/activities/activities',
+              })
+            }
+          })
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+      wx.showToast({
+        title: '发布成功',
+        icon: 'success',
+        duration: 1000
+      })
+    }, 2000)
+
     try {
       wx.setStorageSync('toreleaserecuit1',toreleaserecruit);
     } 

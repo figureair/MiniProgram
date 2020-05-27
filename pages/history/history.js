@@ -14,6 +14,7 @@ Page({
     is_MyParticipation : true, 
     participations:[ //我参加的
       {
+        record_id:1,
         state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
         activity_type: 2, //种类，1:活动 2:招募
         name : "很神奇的凑字数的南大团委",
@@ -124,24 +125,66 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
   },
 
   //转为我参加的
   toMyParticipation : function(e){
+    var that =this
     var animation = wx.createAnimation({
       duration: 300,
       timingFunction: 'ease',
     });
     animation.translate(0, 0).step()
-    this.setData({
+    that.setData({
       is_MyParticipation : true,
       ani : animation.export()
+    }),
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            participations: res.data.data
+          })
+          console.log(that.data.participations)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
     })
   },
 
   //转为我发布的
   toMyRelease : function(e){
+    var that = this
     var animation = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease',
@@ -151,6 +194,47 @@ Page({
     this.setData({
       is_MyParticipation : false,
       ani: animation.export()
+    }),
+    wx.request({
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
+      data: {
+        user_id: getApp().globalData.userInfo.user_id,
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(re){
+        console.log(re.data)
+        if(re.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: re.data.msg,
+            success: function(re){
+              if(re.confirm){console.log('用户点击确定')}
+              else{console.log('用户点击取消')}
+            }
+          })
+        }else{
+          that.setData({
+            releases: res.data.data
+          })
+          console.log(that.data.releases)
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '欸~',
+          content: '网络不在状态',
+          success: function(re){
+            if(re.confirm){console.log('用户点击确定')}
+            else{console.log('用户点击取消')}
+          }
+        })
+      },
+      complete: function(res){
+        wx.hideLoading()
+      }
     })
   },
 
@@ -170,13 +254,11 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    var state = this.data.participations[idx].state
-    if(state==3 || state == 2 || state == 4){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content:  '只能退出进行中的活动或招募哦~',
-        confirmColor: '#71CD63',
+    if(this.data.participations[idx].state==3){
+      wx.showToast({
+        icon: 'none',
+        duration: 1000,
+        title: '您已经退出了哟~',
       })
       return
     }
@@ -192,20 +274,56 @@ Page({
           wx.showLoading({
             title: '退出中'
           })
-          //此处待补充，将退出信息发送给服务器
-
-          var participations = 'participations[' + idx + '].state';
-          that.setData({
-            [participations] : 3
+          //将退出信息发送给服务器
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/exit_activity', //接口地址
+            data: {
+              record_id: that.data.participations[idx].record_id
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '退出成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                  complete:function(res){
+                    //重新刷新页面
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '欸~',
+                content: '你这网不行啊~',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            complete:function(res){
+              wx.hideLoading()
+            }
           })
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({
-              title: '退出成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }, 2000)
         }
       }
     })

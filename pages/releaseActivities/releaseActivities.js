@@ -1,6 +1,6 @@
 // pages/releaseActivities/releaseActivities.js
-//author: zzn
-//submit()函数待补充
+//author: zzn-lbh
+//submit()函数待补充√
 
 var util = require('../../utils/util.js');
 Page({
@@ -15,6 +15,7 @@ Page({
     endDate: '',
     endTime: '',
     target: '',
+    state: 0,
   },
 
   /**
@@ -148,7 +149,7 @@ Page({
       })
       return
     }
-    
+    var that=this;
     //询问是否确认提交并做处理
     wx.showModal({
       title: '确认',
@@ -163,6 +164,71 @@ Page({
             title: '发布中'
           })
           //此处待补充，将报名者信息发送给服务器
+          if(that.isCorrectTime(that.systime, that.sdt)) that.state=0;//未开始
+          else if(that.isCorrectTime(that.systime, that.edt)) that.state=1;//已开始
+          else that.state=2;//已结束
+          wx.request({
+            url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
+            data: {
+              user_id: getApp().globalData.userInfo.user_id,
+              activity_name: that.actname,
+              activity_type: 1,
+              state: that.state,
+              starttime: that.startDate,
+              endtime: that.endDate,
+              place: '',
+              phone: '',
+              picture: that.poster,
+              audience: that.target,
+              other: '',
+              user_name: getApp().globalData.userInfo.user_name,
+              user_face: getApp().globalData.userInfo.user_face,
+            },
+            method: "POST",
+            header: {
+              'content-type': "application/x-www-form-urlencoded"
+            },
+            success(re){
+              console.log(re.data)
+              if(re.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: re.data.msg,
+                  success: function(re){
+                    if(re.confirm){console.log('用户点击确定')}
+                    else{console.log('用户点击取消')}
+                  }
+                })
+              }else{
+                getApp.globalData.user=re.data.data,
+                wx.showModal({
+                  title: '恭喜',
+                  content: '注册成功',
+                  showCancel: false,
+                  success(r){},
+                  complete: function(re){
+                    wx.reLaunch({
+                      url: '/pages/activities/activities',
+                    })
+                  }
+                })
+              }
+            },
+            fail: function(res){
+              wx.showModal({
+                title: '欸~',
+                content: '网络不在状态',
+                success: function(re){
+                  if(re.confirm){console.log('用户点击确定')}
+                  else{console.log('用户点击取消')}
+                }
+              })
+            },
+            complete: function(res){
+              wx.hideLoading()
+            }
+          })
+
           setTimeout(function () {
             wx.hideLoading()
             wx.showToast({

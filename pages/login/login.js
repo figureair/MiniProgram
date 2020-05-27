@@ -67,6 +67,7 @@ Page({
 
   //登录
   submit: function(e){
+    var that =this
     if(this.data.sno.length==0){
       wx.showModal({
         showCancel: false,
@@ -93,48 +94,60 @@ Page({
       return
     }
 
+    wx.showLoading({
+      title: '登录中...'
+    })
     console.log(e);
-    // wx.request({   
-      // wx.showLoading({
-     // title: '登录中...'
-   // })
-    //   url: '', //接口地址
-    //   data: {//数据为stuno password
-    //     stuno: this.data.stuno,
-    //     password: this.data.password
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' 
-    //   },
-    //   success: function (res) {
-    //     console.log(res);
-    //     if (res.statusCode == 200) {//request success 
-    //       if (res.data.error == true) {
-    //         wx.showToast({//信息错误 
-    //           title: res.data.msg,
-    //           icon: 'none',
-    //           duration: 2000
-    //         })
-    //       } else {
-    //         wx.setStorageSync('student', res.data.data);
-    //         wx.showToast({
-    //           title: res.data.msg,
-    //           icon: 'success',
-    //           duration: 2000
-    //         })
-    //       }
-    //     }else{
-    //       wx.showToast({
-    //         title: '服务器出现错误',
-    //         icon: 'none',
-    //         duration: 2000
-    //       })
-    //     }
-    //   },
-    //   fail:function(res){
-    //     console.log(res);
-    //   },
-    // })
+    wx.request({   
+      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/User/login', //接口地址
+      data: {//数据为stuno password
+        stuno: this.data.stuno,
+        password: this.data.password
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+              else console.log('用户选择取消')
+            },
+          })
+        }
+        else{
+          getApp().globalData.user=res.data.data
+          getApp().globalData.userInfo=res.data.data
+          console.log(getApp().globalData.user)
+          wx.showModal({
+            title: '恭喜！',
+            content: '登录成功',
+            showCancel: false,
+            success(res){},
+            complete: function(res){
+              wx.reLaunch({
+                url: 'pages/activities/activities',
+              })
+            }
+          })
+        }
+       },
+      fail:function(res){
+        console.log(res);
+        wx.showModal({
+          title: '欸~',
+          content: '你这网不行啊~',
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+            else console.log('用户选择取消')
+          },
+        })
+      },
+    })
 
       wx.switchTab({
         url: '/pages/recruit/recruit',

@@ -9,6 +9,7 @@ Page({
    */
   data: {
     chooseEnd: false,//是否选择结束。页面数据，不需保存
+    chooseUrgent: false,//是否选择加急。页面数据，不需保存
     chooseCancel: false,//是否选择取消活动。页面数据，不需保存
     state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
     poster: '',//海报链接
@@ -42,6 +43,13 @@ Page({
         chooseEnd: true,
         chooseCancel: false,
         chooseUrgent: false
+      })
+    }
+    else if(totype == 'urgent'){
+      this.setData({ 
+        chooseEnd: false,
+        chooseCancel: false,
+        chooseUrgent: true
       })
     }
     else if(totype == 'cancel'){
