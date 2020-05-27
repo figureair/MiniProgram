@@ -237,7 +237,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
         activity_name: that.actname,
