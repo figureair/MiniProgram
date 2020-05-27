@@ -5,11 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user_id:'1',
+    user_sno:'180000000',
     user_name: '蓝小鲸',
     face_url: '/images/defaultAvatar.png',
     description: '本人尚未添加描述哦~',
     phone: 12312341234,
-    mailbox: '123@mail.com'
+    mailbox: '123@mail.com',
+    password:'123'
   },
 
   // 修改头像
@@ -64,9 +67,66 @@ Page({
       data: this.data,
       key: 'newInf',
     })
-    wx.switchTab({
-      url: '/pages/information/information',
+    var that=this
+    console.log(that.data)
+    wx.showLoading({title: '保存中'})
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/update_user', //接口地址
+      data: {
+        user_sno:that.data.user_sno,
+        user_id:that.data.user_id,
+        user_name:that.data.user_name,
+        phone:that.data.phone,
+        face_url:that.data.face_url,
+        mailbox:that.data.mailbox,
+        description:that.data.description,
+        password:that.data.password
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' 
+      },
+      success: function (res) {
+        wx.hideLoading();
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            content: res.data.msg,
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+          })
+        }
+        else{
+          wx.showModal({
+            title: '提示！',
+            content: '保存成功',
+            showCancel:false,
+            success: function(res){
+              if(res.confirm) console.log('用户选择确定')
+            },
+            complete:function(res){
+              wx.switchTab({
+                url: '/pages/information/information',
+              })
+            }
+          })
+        }
+      },
+      fail:function(res){
+        wx.hideLoading();
+        wx.showModal({
+          title: '提示！',
+          content: '亲，网络不好哦',
+          showCancel:false,
+          success: function(res){
+            if(res.confirm) console.log('用户选择确定')
+          },
+        })
+      },
     })
+    
   },
 
   /**
