@@ -16,7 +16,7 @@
 
   <view class="word">工作名称：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput"></input>
+    <input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput" value='{{activity_name}}'></input>
   </view>
 
   <view class="word">工作时间：</view>
@@ -56,18 +56,18 @@
 
   <view class="word">工作地点：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" bindinput="placeinput"></input>
+    <input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" bindinput="placeinput" value='{{place}}'></input>
   </view>
 
   <view class="word">工作报酬：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" bindinput="rewordinput"></input>
+    <input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" bindinput="rewordinput" value='{{reward}}'></input>
   </view>
   
 
     <view class="word">联系方式：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" bindinput="telinput"></input>
+    <input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" bindinput="telinput" value='{{tel}}'></input>
   </view>
 
       <view class="word">备注：</view>

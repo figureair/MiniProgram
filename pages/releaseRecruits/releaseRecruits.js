@@ -23,10 +23,10 @@ Page({
   data: {
 
     checks: [
-      { name: "进行中", value: '0', checked: true},
-      { name: "已完成", value: '1', checked: false },
-      { name: "加急", value: '2', checked: false },
-      { name: "取消", value: '3', checked: false },
+      { name: "普通", value: '0', checked: true},
+
+      { name: "加急", value: '1', checked: false },
+
     ],
     catename:'',
     cateid:'',
@@ -87,7 +87,7 @@ Page({
     clicks: function (e) {
       let index = e.currentTarget.dataset.index;
       let arrs = this.data.checks;
-      for (var i=0;i<4;i++)
+      for (var i=0;i<2;i++)
       { 
         arrs[i].checked=false;
       }
@@ -96,14 +96,9 @@ Page({
         this.data.state=1;
       }
       if(index==1){
-        this.data.state=2;
-      }
-      if(index==2){
         this.data.state=3;
       }
-      if(index==3){
-        this.data.state=4;
-      }
+
       this.setData({
         checks: arrs
       })
@@ -237,7 +232,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
         activity_name: that.actname,

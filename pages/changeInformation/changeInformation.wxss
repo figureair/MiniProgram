@@ -41,18 +41,6 @@
   margin-bottom: 25rpx;
 }
 
-/* 修改性别的选项框 */
-.picker {
-  width: 100rpx;
-  text-align: right;
-  font-size: 32rpx;
-  font-style: initial;
-  color: gray;
-  margin-top: 40rpx;
-  margin-left: 350rpx;
-  margin-bottom: 40rpx;
-}
-
 .textArea {
   height: 110rpx;
   width: 300rpx;

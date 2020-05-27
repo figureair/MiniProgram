@@ -15,6 +15,7 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
 Page({
 
   /**
@@ -23,7 +24,7 @@ Page({
   data: {
 
     checks: [
-      { name: "进行中", value: '0', checked: true},
+      { name: "进行中", value: '0', checked: false},
       { name: "已完成", value: '1', checked: false },
       { name: "加急", value: '2', checked: false },
       { name: "取消", value: '3', checked: false },
@@ -59,7 +60,7 @@ Page({
     activity_name:'',
     activity_type:'2',
     state:'',
-    place:'',
+    place:123,
     reward:'',
     phone:'',
     other:'',
@@ -75,7 +76,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
+
+    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
+    //设置默认开始,结束年月日
+    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
+    var st = systime.substr(11,2)+':'+systime.substr(14,2)
+    var ed = sd
+    var et = "23:59"
+    this.setData({
+      startDate: sd,
+      startTime: st,
+      endDate: ed,
+      endTime: et,
+    })
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
       data: {
@@ -111,6 +124,12 @@ Page({
             user_id:res.data.data.user_id,
             user_face:res.data.data.user_face
           })
+        if(this.data.state==3){
+            this.data.checks[2].checked=true
+        }
+        else{
+          this.data.checks[0].checked=true;
+        }
         }
       },
       fail:function(res){
@@ -305,20 +324,7 @@ Page({
       complete: (res) => {'发布中...'},
     })
   },
-  onLoad: function (options) {
-    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
-    //设置默认开始,结束年月日
-    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
-    var ed = sd
-    var et = "23:59"
-    this.setData({
-      startDate: sd,
-      startTime: st,
-      endDate: ed,
-      endTime: et,
-    })
-  },
+
   isCorrectTime: function(t1, t2){
     var year1 = t1.substr(0,4)
     var month1 = t1.substr(5,2)
