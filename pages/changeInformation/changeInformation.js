@@ -7,13 +7,11 @@ Page({
   data: {
     user: {
       nickname: '蓝小鲸',
-      gender: 0,
       avatarUrl: '/images/defaultAvatar.png',
       description: '本人尚未添加描述哦~',
       phoneNumber: 12312341234,
       emailAddress: '123@mail.com'
     },
-    genderArray: ['未知', '男', '女']
   },
 
   // 修改头像
@@ -21,12 +19,13 @@ Page({
     const that = this;
     wx.chooseImage({
       count: 1,
-      sizeType: ['original', 'compressed'],
+      sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
+        var img = res.tempFilePaths
         that.setData({
-          'user.avatarUrl': res.tempFilePaths
+          'user.avatarUrl': img[0]
         })
       }
     })
@@ -83,7 +82,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var inf = wx.getStorageSync('rawInf');
+    if (inf) {
+      this.setData({
+        'user.nickname': inf.nickname,
+        'user.avatarUrl': inf.avatarUrl,
+        'user.description': inf.description,
+        'user.phoneNumber': inf.phoneNumber,
+        'user.emailAddress': inf.emailAddress
+      })
+    }
   },
 
   /**
@@ -97,17 +105,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var inf = wx.getStorageSync('rawInf');
-    if (inf) {
-      this.setData({
-        'user.nickname': inf.nickname,
-        'user.gender': inf.gender,
-        'user.avatarUrl': inf.avatarUrl,
-        'user.description': inf.description,
-        'user.phoneNumber': inf.phoneNumber,
-        'user.emailAddress': inf.emailAddress
-      })
-    }
+    
   },
 
   /**

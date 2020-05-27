@@ -8,7 +8,6 @@ Page({
     user: {
       nickname: "蓝小鲸",
       studentID: "181250000",
-      gender: 0, // 未知为0，男为1，女为2
       avatarUrl: "/images/defaultAvatar.png",
       description: "本人尚未添加描述哦~",
       phoneNumber: "12312341234",
@@ -40,7 +39,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -58,7 +57,6 @@ Page({
     if (inf) {
       this.setData({
         'user.nickname': inf.nickname,
-        'user.gender': inf.gender,
         'user.avatarUrl': inf.avatarUrl,
         'user.description': inf.description,
         'user.phoneNumber': inf.phoneNumber,
