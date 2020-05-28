@@ -72,10 +72,11 @@ Page({
     this.setData({
       activity_id: options.id,
     })
+    var that=this
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/activity_signup', //接口地址
       data: {
-        activity_id: that.activity_id
+        activity_id: that.data.activity_id
       },
       method: "POST",
       header: {
@@ -94,8 +95,8 @@ Page({
         }
         else{
           console.log(res.data)
-          this.setData({
-            data:res.data.data
+          that.setData({
+            people:res.data.all_record
           })
         }
       },

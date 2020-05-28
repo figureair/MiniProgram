@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
       data: {
-        activity_id: that.activity_id
+        activity_id: that.data.activity_id
       },
       method: "POST",
       header: {
