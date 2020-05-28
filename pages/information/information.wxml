@@ -5,15 +5,15 @@
 <view class="card">
 	<view class="combination">
 		<view class="avatarView">
-			<image src="{{user.avatarUrl}}" class="avatar"></image>
+			<image src="{{face_url}}" class="avatar"></image>
 		</view>
 		<view class="textView">
-			<text class="nickname">昵称：{{user.nickname}}</text>
-			<text class="studentID">学号：{{user.studentID}}</text>
+			<text class="nickname">昵称：{{user_name}}</text>
+			<text class="studentID">学号：{{user_id}}</text>
 		</view>
 	</view>
 	<view class="descriptionView">
-		<text class="description">简介：{{user.description}}</text>
+		<text class="description">简介：{{description}}</text>
 	</view>
 </view>
 
@@ -26,14 +26,14 @@
 		<image src="/images/phone.png" class="optionIcon"></image>
 		<view class="optionTextView">
 			<text class="optionText1">绑定手机</text>
-			<text class="optionText2">{{user.phoneNumber}}</text>
+			<text class="optionText2">{{phone}}</text>
 		</view>
 	</view>
 	<view class="option" style="border-bottom: thin solid rgb(200, 200, 200)">
 		<image src="/images/email.png" class="optionIcon"></image>
 		<view class="optionTextView">
 			<text class="optionText1">绑定邮箱</text>
-			<text class="optionText2">{{user.emailAddress}}</text>
+			<text class="optionText2">{{mailbox}}</text>
 		</view>
 	</view>
 	<view class="option" bindtap="changeInformation">

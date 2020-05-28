@@ -1,27 +1,27 @@
 <!--pages/changeInformation.wxml-->
 <view class="entry">
 	<text class="wideEntryText">修改头像</text>
-	<image class="entryAvatar" src="{{user.avatarUrl}}" bindtap="changeAvatar"></image>
+	<image class="entryAvatar" src="{{face_url}}" bindtap="changeAvatar"></image>
 </view>
 
 <view class="entry">
 	<text class="narrowEntryText">修改昵称</text>
-	<input class="entryInput" bindblur="bindChangeNickname" placeholder="{{user.nickname}}"></input>
+	<input class="entryInput" bindblur="bindChangeNickname" value="{{user_name}}"></input>
 </view>
 
 <view class="entry">
 	<text class="wideEntryText">修改简介</text>
-	<textarea class="textArea" bindblur="bindDescriptionChange" placeholder="{{user.description}}"></textarea>
+	<textarea class="textArea" bindblur="bindDescriptionChange" value="{{description}}"></textarea>
 </view>
 
 <view class="entry">
 	<text class="narrowEntryText">换绑手机</text>
-	<input class="entryInput" type="number" bindblur="bindChangePhoneNumber" placeholder="{{user.phoneNumber}}"></input>
+	<input class="entryInput" type="number" bindblur="bindChangePhoneNumber" value="{{phone}}"></input>
 </view>
 
 <view class="entry">
 	<text class="narrowEntryText">换绑邮箱</text>
-	<input class="entryInput" bindblur="bindChangeEmailAddress" placeholder="{{user.emailAddress}}"></input>
+	<input class="entryInput" bindblur="bindChangeEmailAddress" value="{{mailbox}}"></input>
 </view>
 
 <button class="save" style="width: 700rpx" bindtap="saveChanges">保存</button>
