@@ -140,14 +140,56 @@ Page({
             title: '报名中'
           })
           //此处待补充，将报名者信息发送给服务器
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({
-              title: '报名成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }, 2000)
+          var that=this
+          wx.request({
+            url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/user_signup', //接口地址
+            data: {
+              activity_id:that.data.activity_id,
+              user_id:getApp().globalData.user_id,
+              state:1
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' 
+            },
+            success: function (res) {
+              wx.hideLoading();
+              if(res.data.error_code != 0){
+                wx.showModal({
+                  title: '提示！',
+                  content: res.data.msg,
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  },
+                })
+              }
+              else{
+                wx.showModal({
+                  title: '提示！',
+                  content: '报名成功',
+                  showCancel:false,
+                  success: function(res){
+                    if(res.confirm) console.log('用户选择确定')
+                  }
+                })
+              }
+            },
+            fail:function(res){
+              wx.showModal({
+                title: '提示！',
+                content: '亲，网络不好哦',
+                showCancel:false,
+                success: function(res){
+                  if(res.confirm) console.log('用户选择确定')
+                },
+              })
+            },
+            // complete:function(res){
+            //   wx.hideLoading(),
+            //   wx.navigateBack()
+            // }
+          })
         }
       }
     })

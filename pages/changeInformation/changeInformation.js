@@ -98,13 +98,15 @@ Page({
             },
           })
         }
-        else{
+        else{ 
+          getApp().globalData.user=res.data.data
           wx.showModal({
             title: '提示！',
             content: '保存成功',
             showCancel:false,
             success: function(res){
               if(res.confirm) console.log('用户选择确定')
+             
             },
             complete:function(res){
               wx.switchTab({

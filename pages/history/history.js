@@ -14,11 +14,8 @@ Page({
     is_MyParticipation : true, 
     participations:[ //我参加的
       {
-<<<<<<< HEAD
         record_id:1,//记录id
         id: 1,//活动id
-=======
->>>>>>> test
         state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
         activity_type: 2, //种类，1:活动 2:招募
         name : "很神奇的凑字数的南大团委",
