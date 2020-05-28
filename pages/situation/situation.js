@@ -11,46 +11,53 @@ Page({
     totalchosen: 0,
     people: [
       {
-        name : '刘峰',
-        tel: '13318566749',
-        email: '181250001@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '刘峰',
+        phone: '13318566749',
+        mailbox: '181250001@smail.nju.edu.cn',
+        chosen: 1,
       },
       {
-        name : '特朗普',
-        tel: '18918566749',
-        email: '181250002@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '特朗普',
+        phone: '18918566749',
+        mailbox: '181250002@smail.nju.edu.cn',
+        chosen: 1,
       },
       {
-        name : 'Taylor Swift',
-        tel: '13318566520',
-        email: '1989@gmail.com',
-        chosen: true,
+        record_id: 0,
+        user_name : 'Taylor Swift',
+        phone: '13318566520',
+        mailbox: '1989@gmail.com',
+        chosen: 2,
       },
       {
-        name : '无名',
-        tel: '13318566749',
-        email: '181250001@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '无名',
+        phone: '13318566749',
+        mailbox: '181250001@smail.nju.edu.cn',
+        chosen: 1,
       },
       {
-        name : '无名',
-        tel: '13318566749',
-        email: '181250001@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '无名',
+        phone: '13318566749',
+        mailbox: '181250001@smail.nju.edu.cn',
+        chosen: 1,
       },
       {
-        name : '无名',
-        tel: '13318566749',
-        email: '181250001@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '无名',
+        phone: '13318566749',
+        mailbox: '181250001@smail.nju.edu.cn',
+        chosen: 1,
       },
       {
-        name : '无名',
-        tel: '13318566749',
-        email: '181250001@smail.nju.edu.cn',
-        chosen: false,
+        record_id: 0,
+        user_name : '无名',
+        phone: '13318566749',
+        mailbox: '181250001@smail.nju.edu.cn',
+        chosen: 1,
       },
     ]
   },
@@ -59,6 +66,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //从history传来的活动id
+    console.log(options.id);
+    
+    this.setData({
+      activity_id: options.id,
+    })
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/activity_signup', //接口地址
       data: {
@@ -114,7 +127,7 @@ Page({
     var totalcho = 0
     for(var i =0;i<this.data.people.length;i++){
       sum++
-      if(this.data.people[i].chosen){
+      if(this.data.people[i].chosen==2){
         totalcho+=1
       }
     }
@@ -168,7 +181,7 @@ Page({
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/choose', //接口地址
       data: {
-        record_id:that.data[idx].record_id
+        record_id:that.data.people[idx].record_id
       },
       method: "POST",
       header: {
@@ -187,7 +200,7 @@ Page({
         }
         else{
           this.setData({
-            [chosen] : true,
+            [chosen] : 2,
             totalchosen : this.data.totalchosen + 1
           })
         }
@@ -233,7 +246,7 @@ Page({
         }
         else{
           this.setData({
-            [chosen] : false,
+            [chosen] : 1,
             totalchosen : this.data.totalchosen - 1
           })
         }

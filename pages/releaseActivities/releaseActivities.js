@@ -8,13 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    poster: '',
-    actname: '',
+    //注：已取消target数据项！！！
+    picture: '',
+    activity_name: '',
     startDate: '',//开始年月日,格式yyyy-mm-dd
     startTime: '',//开始时分秒,格式hh:mm:ss
     endDate: '',
     endTime: '',
-    target: '',
     state: 0,
   },
 
@@ -45,14 +45,8 @@ Page({
 
   //获取用户输入的活动名称
   actnameInput: function(e){
-    this.data.actname = e.detail.value 
+    this.data.activity_name = e.detail.value 
   },
-
-  //获取用户输入的活动面向对象
-  targetInput: function(e){
-    this.data.target = e.detail.value 
-  },
-
 
   //上传图片
   addPoster: function(e){
@@ -66,7 +60,7 @@ Page({
       success(res){
         var img = res.tempFilePaths//上传图片的url，数组形式
         that.setData({
-          poster: img[0]
+          picture: img[0]
         })
       }
     })
@@ -97,7 +91,7 @@ Page({
   submit : function(e){
     var that = this
     //检查是否遗漏输入
-    if(this.data.poster == ''){
+    if(this.data.picture == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -105,7 +99,7 @@ Page({
       })
       return
     }
-    else if(this.data.actname == ''){
+    else if(this.data.activity_name == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -113,14 +107,7 @@ Page({
       })
       return
     }
-    else if(this.data.target == ''){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content: '忘了输入活动面向对象哦~'
-      })
-      return
-    }
+
     //检查时间正确性
     var systime = util.formatTime(new Date())
     var sdt = this.data.startDate+' '+this.data.startTime
@@ -171,15 +158,14 @@ Page({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
             data: {
               user_id: getApp().globalData.userInfo.user_id,
-              activity_name: that.actname,
+              activity_name: that.activity_name,
               activity_type: 1,
               state: that.state,
               starttime: that.startDate,
               endtime: that.endDate,
               place: '',
               phone: '',
-              picture: that.poster,
-              audience: that.target,
+              picture: that.picture,
               other: '',
               user_name: getApp().globalData.userInfo.user_name,
               user_face: getApp().globalData.userInfo.user_face,

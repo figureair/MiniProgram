@@ -11,14 +11,14 @@
   </view>
   <view class="word">海报（比例为4：3）：</view>
   <view class="poster" bindtap="addPoster">
-    <image src="/images/addgrey.png" id="add" wx:if="{{poster == ''}}"></image>
-    <text id="upload" wx:if="{{poster == ''}}">上传图片</text>
-    <image class="posterimg" src="{{poster}}" wx:if="{{poster != ''}}"></image>
+    <image src="/images/addgrey.png" id="add" wx:if="{{picture == ''}}"></image>
+    <text id="upload" wx:if="{{picture == ''}}">上传图片</text>
+    <image class="posterimg" src="{{picture}}" wx:if="{{picture != ''}}"></image>
   </view>
 
   <view class="word">活动名称：</view>
   <view class="inputview">
-    <input class="input" type="text" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" value="{{ actname }}" bindinput="actnameInput"></input>
+    <input class="input" type="text" placeholder="输入活动名称，限25字" placeholder-class="plas" maxlength="25" value="{{ activity_name }}" bindinput="actnameInput"></input>
   </view>
 
   <view class="word">活动时间：（只能修改结束时间）</view>
@@ -54,11 +54,6 @@
         </view>
       </picker>
     </view>
-  </view>
-
-  <view class="word">面向对象：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="输入活动面向对象，限25字" placeholder-class="plas" maxlength="25" value="{{target}}" bindinput="targetInput"></input>
   </view>
 
   <view class="submit" bindtap="clickSubmit">保存修改</view>

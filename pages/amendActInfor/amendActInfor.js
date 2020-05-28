@@ -8,17 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //注：已去掉target数据项！！！
     activity_id:'1',
     chooseEnd: false,//是否选择结束。页面数据，不需保存
     chooseCancel: false,//是否选择取消活动。页面数据，不需保存
     state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
-    poster: '',//海报链接
-    actname: '123',//活动名
+    picture: '',//海报链接
+    activity_name: '123',//活动名
     startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
     startTime: '23:00',//开始时分,格式hh:mm
     endDate: '2020-06-16',
     endTime: '23:00',
-    target: '所有本科生',//目标人群
     user_id:'1',
     user_face:'',
     user_name:''
@@ -28,7 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
+    this.setData({
+      activity_id: options.id,//url传入的活动id，int
+    })
+    var that = this
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/find_activity', //接口地址
       data: {
@@ -53,14 +56,13 @@ Page({
           console.log(res.data)
           that.setData({
             activity_id:res.data.data.activity_id,
-            actname:res.data.data.activity_name,
+            activity_name:res.data.data.activity_name,
             state:res.data.data.state,
-            poster:res.data.data.picture,
+            picture:res.data.data.picture,
             startDate:res.data.data.starttime.substr(0,10),
             startTime:res.data.data.starttime.substr(11,5),
             endDate:res.data.data.endtime.substr(0,10),
             endTime:res.data.data.endtime.substr(11,5),
-            target:res.data.data.audience,
             user_name:res.data.data.user_name,
             user_id:res.data.data.user_id,
             user_face:res.data.data.user_face
@@ -116,7 +118,7 @@ Page({
       success(res){
         var img = res.tempFilePaths//上传图片的url，数组形式
         that.setData({
-          poster: img[0]
+          picture: img[0]
         })
       }
     })
@@ -124,14 +126,8 @@ Page({
 
   //获取用户输入的活动名称
   actnameInput: function(e){
-    this.data.actname = e.detail.value 
+    this.data.activity_name = e.detail.value 
   },
-
-  //获取用户输入的活动面向对象
-  targetInput: function(e){
-    this.data.target = e.detail.value 
-  },
-
   //获得输入的开始日期
   bindStartDateChange: function(e){
     var sd = e.detail.value
@@ -164,7 +160,7 @@ Page({
     }
     else {
       //检查是否遗漏输入
-      if(this.data.poster == ''){
+      if(this.data.picture == ''){
         wx.showModal({
           showCancel: false,
           title: '提示',
@@ -172,19 +168,11 @@ Page({
         })
         return
       }
-      else if(this.data.actname == ''){
+      else if(this.data.activity_name == ''){
         wx.showModal({
           showCancel: false,
           title: '提示',
           content: '忘了输入活动名称哦~'
-        })
-        return
-      }
-      else if(this.data.target == ''){
-        wx.showModal({
-          showCancel: false,
-          title: '提示',
-          content: '忘了输入活动面向对象哦~'
         })
         return
       }
@@ -245,7 +233,7 @@ Page({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
               activity_id:that.data.activity_id,
-              activity_name:that.data.actname,
+              activity_name:that.data.activity_name,
               activity_type:1,
               state:that.data.state,
               starttime:starttime,
@@ -253,8 +241,7 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target,
-              picture:that.data.poster
+              picture:that.data.picture
             },
             method: "POST",
             header: {
@@ -329,7 +316,7 @@ Page({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
               activity_id:that.data.activity_id,
-              activity_name:that.data.actname,
+              activity_name:that.data.activity_name,
               activity_type:1,
               state:that.data.state,
               starttime:starttime,
@@ -337,8 +324,7 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target,
-              picture:that.data.poster
+              picture:that.data.picture
             },
             method: "POST",
             header: {
@@ -414,7 +400,7 @@ Page({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
               activity_id:that.data.activity_id,
-              activity_name:that.data.actname,
+              activity_name:that.data.activity_name,
               activity_type:1,
               state:that.data.state,
               starttime:starttime,
@@ -422,8 +408,7 @@ Page({
               user_id:that.data.user_id,
               user_face:that.data.user_face,
               user_name:that.data.user_name,
-              audience:that.data.target,
-              picture:that.data.poster
+              picture:that.data.picture
             },
             method: "POST",
             header: {

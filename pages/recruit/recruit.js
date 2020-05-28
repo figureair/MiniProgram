@@ -9,60 +9,65 @@ Page({
     official_recruits:[
       {
         state: 3,//加急
-        head : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4064142245,3232604835&fm=26&gp=0.jpg",
-        name : "很神奇的凑字数的南大团委",
-        work : "新年音乐会场务",
-        time : "12月30日 19：00 - 22：00",
+        user_face : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4064142245,3232604835&fm=26&gp=0.jpg",
+        user_name : "很神奇的凑字数的南大团委",
+        activity_name : "新年音乐会场务",
+        starttime:0,
+        endtime:0,
         place : "仙林校区大活",
-        reword : "20元饭票",
-        tel : "12345677899",
-        more : "搬搬道具，听现场指挥就行"
+        reward : "20元饭票",
+        phone : "12345677899",
+        other : "搬搬道具，听现场指挥就行"
       },
       {
         state: 3,
-        head : "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3085317021,500690793&fm=26&gp=0.jpg",
-        name : "街舞社",
-        work : "找人录像",
-        time : "12月30日-12月31日 19：00 - 22：00",
+        user_face : "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3085317021,500690793&fm=26&gp=0.jpg",
+        user_name : "街舞社",
+        activity_name : "找人录像",
+        starttime:0,
+        endtime:0,
         place : "四五六食堂门前空地",
-        reword : "没有",
-        tel : "12345677899",
-        more : "帮忙录个像，很简单的！"
+        reward : "没有",
+        phone : "12345677899",
+        other : "帮忙录个像，很简单的！"
       },
       {
         state: 1,//正在进行
-        head : "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=253073685,3587850098&fm=15&gp=0.jpg",
-        name : "南京大学学生会",
-        work : "音乐作品征集比赛海报设计",
-        time : "5月25号前完成",
+        user_face : "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=253073685,3587850098&fm=15&gp=0.jpg",
+        user_name : "南京大学学生会",
+        activity_name : "音乐作品征集比赛海报设计",
+        starttime:0,
+        endtime:0,
         place : "无",
-        reword : "100-200元",
-        tel : "12345677899",
-        more : "我们会在报名者中筛选合适的设计师，请报名者尽快将个人作品发送至邮箱181250001@smail.nju.edu.cn，我们明天会以短信形式通知入选者"
+        reward : "100-200元",
+        phone : "12345677899",
+        other : "我们会在报名者中筛选合适的设计师，请报名者尽快将个人作品发送至邮箱181250001@smail.nju.edu.cn，我们明天会以短信形式通知入选者"
       },
     ],
     non_official_recruits:[
       {
         state: 3,
-        head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588314029275&di=763dff5ec910ce77155cf285e9da125f&imgtype=0&\src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg",
-        name : "一位大佬",
-        work : "找人做栋梁奖学金答辩视频",
-        time : "6月1日前",
+        user_face : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588314029275&di=763dff5ec910ce77155cf285e9da125f&imgtype=0&\src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg",
+        user_name : "一位大佬",
+        activity_name : "找人做栋梁奖学金答辩视频",
+        starttime:0,
+        endtime:0,
         place : "仙林校区",
-        reword : "800-1000元",
-        tel : "12345677899",
-        more : "需要有点技术，把个人作品发到181250006@smail.nju.edu.cn我看看吧"
+        reward : "800-1000元",
+        phone : "12345677899",
+        other : "需要有点技术，把个人作品发到181250006@smail.nju.edu.cn我看看吧"
       },
       {
         state: 1,
-        head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588321392410&di=808f39e737ae40b465d6203f649d56bd&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F7405829970%2F0",
-        name : "一位渣渣",
-        work : "找人教我数据科学",
-        time : "到本学期结束",
+        user_face : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588321392410&di=808f39e737ae40b465d6203f649d56bd&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F7405829970%2F0",
+        user_name : "一位渣渣",
+        activity_name : "找人教我数据科学",
+        starttime:0,
+        endtime:0,
         place : "我家",
-        reword : "每节课100元",
-        tel : "12345677899",
-        more : "救救我吧，真学不会！"
+        reward : "每节课100元",
+        phone : "12345677899",
+        other : "救救我吧，真学不会！"
       },
     ]
   },

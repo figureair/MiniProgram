@@ -14,108 +14,113 @@ Page({
     is_MyParticipation : true, 
     participations:[ //我参加的
       {
+        id: 1,//活动id
         state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
         activity_type: 2, //种类，1:活动 2:招募
-        name : "很神奇的凑字数的南大团委",
-        work : "新年音乐会场务",
-        time : "12月30日 19：00 - 22：00",
+        user_name : "很神奇的凑字数的南大团委",
+        activity_name : "新年音乐会场务",
+        starttime: 0,
+        endtime: 0,
         place : "仙林校区大活",
-        reword : "20元饭票",
-        tel : "12345677899",
-        more : "搬搬道具，听现场指挥就行"
+        reward : "20元饭票",
+        phone : "12345677899",
+        other : "搬搬道具，听现场指挥就行"
       },
       {
+        id: 1,
         state: 2, //已完成
         activity_type: 1,
-        name : "南京大学学生会",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        user_name : "南京大学学生会",
+        activity_name : "十大歌手总决赛",
+        starttime: 0,
+        endtime: 0,
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
+        id: 1,
         state: 3, //已退出
         activity_type: 1, 
-        name : "南大团委",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        user_name : "南大团委",
+        activity_name : "十大歌手总决赛",
+        starttime: 0,
+        endtime: 0,
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
+        id: 1,
         state: 4, //已取消
         activity_type: 1, 
-        name : "南大团委",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        user_name : "南大团委",
+        activity_name : "十大歌手总决赛",
+        starttime: 0,
+        endtime: 0,
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
     ],
     releases:[
       {
+        id: 1,
         state: 3, // 1 为进行中，2 为已完成，3为加急，4为取消
         activity_type: 2, //种类，包括“活动”和“招募”
-        //以下为招募专属信息
-        name : "南大团委",
-        work : "海报制作招募",
-        time : "5月30日 22：00前完成",
+        user_name : "南大团委",
+        activity_name : "海报制作招募",
+        starttime: 0,
+        endtime: 0,
         place : "无",
-        reword : "100元",
-        tel : "12345677899",
-        more : "听我指挥",
-        //以下为活动信息
-        actname : "",
-        target : "",
-        detail: "",
+        reward : "100元",
+        phone : "12345677899",
+        other : "听我指挥",
+        activity_name : "",
+        other: "",
       },
       {
+        id: 1,
         state: 2, // 已完成
         activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
+        user_name : "南大团委",
+        starttime: 0,
+        endtime: 0,
         //以下为招募专属信息
-        work : "",
+        activity_name : "",
         place : "",
-        reword : "",
-        tel : "",
-        more : "",
+        reward : "",
+        phone : "",
+        other : "",
         //以下为活动信息
-        actname : "十大歌手总决赛",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        activity_name : "十大歌手总决赛",
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
+        id: 1,
         state: 1, // 加急
         activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
-        //以下为招募专属信息
-        work : "",
+        user_name : "南大团委",
+        starttime: 0,
+        endtime: 0,
+        activity_name : "",
         place : "",
-        reword : "",
-        tel : "",
-        more : "",
-        //以下为活动信息
-        actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-        target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        reward : "",
+        phone : "",
+        other : "",
+        activity_name : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
+        id: 1,
         state: 4, // 已取消
         activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
+        user_name : "南大团委",
+        starttime: 0,
+        endtime: 0,
         //以下为招募专属信息
-        work : "",
+        activity_name : "",
         place : "",
-        reword : "",
-        tel : "",
-        more : "",
+        reward : "",
+        phone : "",
+        other : "",
         //以下为活动信息
-        actname : "十大歌手总决赛",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        activity_name : "十大歌手总决赛",
+        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
     ]
   },
@@ -130,7 +135,7 @@ Page({
    * 页面加载
    */
   onLoad: function(){
-    var that =this
+    var that = this
 
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
@@ -302,11 +307,11 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    if(this.data.participations[idx].state==3){
+    if(this.data.participations[idx].state!=1){
       wx.showToast({
         icon: 'none',
-        duration: 1000,
-        title: '您已经退出了哟~',
+        duration: 1500,
+        title: '只能退出进行中的活动或招募哟~',
       })
       return
     }
@@ -358,12 +363,12 @@ Page({
     else{
       if(list[idx].activity_type==1){
         wx.navigateTo({
-          url: '/pages/amendActInfor/amendActInfor',
+          url: '/pages/amendActInfor/amendActInfor?id=' + this.data.releases[idx].id,
         })
       }
       else if(list[idx].activity_type==2){
         wx.navigateTo({
-          url: '/pages/amendRec/amendRec',
+          url: '/pages/amendRec/amendRec?id=' + this.data.releases[idx].id,
         })
       }
     }
@@ -374,7 +379,7 @@ Page({
     //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
     wx.navigateTo({
-      url: '/pages/situation/situation',
+      url: '/pages/situation/situation?id=' + this.data.releases[idx].id,
     })
   }
 })
