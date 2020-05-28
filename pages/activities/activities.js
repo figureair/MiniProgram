@@ -145,7 +145,7 @@ Page({
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/user_signup', //接口地址
             data: {
-              activity_id:that.data.activity_id,
+              activity_id:that.data.activities[idx].activity_id,
               user_id:getApp().globalData.user_id,
               state:1
             },
@@ -186,10 +186,6 @@ Page({
                 },
               })
             },
-            // complete:function(res){
-            //   wx.hideLoading(),
-            //   wx.navigateBack()
-            // }
           })
         }
       }
