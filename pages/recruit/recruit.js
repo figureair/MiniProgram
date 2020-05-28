@@ -157,6 +157,7 @@ Page({
 
   //马上报名
   signUp : function(e){
+    var idx = e.currentTarget.dataset.idx//活动idx
     wx.showModal({
       content: '是否确认报名？',
       cancelText: '再想想',
