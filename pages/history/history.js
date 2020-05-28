@@ -14,114 +14,113 @@ Page({
     is_MyParticipation : true, 
     participations:[ //我参加的
       {
+<<<<<<< HEAD
         record_id:1,//记录id
         id: 1,//活动id
+=======
+>>>>>>> test
         state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
         activity_type: 2, //种类，1:活动 2:招募
-        user_name : "很神奇的凑字数的南大团委",
-        activity_name : "新年音乐会场务",
-        starttime: 0,
-        endtime: 0,
+        name : "很神奇的凑字数的南大团委",
+        work : "新年音乐会场务",
+        time : "12月30日 19：00 - 22：00",
         place : "仙林校区大活",
-        reward : "20元饭票",
-        phone : "12345677899",
-        other : "搬搬道具，听现场指挥就行"
+        reword : "20元饭票",
+        tel : "12345677899",
+        more : "搬搬道具，听现场指挥就行"
       },
       {
-        id: 1,
         state: 2, //已完成
         activity_type: 1,
-        user_name : "南京大学学生会",
-        activity_name : "十大歌手总决赛",
-        starttime: 0,
-        endtime: 0,
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        name : "南京大学学生会",
+        actname : "十大歌手总决赛",
+        time : "5月28日",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        id: 1,
         state: 3, //已退出
         activity_type: 1, 
-        user_name : "南大团委",
-        activity_name : "十大歌手总决赛",
-        starttime: 0,
-        endtime: 0,
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        name : "南大团委",
+        actname : "十大歌手总决赛",
+        time : "5月28日",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        id: 1,
         state: 4, //已取消
         activity_type: 1, 
-        user_name : "南大团委",
-        activity_name : "十大歌手总决赛",
-        starttime: 0,
-        endtime: 0,
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        name : "南大团委",
+        actname : "十大歌手总决赛",
+        time : "5月28日",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
     ],
     releases:[
       {
-        id: 1,
         state: 3, // 1 为进行中，2 为已完成，3为加急，4为取消
         activity_type: 2, //种类，包括“活动”和“招募”
-        user_name : "南大团委",
-        activity_name : "海报制作招募",
-        starttime: 0,
-        endtime: 0,
+        //以下为招募专属信息
+        name : "南大团委",
+        work : "海报制作招募",
+        time : "5月30日 22：00前完成",
         place : "无",
-        reward : "100元",
-        phone : "12345677899",
-        other : "听我指挥",
-        activity_name : "",
-        other: "",
+        reword : "100元",
+        tel : "12345677899",
+        more : "听我指挥",
+        //以下为活动信息
+        actname : "",
+        target : "",
+        detail: "",
       },
       {
-        id: 1,
         state: 2, // 已完成
         activity_type: 1, //种类，包括“活动”和“招募”
-        user_name : "南大团委",
-        starttime: 0,
-        endtime: 0,
+        name : "南大团委",
+        time : "5月30日 22：00前完成",
         //以下为招募专属信息
-        activity_name : "",
+        work : "",
         place : "",
-        reward : "",
-        phone : "",
-        other : "",
+        reword : "",
+        tel : "",
+        more : "",
         //以下为活动信息
-        activity_name : "十大歌手总决赛",
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        actname : "十大歌手总决赛",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        id: 1,
         state: 1, // 加急
         activity_type: 1, //种类，包括“活动”和“招募”
-        user_name : "南大团委",
-        starttime: 0,
-        endtime: 0,
-        activity_name : "",
+        name : "南大团委",
+        time : "5月30日 22：00前完成",
+        //以下为招募专属信息
+        work : "",
         place : "",
-        reward : "",
-        phone : "",
-        other : "",
-        activity_name : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        reword : "",
+        tel : "",
+        more : "",
+        //以下为活动信息
+        actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
+        target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
       {
-        id: 1,
         state: 4, // 已取消
         activity_type: 1, //种类，包括“活动”和“招募”
-        user_name : "南大团委",
-        starttime: 0,
-        endtime: 0,
+        name : "南大团委",
+        time : "5月30日 22：00前完成",
         //以下为招募专属信息
-        activity_name : "",
+        work : "",
         place : "",
-        reward : "",
-        phone : "",
-        other : "",
+        reword : "",
+        tel : "",
+        more : "",
         //以下为活动信息
-        activity_name : "十大歌手总决赛",
-        other: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+        actname : "十大歌手总决赛",
+        target : "全体在校本科生",
+        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
       },
     ]
   },
@@ -133,11 +132,8 @@ Page({
     this.onLoad()
   },
 
-  /**
-   * 页面加载
-   */
   onLoad: function(){
-    var that = this
+    var that =this
 
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
@@ -151,6 +147,7 @@ Page({
       success(re){
         console.log(re.data)
         if(re.data.error_code != 0){
+          //console.log('error_code!=0')
           wx.showModal({
             title: '提示！',
             content: re.data.msg,
@@ -251,7 +248,7 @@ Page({
       ani: animation.export()
     }),
     wx.request({
-      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_recruits',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
       },
@@ -309,11 +306,11 @@ Page({
   //点击"退出"按钮退出该活动
   cancel:function(e){
     var idx = e.currentTarget.dataset.idx
-    if(this.data.participations[idx].state!=1){
+    if(this.data.participations[idx].state==3){
       wx.showToast({
         icon: 'none',
-        duration: 1500,
-        title: '只能退出进行中的活动或招募哟~',
+        duration: 1000,
+        title: '您已经退出了哟~',
       })
       return
     }
@@ -404,12 +401,12 @@ Page({
     else{
       if(list[idx].activity_type==1){
         wx.navigateTo({
-          url: '/pages/amendActInfor/amendActInfor?id=' + this.data.releases[idx].id,
+          url: '/pages/amendActInfor/amendActInfor',
         })
       }
       else if(list[idx].activity_type==2){
         wx.navigateTo({
-          url: '/pages/amendRec/amendRec?id=' + this.data.releases[idx].id,
+          url: '/pages/amendRec/amendRec',
         })
       }
     }
@@ -420,7 +417,7 @@ Page({
     //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
     wx.navigateTo({
-      url: '/pages/situation/situation?id=' + this.data.releases[idx].id,
+      url: '/pages/situation/situation',
     })
   }
 })

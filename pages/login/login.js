@@ -101,7 +101,7 @@ Page({
     wx.request({   
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/login', //接口地址
       data: {//数据为stuno password
-        stuno: this.data.stuno,
+        user_sno: this.data.stuno,
         password: this.data.password
       },
       method: "POST",
@@ -110,6 +110,8 @@ Page({
       },
       success: function (res) {
         if(res.data.error_code != 0){
+          console.log(res.data.error_code)
+          console.log(res)
           wx.showModal({
             title: '提示！',
             content: res.data.msg,
@@ -120,6 +122,7 @@ Page({
           })
         }
         else{
+          //console.log(res.data)
           getApp().globalData.user=res.data.data
           getApp().globalData.userInfo=res.data.data
           console.log(getApp().globalData.user)
