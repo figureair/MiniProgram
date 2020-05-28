@@ -18,17 +18,15 @@
 	<!-- 卡片 -->
 	<view wx:for="{{ activities }}" >
 	<view class="card" enable-flex="true" wx:if="{{item.state==1}}">
-    <image class="poster" src="{{ item.poster }}" data-idx="{{ index }}" bindtap="toDetail"></image>
+    <image class="poster" src="{{ item.picture }}" data-idx="{{ index }}" bindtap="toDetail"></image>
 		<view class="info" >
 			<view class="headAndName">
-				<image src="{{ item.head }}" class="head"></image>
-				<view class="name">{{item.name}}</view>
+				<image src="{{ item.user_face }}" class="head"></image>
+				<view class="name">{{item.user_name}}</view>
 			</view>
-      <text class="actname">{{ item.actname }}</text>
-			<text class="detail">时间：{{ item.time }}
-        面向对象：{{ item.target }}
-      </text>
-      <view class="signup" bindtap="signUp">马上报名</view>
+      <text class="actname">{{ item.activity_name }}</text>
+			<text class="detail">时间：{{ item.starttime }} 至 {{ item.endtime }}</text>
+      <view class="signup" data-idx="{{index}}" bindtap="signUp">马上报名</view>
 		</view>
 	</view>
 	</view>

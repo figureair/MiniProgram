@@ -76,7 +76,7 @@ Page({
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
       data: {
-        sno: that.data.sno,
+        user_sno: that.data.sno,
         phone:that.data.phone,
         password: that.data.password,
       },
@@ -86,6 +86,7 @@ Page({
       },
       success: function (res) {
         if(res.data.error_code != 0){
+          console.log(res.data)
           wx.showModal({
             title: '提示！',
             content: res.data.msg,

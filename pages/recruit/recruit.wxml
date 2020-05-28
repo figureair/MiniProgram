@@ -21,24 +21,23 @@
 		</view>
 	</view>
 	<!-- 卡片 -->
-	<view wx:for="{{ is_official ? official_recruits :  non_official_recruits}}" >
-	<view class="card" enable-flex="true" wx:if="{{item.state==1 || item.state==3}}">
-		<view style="display:flex">
-			<view class="headAndName">
-				<image src="{{ item.head }}" class="head"></image>
-				<view class="name">{{item.name}}</view>
-			</view>
-			<text class="detail">工作：{{ item.work }}
-        时间：{{ item.time }}
+	<view wx:for="{{ is_official ? official_recruits :  non_official_recruits}}">
+		<view class="card" enable-flex="true" wx:if="{{item.state==1 || item.state==3}}">
+			<view style="display:flex">
+				<view class="headAndName">
+					<image src="{{ item.user_face }}" class="head"></image>
+					<view class="name">{{item.user_name}}</view>
+				</view>
+				<text class="detail">工作：{{ item.activity_name }}
+        时间：{{ item.starttime }} 至 {{ item.endtime }}
         地点：{{ item.place }}
-        报酬：{{ item.reword }}
-        联系方式：{{ item.tel }}
-        备注：{{ item.more }}
+        报酬：{{ item.reward }}
+        联系方式：{{ item.phone }}
+        备注：{{ item.other }}
       </text>
+			</view>
+			<view class="urgent" wx:if="{{ item.state == 3 }}">加急</view>
+			<view class="signup" data-idx="{{index}}" bindtap="signUp">马上报名</view>
 		</view>
-		<view class="urgent" wx:if="{{ item.state == 3 }}">加急</view>
-		<view class="signup" bindtap="signUp">马上报名</view>
-	
-	</view>
 	</view>
 </scroll-view>

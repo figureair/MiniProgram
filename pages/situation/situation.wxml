@@ -11,15 +11,15 @@
 
   <view class="card" wx:for="{{ people }}">
     <view class="content">
-      <text class="name">{{ item.name }}</text>
+      <text class="name">{{ item.user_name }}</text>
       <view class="line"></view>
-      <text class="info">手机号：{{ item.tel }}
-        邮箱:{{ item.email }}
+      <text class="info">手机号：{{ item.phone }}
+        邮箱:{{ item.mailbox }}
       </text>
     </view>
-    <image wx:if="{{ item.chosen }}" class="gou" src="/images/gou.png"></image>
+    <image wx:if="{{ item.chosen==2 }}" class="gou" src="/images/gou.png"></image>
     <view class="btn">
-      <view class="choose" wx:if="{{ ! item.chosen }}" data-idx="{{ index }}" bindtap="choose">选定</view>
+      <view class="choose" wx:if="{{ item.chosen==1 }}" data-idx="{{ index }}" bindtap="choose">选定</view>
       <view class="choose" wx:else bindtap="cancel" data-idx="{{ index }}">取消选定</view>
     </view>
   </view>

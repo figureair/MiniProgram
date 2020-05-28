@@ -86,7 +86,7 @@ class ActivityController extends BaseController {
         $data['other']=$_POST['other'];
         $data['user_name']=$_POST['user_name'];
         $data['user_face']=$_POST['user_face'];
-        $data['official']=$_POST['official'];
+
         //插入数据
         $result=$Activity->add($data);
 
@@ -110,7 +110,7 @@ class ActivityController extends BaseController {
             $return_data['data']['other']=$_POST['other'];
             $return_data['data']['user_face']=$_POST['user_face'];
             $return_data['data']['user_name']=$_POST['user_name'];
-            $return_data['data']['official']=$_POST['official'];//添加官方属性
+
 
             $this->ajaxReturn($return_data);
         }
@@ -373,7 +373,7 @@ class ActivityController extends BaseController {
 
 
     /**
-     * 获取指定用户发布的活动与招募
+     * 获取指定用户发布的活动
      * @return [type] [description]
      */
     public function get_user_activities(){
@@ -393,6 +393,47 @@ class ActivityController extends BaseController {
         //设置查询条件
         $where=array();
         $where['user_id']=$_POST['user_id'];
+        $where['activity_type']=1;
+        //实例化查询对象
+        $activitis=$Activity->where($where)->order('id desc')->select();
+        //调整starttime与endtime格式
+        foreach ($activitis as $key => $value) {
+
+            $activitis[$key]['starttime']=date('Y-m-d H:i:s', $value['starttime']);
+            $activitis[$key]['endtime']=date('Y-m-d H:i:s', $value['endtime']);
+        }
+
+        $return_data=array();
+        $return_data['error_code']=0;
+        $return_data['msg']='数据获取成功';
+        $return_data['data']=$activitis;
+
+        $this->ajaxReturn($return_data);
+    }
+
+
+    /**
+     * 获取指定用户发布的招募
+     * @return [type] [description]
+     */
+    public function get_user_recruits(){
+
+        //参数缺失
+        if(!$_POST['user_id']){
+
+            $return_data=array();
+            $return_data['error_code']=1;
+            $return_data['msg']='参数不足:user_id';
+
+            $this->ajaxReturn($return_data);
+        }
+        //实例化数据库表
+        $Activity=M('activity');
+
+        //设置查询条件
+        $where=array();
+        $where['user_id']=$_POST['user_id'];
+        $where['activity_type']=2;
         //实例化查询对象
         $activitis=$Activity->where($where)->order('id desc')->select();
         //调整starttime与endtime格式
