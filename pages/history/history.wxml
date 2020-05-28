@@ -4,7 +4,7 @@
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片 -->
-	<image src="/images/history.jpg" class="top_pic"></image>
+	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/history.jpg" class="top_pic"></image>
 
 	<!-- 我参加的 我发布的 栏 -->
 	<view class="switch">

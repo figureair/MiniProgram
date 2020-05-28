@@ -3,7 +3,7 @@
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片与发布按钮 -->
-	<image src="/images/work.jpg" class="top_pic"></image>
+	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/work.jpg" class="top_pic"></image>
 	<view class="releaseblock">
 		<view class="release" bindtap="toRelease">
 			<image src="/images/add.png" class="add"></image>
