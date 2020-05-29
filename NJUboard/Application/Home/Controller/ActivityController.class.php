@@ -127,18 +127,29 @@ class ActivityController extends BaseController {
 
 
     /**
-     * （活动招募页面专用）获得所有活动与招募
+     * （活动招募页面专用）获得所有活动或招募
      * @return [type] [description]
      */
     public function get_all_activities(){
 
+        if(!$_POST['activity_type']){
+            $return_data=array();
+            $return_data['error_code']=1;
+            $return_data['msg']='参数不足: activity_type';
+
+            $this->ajaxReturn($return_data);
+        }
+
         //实例化数据库表
         $Activity=M('activity');
+
+        $where=array();
+        $where['activity_type']=$_POST['activity_type'];
 
         $result=array();
 
         //实例化查询对象
-        $activitis=$Activity->order('id desc')->select();
+        $activitis=$Activity->where($where)->order('id desc')->select();
 
         foreach ($activitis as $key => $value) {
             if($value['state']==3){

@@ -218,16 +218,27 @@ class RecordController extends BaseController {
 
             $return_data=array();
             $return_data['error_code']=1;
-            $return_data['msg']='参数不足:user_id';
+            $return_data['msg']='参数不足: user_id';
 
             $this->ajaxReturn($return_data);
         }
+        if(!$_POST['activity_type']){
+
+            $return_data=array();
+            $return_data['error_code']=1;
+            $return_data['msg']='参数不足: activity_type';
+
+            $this->ajaxReturn($return_data);
+        }
+
+
         //实例化数据库表
         $Record=M('record');
         $Activity=M('activity');
         //设置查询条件
         $where=array();
         $where['user_id']=$_POST['user_id'];
+        $where['activity_type']=$_POST['activity_type'];
         //实例化查询对象
         $records=$Record->where($where)->order('activity_id desc')->select();//->toArray()
 
