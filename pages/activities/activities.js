@@ -63,7 +63,9 @@ Page({
     })
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_all_activities',
-      data: {},
+      data: {
+        activity_type: 1
+      },
       method: "POST",
       header: {
         'content-type': "application/x-www-form-urlencoded"

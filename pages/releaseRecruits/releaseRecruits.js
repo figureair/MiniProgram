@@ -147,8 +147,8 @@ Page({
    */ 
   submit(){  
     var that=this  
-    this.data.activity_type=2;
-    if(this.data.activity_name==''){
+    that.data.activity_type=2;
+    if(that.data.activity_name==''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -156,7 +156,7 @@ Page({
       })
       return
     }
-    else if(this.data.place == ''){
+    else if(that.data.place == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -164,7 +164,7 @@ Page({
       })
       return
     }
-    else if(this.data.reward== ''){
+    else if(that.data.reward== ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -172,7 +172,7 @@ Page({
       })
       return
     }
-    else if(this.data.phone == ''){
+    else if(that.data.phone == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -182,9 +182,9 @@ Page({
     }
     //检查时间正确性
     var systime = util.formatTime(new Date())
-    var sdt = this.data.startDate+' '+this.data.startTime
-    var edt = this.data.endDate+' '+this.data.endTime
-    if(! this.isCorrectTime(systime,sdt)){
+    var sdt = that.data.startDate+' '+that.data.startTime
+    var edt = that.data.endDate+' '+that.data.endTime
+    if(! that.isCorrectTime(systime,sdt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -192,7 +192,7 @@ Page({
       })
       return
     }
-    else if(! this.isCorrectTime(systime,edt)){
+    else if(! that.isCorrectTime(systime,edt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -200,7 +200,7 @@ Page({
       })
       return
     }
-    else if(! this.isCorrectTime(sdt,edt)){
+    else if(! that.isCorrectTime(sdt,edt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -209,19 +209,19 @@ Page({
       return
     }
     var is_urgent=false;
-    if(this.status=="加急") var is_urgent=true;
+    if(that.status=="加急") var is_urgent=true;
     var toreleaserecruit={
-      state : this.data.state,
-      activity_name : this.data.activity_name,
-      activity_type:this.data.activity_type,
-      startDate:this.data.startDate,
-      endDate:this.data.endDate,
-      startTime:this.data.startTime,
-      endTime:this.data.endTime,
-      place : this.data.place,
-      reward : this.data.reward,
-      phone : this.data.phone,
-      other : this.data.other,
+      state : that.data.state,
+      activity_name : that.data.activity_name,
+      activity_type:that.data.activity_type,
+      startDate:that.data.startDate,
+      endDate:that.data.endDate,
+      startTime:that.data.startTime,
+      endTime:that.data.endTime,
+      place : that.data.place,
+      reward : that.data.reward,
+      phone : that.data.phone,
+      other : that.data.other,
     
     }
    
@@ -231,20 +231,26 @@ Page({
     title: '发布中...',
     })
 
+    console.log('that.data------------------------')
+    getApp().globalData.activity_data={}
+    getApp().globalData.activity_data=toreleaserecruit
+    console.log(getApp().globalData.activity_data)
+
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
-        activity_name: that.actname,
+        activity_name: getApp().globalData.activity_data.activity_name,
         activity_type: 2,
-        state: that.state,
-        starttime: that.startDate + that.startTime,
-        endtime: that.endDate + that.endTime,
-        place: that.place,
-        phone: that.phone,
+        state: getApp().globalData.activity_data.state,
+        starttime: getApp().globalData.activity_data.startDate + ' ' + getApp().globalData.activity_data.startTime,
+        endtime: getApp().globalData.activity_data.endDate + ' ' + getApp().globalData.activity_data.endTime,
+        place: getApp().globalData.activity_data.place,
+        reward: getApp().globalData.activity_data.reward,
+        phone: getApp().globalData.activity_data.phone,
         picture: '',
         audience: '',
-        other: that.other,
+        other: getApp().globalData.activity_data.other,
         user_name: getApp().globalData.userInfo.user_name,
         user_face: getApp().globalData.userInfo.user_face,
       },
@@ -252,25 +258,26 @@ Page({
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
+      success: (res) => {
+        console.log('res.data*************************************')
+        console.log(res.data)
+        if(res.data.error_code != 0){
           wx.showModal({
             title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
               else{console.log('用户点击取消')}
             }
           })
         }else{
-          getApp.globalData.user=re.data.data,
+          getApp.globalData.user=res.data.data,
           wx.showModal({
             title: '恭喜',
-            content: '注册成功',
+            content: '发布成功！',
             showCancel: false,
-            success(re){},
-            complete: function(re){
+            success(res){},
+            complete: function(res){
               wx.reLaunch({
                 url: '/pages/activities/activities',
               })
@@ -278,17 +285,17 @@ Page({
           })
         }
       },
-      fail: function(res){
+      fail: (res) =>{
         wx.showModal({
           title: '欸~',
           content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
             else{console.log('用户点击取消')}
           }
         })
       },
-      complete: function(res){
+      complete: (res) => {
         wx.hideLoading()
       }
     })

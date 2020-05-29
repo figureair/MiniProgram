@@ -106,7 +106,7 @@ Page({
             success(res){},
             complete: function(res){
               wx.reLaunch({
-                url: 'pages/activities/activities',
+                url: '/pages/history/history',
               })
             }
           })

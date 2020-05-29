@@ -131,46 +131,48 @@ Page({
 
   onLoad: function(){
     var that =this
-
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
       data: {
-        user_id: getApp().globalData.userInfo.user_id,
+        user_id: getApp().globalData.user.user_id,
+        activity_type: 1
       },
       method: "POST",
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
+      success: (res) => {
+        console.log('*********************************')
+        console.log(getApp().globalData.user.user_id)
+        console.log(res.data)
+        if(res.data.error_code != 0){
           //console.log('error_code!=0')
           wx.showModal({
             title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
               else{console.log('用户点击取消')}
             }
           })
         }else{
           that.setData({
-            participations: re.data.data
+            participations: res.data.data
           })
           console.log(that.data.participations)
         }
       },
-      fail: function(re){
+      fail: (res) => {
         wx.showModal({
           title: '欸~',
           content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
             else{console.log('用户点击取消')}
           }
         })
       },
-      complete: function(re){
+      complete: function(res){
         wx.hideLoading()
       }
     })
@@ -192,6 +194,7 @@ Page({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
+        activity_type: 1
       },
       method: "POST",
       header: {
@@ -245,9 +248,10 @@ Page({
       ani: animation.export()
     }),
     wx.request({
-      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_recruits',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
       data: {
         user_id: getApp().globalData.userInfo.user_id,
+        activity_type: 2
       },
       method: "POST",
       header: {

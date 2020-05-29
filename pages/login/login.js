@@ -101,14 +101,16 @@ Page({
     wx.request({   
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/login', //接口地址
       data: {//数据为stuno password
-        user_sno: this.data.stuno,
-        password: this.data.password
+        user_sno: that.data.sno,
+        password: that.data.password
       },
       method: "POST",
       header: {
         'content-type': 'application/x-www-form-urlencoded' 
       },
       success: function (res) {
+        console.log(that.data.sno)
+        console.log(that.data.password)
         if(res.data.error_code != 0){
           console.log(res.data.error_code)
           console.log(res)
@@ -123,6 +125,8 @@ Page({
         }
         else{
           //console.log(res.data)
+          console.log(res.data.error_code)
+          console.log(res)
           getApp().globalData.user=res.data.data
           getApp().globalData.userInfo=res.data.data
           console.log(getApp().globalData.user)
@@ -133,7 +137,7 @@ Page({
             success(res){},
             complete: function(res){
               wx.reLaunch({
-                url: 'pages/activities/activities',
+                url: '/pages/recruit/recruit',
               })
             }
           })
