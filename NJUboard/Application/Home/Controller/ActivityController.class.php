@@ -153,6 +153,63 @@ class ActivityController extends BaseController {
 
         foreach ($activitis as $key => $value) {
             if($value['state']==3){
+                $activitis[$key]['starttime']=date('Y/m/d H:i:s', $value['starttime']);
+                $activitis[$key]['endtime']=date('Y/m/d H:i:s', $value['endtime']);
+                array_push($result, $activitis[$key]);
+            }
+        }
+        //调整starttime与endtime格式
+        foreach ($activitis as $key => $value) {
+            if($value['state']!=3&&$value['state']!=4){
+                $activitis[$key]['starttime']=date('Y/m/d H:i:s', $value['starttime']);
+                $activitis[$key]['endtime']=date('Y/m/d H:i:s', $value['endtime']);
+                array_push($result, $activitis[$key]);
+            }
+        }
+
+
+
+        $return_data=array();
+        $return_data['error_code']=0;
+        $return_data['msg']='数据获取成功';
+        $return_data['data']=$activitis;
+
+        $this->ajaxReturn($return_data);
+
+    }
+
+
+    public function get_offical_recuits(){
+
+        if(!$_POST['activity_type']){
+            $return_data=array();
+            $return_data['error_code']=1;
+            $return_data['msg']='参数不足: activity_type';
+
+            $this->ajaxReturn($return_data);
+        }
+        if(!$_POST['official']){
+            $return_data=array();
+            $return_data['error_code']=1;
+            $return_data['msg']='参数不足: official';
+
+            $this->ajaxReturn($return_data);
+        }
+
+        //实例化数据库表
+        $Activity=M('activity');
+
+        $where=array();
+        $where['activity_type']=$_POST['activity_type'];
+        $where['official']=$_POST['official'];
+
+        $result=array();
+
+        //实例化查询对象
+        $activitis=$Activity->where($where)->order('id desc')->select();
+
+        foreach ($activitis as $key => $value) {
+            if($value['state']==3){
                 $activitis[$key]['starttime']=date('Y-m-d H:i:s', $value['starttime']);
                 $activitis[$key]['endtime']=date('Y-m-d H:i:s', $value['endtime']);
                 array_push($result, $activitis[$key]);
