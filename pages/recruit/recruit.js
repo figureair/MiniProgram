@@ -121,7 +121,8 @@ Page({
 
   //转化为官方栏
   toOfficial : function(e){
-    console.log('触发1');
+    console.log('触发1')
+    var that=this
     
     var animation = wx.createAnimation({
       duration: 300,

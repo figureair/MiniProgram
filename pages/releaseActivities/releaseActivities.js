@@ -3,6 +3,11 @@
 //submit()函数待补充√
 
 var util = require('../../utils/util.js');
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
 Page({
   /**
    * 页面的初始数据
@@ -16,6 +21,8 @@ Page({
     endDate: '',
     endTime: '',
     state: 0,
+    startTimeStamp: '',
+    endTimeStamp: ''
   },
 
   /**
@@ -144,6 +151,44 @@ Page({
       return
     }
 
+    
+    var year = this.data.startDate.substr(0, 4);
+    var month = this.data.startDate.substr(5,2);
+    var day = this.data.startDate.substr(8,2);
+    var hour = this.data.startTime.substr(0,2);
+    var minute = this.data.startTime.substr(3,2);
+    var seconds =this.data.startTime.substr(6,2);
+    this.setData({
+      startTimeStamp: [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, seconds].map(formatNumber).join(':')
+    })
+    console.log('startTimeStamp:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    console.log(that.data.startTimeStamp)
+    var timeTamp = Date.parse(that.data.startTimeStamp);
+    console.log('var timeTamp = Date.parse(repTime);')
+    console.log(timeTamp)
+    that.setData({
+      startTimeStamp: timeTamp/1000
+    })
+        
+    var year = this.data.endDate.substr(0, 4);
+    var month = this.data.endDate.substr(5,2);
+    var day = this.data.endDate.substr(8,2);
+    var hour = this.data.endTime.substr(0,2);
+    var minute = this.data.endTime.substr(3,2);
+    var seconds =this.data.endTime.substr(6,2);
+    this.setData({
+      endTimeStamp: [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, seconds].map(formatNumber).join(':')
+    })
+    console.log('endTimeStamp:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    console.log(that.data.endTimeStamp)
+    var timeTamp = Date.parse(that.data.endTimeStamp);
+    console.log('var timeTamp = Date.parse(repTime);')
+    console.log(timeTamp)
+    that.setData({
+      endTimeStamp: timeTamp/1000
+    })
+    
+
     //console.log('this.data~~~~~~~~~~~~~~~~~~~')
     //console.log(that.data)
     that.data['state']=that.state
@@ -170,8 +215,8 @@ Page({
               activity_name: getApp().globalData.activity_data.activity_name,
               activity_type: 1,
               state: getApp().globalData.activity_data.state,
-              starttime: getApp().globalData.activity_data.startDate,
-              endtime: getApp().globalData.activity_data.endDate,
+              starttime: that.data.startTimeStamp,
+              endtime: that.data.endTimeStamp,
               place: '',
               reward: '',
               phone: '',
