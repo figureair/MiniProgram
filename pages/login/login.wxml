@@ -2,7 +2,7 @@
 
 <view class="container"> 
 
-  <image class='back' src='/images/login.gif'></image>
+  <image class='back' src='https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/login.gif'></image>
 
   <view class="login-from">  
   <form bindsubmit="formSubmit" class='form'>

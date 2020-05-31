@@ -13,112 +13,112 @@ Page({
     acttype: ['','活动','招募'],
     is_MyParticipation : true, 
     participations:[ //我参加的
-      {
-        record_id:1,//记录id
-        id: 1,//活动id
-        state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
-        activity_type: 2, //种类，1:活动 2:招募
-        name : "很神奇的凑字数的南大团委",
-        work : "新年音乐会场务",
-        time : "12月30日 19：00 - 22：00",
-        place : "仙林校区大活",
-        reword : "20元饭票",
-        tel : "12345677899",
-        more : "搬搬道具，听现场指挥就行"
-      },
-      {
-        state: 2, //已完成
-        activity_type: 1,
-        name : "南京大学学生会",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
-      {
-        state: 3, //已退出
-        activity_type: 1, 
-        name : "南大团委",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
-      {
-        state: 4, //已取消
-        activity_type: 1, 
-        name : "南大团委",
-        actname : "十大歌手总决赛",
-        time : "5月28日",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
+    //   {
+    //     record_id:1,//记录id
+    //     id: 1,//活动id
+    //     state: 1, // 1为进行中，2为已完成，3为已退出，4为已取消
+    //     activity_type: 2, //种类，1:活动 2:招募
+    //     name : "很神奇的凑字数的南大团委",
+    //     work : "新年音乐会场务",
+    //     time : "12月30日 19：00 - 22：00",
+    //     place : "仙林校区大活",
+    //     reword : "20元饭票",
+    //     tel : "12345677899",
+    //     more : "搬搬道具，听现场指挥就行"
+    //   },
+    //   {
+    //     state: 2, //已完成
+    //     activity_type: 1,
+    //     name : "南京大学学生会",
+    //     actname : "十大歌手总决赛",
+    //     time : "5月28日",
+    //     target : "全体在校本科生",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
+    //   {
+    //     state: 3, //已退出
+    //     activity_type: 1, 
+    //     name : "南大团委",
+    //     actname : "十大歌手总决赛",
+    //     time : "5月28日",
+    //     target : "全体在校本科生",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
+    //   {
+    //     state: 4, //已取消
+    //     activity_type: 1, 
+    //     name : "南大团委",
+    //     actname : "十大歌手总决赛",
+    //     time : "5月28日",
+    //     target : "全体在校本科生",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
     ],
     releases:[
-      {
-        state: 3, // 1 为进行中，2 为已完成，3为加急，4为取消
-        activity_type: 2, //种类，包括“活动”和“招募”
-        //以下为招募专属信息
-        name : "南大团委",
-        work : "海报制作招募",
-        time : "5月30日 22：00前完成",
-        place : "无",
-        reword : "100元",
-        tel : "12345677899",
-        more : "听我指挥",
-        //以下为活动信息
-        actname : "",
-        target : "",
-        detail: "",
-      },
-      {
-        state: 2, // 已完成
-        activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
-        //以下为招募专属信息
-        work : "",
-        place : "",
-        reword : "",
-        tel : "",
-        more : "",
-        //以下为活动信息
-        actname : "十大歌手总决赛",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
-      {
-        state: 1, // 加急
-        activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
-        //以下为招募专属信息
-        work : "",
-        place : "",
-        reword : "",
-        tel : "",
-        more : "",
-        //以下为活动信息
-        actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-        target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
-      {
-        state: 4, // 已取消
-        activity_type: 1, //种类，包括“活动”和“招募”
-        name : "南大团委",
-        time : "5月30日 22：00前完成",
-        //以下为招募专属信息
-        work : "",
-        place : "",
-        reword : "",
-        tel : "",
-        more : "",
-        //以下为活动信息
-        actname : "十大歌手总决赛",
-        target : "全体在校本科生",
-        detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-      },
+    //   {
+    //     state: 3, // 1 为进行中，2 为已完成，3为加急，4为取消
+    //     activity_type: 2, //种类，包括“活动”和“招募”
+    //     //以下为招募专属信息
+    //     name : "南大团委",
+    //     work : "海报制作招募",
+    //     time : "5月30日 22：00前完成",
+    //     place : "无",
+    //     reword : "100元",
+    //     tel : "12345677899",
+    //     more : "听我指挥",
+    //     //以下为活动信息
+    //     actname : "",
+    //     target : "",
+    //     detail: "",
+    //   },
+    //   {
+    //     state: 2, // 已完成
+    //     activity_type: 1, //种类，包括“活动”和“招募”
+    //     name : "南大团委",
+    //     time : "5月30日 22：00前完成",
+    //     //以下为招募专属信息
+    //     work : "",
+    //     place : "",
+    //     reword : "",
+    //     tel : "",
+    //     more : "",
+    //     //以下为活动信息
+    //     actname : "十大歌手总决赛",
+    //     target : "全体在校本科生",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
+    //   {
+    //     state: 1, // 加急
+    //     activity_type: 1, //种类，包括“活动”和“招募”
+    //     name : "南大团委",
+    //     time : "5月30日 22：00前完成",
+    //     //以下为招募专属信息
+    //     work : "",
+    //     place : "",
+    //     reword : "",
+    //     tel : "",
+    //     more : "",
+    //     //以下为活动信息
+    //     actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
+    //     target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
+    //   {
+    //     state: 4, // 已取消
+    //     activity_type: 1, //种类，包括“活动”和“招募”
+    //     name : "南大团委",
+    //     time : "5月30日 22：00前完成",
+    //     //以下为招募专属信息
+    //     work : "",
+    //     place : "",
+    //     reword : "",
+    //     tel : "",
+    //     more : "",
+    //     //以下为活动信息
+    //     actname : "十大歌手总决赛",
+    //     target : "全体在校本科生",
+    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
+    //   },
     ]
   },
 
@@ -127,53 +127,6 @@ Page({
    */
   onShow: function () {
     this.onLoad()
-  },
-
-  onLoad: function(){
-    var that =this
-
-    wx.request({
-      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
-      data: {
-        user_id: getApp().globalData.userInfo.user_id,
-      },
-      method: "POST",
-      header: {
-        'content-type': "application/x-www-form-urlencoded"
-      },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
-          //console.log('error_code!=0')
-          wx.showModal({
-            title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
-              else{console.log('用户点击取消')}
-            }
-          })
-        }else{
-          that.setData({
-            participations: re.data.data
-          })
-          console.log(that.data.participations)
-        }
-      },
-      fail: function(re){
-        wx.showModal({
-          title: '欸~',
-          content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
-            else{console.log('用户点击取消')}
-          }
-        })
-      },
-      complete: function(re){
-        wx.hideLoading()
-      }
-    })
   },
 
   //转为我参加的
@@ -187,47 +140,6 @@ Page({
     that.setData({
       is_MyParticipation : true,
       ani : animation.export()
-    }),
-    wx.request({
-      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
-      data: {
-        user_id: getApp().globalData.userInfo.user_id,
-      },
-      method: "POST",
-      header: {
-        'content-type': "application/x-www-form-urlencoded"
-      },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
-          wx.showModal({
-            title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
-              else{console.log('用户点击取消')}
-            }
-          })
-        }else{
-          that.setData({
-            participations: re.data.data
-          })
-          console.log(that.data.participations)
-        }
-      },
-      fail: function(re){
-        wx.showModal({
-          title: '欸~',
-          content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
-            else{console.log('用户点击取消')}
-          }
-        })
-      },
-      complete: function(re){
-        wx.hideLoading()
-      }
     })
   },
 
@@ -243,48 +155,103 @@ Page({
     this.setData({
       is_MyParticipation : false,
       ani: animation.export()
-    }),
+    })
+  },
+
+  onLoad: function(){
+    var that =this
     wx.request({
-      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_recruits',
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/get_user_participates',
       data: {
-        user_id: getApp().globalData.userInfo.user_id,
+        user_id: getApp().globalData.user.user_id,
       },
       method: "POST",
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
+      success: (res) => {
+        if(res.data.error_code != 0){
           wx.showModal({
             title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
-              else{console.log('用户点击取消')}
+            showCancel:false,
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
             }
           })
         }else{
           that.setData({
-            releases: re.data.data
+            participations: res.data.data
           })
-          console.log(that.data.releases)
+          //去掉时间中的秒
+          for(var i = 0; i <that.data.participations.length; i++){
+            console.log("看这！"+ that.data.participations[i].starttime.substr(0,16));
+            var starttime = 'participations[' + i + '].starttime'
+            var endtime = 'participations[' + i + '].endtime'
+            that.setData({
+              [starttime] : that.data.participations[i].starttime.substr(0,16) ,
+              [endtime] : that.data.participations[i].endtime.substr(0,16)
+            })
+          }
         }
       },
-      fail: function(re){
+      fail: (res) => {
         wx.showModal({
-          title: '欸~',
-          content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
-            else{console.log('用户点击取消')}
+          title: '提示！',
+          showCancel:false,
+          content: '亲，网络不好哦',
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
           }
         })
-      },
-      complete: function(re){
-        wx.hideLoading()
       }
     })
+    wx.request({
+      url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/get_user_activities',
+      data: {
+        user_id: getApp().globalData.user.user_id
+      },
+      method: "POST",
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success(res){
+        if(res.data.error_code != 0){
+          wx.showModal({
+            title: '提示！',
+            showCancel:false,
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
+            }
+          })
+        }else{
+          that.setData({
+            releases: res.data.data
+          })
+          //去掉时间中的秒
+          for(var i = 0; i <that.data.releases.length; i++){
+            var starttime = 'releases[' + i + '].starttime'
+            var endtime = 'releases[' + i + '].endtime'
+            that.setData({
+              [starttime] : that.data.releases[i].starttime.substr(0,16) ,
+              [endtime] : that.data.releases[i].endtime.substr(0,16)
+            })
+          }
+        }
+      },
+      fail: function(res){
+        wx.showModal({
+          title: '提示',
+          showCancel:false,
+          content: '亲，网络不好哦',
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
+          }
+        })
+      }
+    })
+    console.log(this.data)
   },
 
   //点击详情按钮跳转到活动对应的微信推文
@@ -332,7 +299,7 @@ Page({
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/exit_activity', //接口地址
             data: {
-              record_id:that.data.participations[idx].record_id
+              record_id:that.data.participations[idx].id
             },
             method: "POST",
             header: {
@@ -370,11 +337,7 @@ Page({
                   if(res.confirm) console.log('用户选择确定')
                 },
               })
-            },
-            // complete:function(res){
-            //   wx.hideLoading(),
-            //   wx.navigateBack()
-            // }
+            }
           })
         }
       }
@@ -398,12 +361,12 @@ Page({
     else{
       if(list[idx].activity_type==1){
         wx.navigateTo({
-          url: '/pages/amendActInfor/amendActInfor',
+          url: '/pages/amendActInfor/amendActInfor?id='+this.data.releases[idx].id,
         })
       }
       else if(list[idx].activity_type==2){
         wx.navigateTo({
-          url: '/pages/amendRec/amendRec',
+          url: '/pages/amendRec/amendRec?id='+this.data.releases[idx].id,
         })
       }
     }
@@ -414,7 +377,7 @@ Page({
     //此处还需要活动/招募ID来定位是哪个活动/招募的报名情况，并作为参数传给URL
     var idx = e.currentTarget.dataset.idx
     wx.navigateTo({
-      url: '/pages/situation/situation',
+      url: '/pages/situation/situation?id='+this.data.releases[idx].id
     })
   }
 })

@@ -79,7 +79,6 @@ class RecordController extends BaseController {
         $result=array();
         $all_record=$Record->where($where)->select();
 
-        if($all_record){
             $User=M('user');
             foreach ($all_record as $key => $record) {
                 if($record['state']!=3){
@@ -97,14 +96,7 @@ class RecordController extends BaseController {
             $return_data['msg']='查询成功';
             $return_data['all_record']=$result;
             $this->ajaxReturn($return_data);
-        }
-        else{
-            $return_data=array();
-            $return_data['error_code']=2;
-            $return_data['msg']='没有该活动';
-
-            $this->ajaxReturn($return_data);
-        }
+  
 
     }
 
@@ -149,6 +141,8 @@ class RecordController extends BaseController {
 
              $this->ajaxReturn($return_data);
         }
+        $data=array();
+        $data['activity_id']=$_POST['activity_id'];
 
         $data['user_id']=$_POST['user_id'];
 
@@ -187,7 +181,6 @@ class RecordController extends BaseController {
                     $this->ajaxReturn($return_data);
             }
         }
-
         $data['state']=$_POST['state'];
 
         $result=$Record->add($data);

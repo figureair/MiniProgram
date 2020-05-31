@@ -4,7 +4,7 @@
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片与发布按钮 -->
-	<image src="/images/run.jpg" class="top_pic"></image>
+	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/run.jpg" class="top_pic"></image>
 	<view class="releaseblock">
 		<view class="release" bindtap="toRelease">
 			<image src="/images/add.png" class="add"></image>
@@ -25,7 +25,9 @@
 				<view class="name">{{item.user_name}}</view>
 			</view>
       <text class="actname">{{ item.activity_name }}</text>
-			<text class="detail">时间：{{ item.starttime }} 至 {{ item.endtime }}</text>
+			<text class="detail">开始时间：{{ item.starttime }}
+				结束时间：{{ item.endtime }}
+			</text>
       <view class="signup" data-idx="{{index}}" bindtap="signUp">马上报名</view>
 		</view>
 	</view>

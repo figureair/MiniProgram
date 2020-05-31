@@ -9,7 +9,7 @@
 		</view>
 		<view class="textView">
 			<text class="nickname">昵称：{{user_name}}</text>
-			<text class="studentID">学号：{{user_id}}</text>
+			<text class="studentID">学号：{{user_sno}}</text>
 		</view>
 	</view>
 	<view class="descriptionView">

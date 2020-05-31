@@ -4,7 +4,7 @@
 
 <scroll-view scroll-y="true" class="scroll">
 	<!-- 顶部图片 -->
-	<image src="/images/history.jpg" class="top_pic"></image>
+	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/history.jpg" class="top_pic"></image>
 
 	<!-- 我参加的 我发布的 栏 -->
 	<view class="switch">
@@ -22,15 +22,16 @@
 		<view class="content">
 			<view class="name">{{item.user_name}}</view>
 			<text class="detail" wx:if="{{ item.activity_type==2 }}">工作：{{ item.activity_name }}
-        时间：{{ item.starttime }} 至 {{ item.endtime }}
+        开始时间：{{ item.starttime }}
+				结束时间：{{ item.endtime }}
         地点：{{ item.place }}
         报酬：{{ item.reward }}
         联系方式：{{ item.phone }}
         备注：{{ item.other }}
       </text>
-			<text class="detail" wx:if="{{ item.activity_type==1 }}">
-			  活动：{{ item.activity_name }}
-				时间：{{ item.starttime }} 至 {{ item.endtime }}
+			<text class="detail" wx:if="{{ item.activity_type==1 }}">活动：{{ item.activity_name }}
+				开始时间：{{ item.starttime }} 
+				结束时间：{{ item.endtime }}
 			</text>
 		</view>
 

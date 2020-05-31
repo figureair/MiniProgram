@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user_id:'1',
-    user_sno:'180000000',
-    user_name: '蓝小鲸',
-    face_url: '/images/defaultAvatar.png',
-    description: '本人尚未添加描述哦~',
-    phone: 12312341234,
-    mailbox: '123@mail.com',
-    password:'123'
+    user_id:'',
+    user_sno:'',
+    user_name: '',
+    face_url: '',
+    description: '',
+    phone: '',
+    mailbox: '',
+    password:''
   },
 
   // 修改头像
@@ -50,7 +50,7 @@ Page({
   // 修改绑定的手机号
   bindChangePhoneNumber: function (e) {
     this.setData({
-      phoneNumber: e.detail.value
+      phone: e.detail.value
     })
   },
 
@@ -63,10 +63,6 @@ Page({
 
   // 保存修改
   saveChanges: function () {
-    wx.setStorage({
-      data: this.data,
-      key: 'newInf',
-    })
     var that=this
     console.log(that.data)
     wx.showLoading({title: '保存中'})
@@ -100,6 +96,7 @@ Page({
         }
         else{ 
           getApp().globalData.user=res.data.data
+          console.log(res.data.data)
           wx.showModal({
             title: '提示！',
             content: '保存成功',
@@ -135,14 +132,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var inf = wx.getStorageSync('rawInf');
+    var inf = getApp().globalData.user;
     if (inf) {
       this.setData({
+        user_id: inf.user_id,
+        user_sno: inf.user_sno,
         user_name: inf.user_name,
         face_url: inf.face_url,
         description: inf.description,
         phone: inf.phone,
-        mailbox: inf.mailbox
+        mailbox: inf.mailbox,
+        password: inf.password,
       })
     }
   },

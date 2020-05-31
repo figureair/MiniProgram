@@ -71,7 +71,8 @@ Page({
     user_id:'',
     user_face:'',
     user_name:'',
-    other:''
+    other:'',
+    official:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -127,7 +128,9 @@ Page({
             user_id:res.data.data.user_id,
             user_face:res.data.data.user_face,
             other:res.data.data.other,
-            phone:res.data.data.phone
+            phone:res.data.data.phone,
+            place:res.data.data.place,
+            official:res.data.data.official
           })
         }
       },
@@ -142,6 +145,7 @@ Page({
         })
       },
     })
+    console.log(this.data)
     if(that.data.state==3){
       this.data.checks[2].checked=true
   }
@@ -270,15 +274,7 @@ Page({
     var systime = util.formatTime(new Date())
     var sdt = this.data.startDate+' '+this.data.startTime
     var edt = this.data.endDate+' '+this.data.endTime
-    if(! this.isCorrectTime(systime,sdt)){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
-      })
-      return
-    }
-    else if(! this.isCorrectTime(systime,edt)){
+    if(! this.isCorrectTime(systime,edt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -300,8 +296,8 @@ Page({
     var that=this
     var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
     var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
-    var starttime=startdate.valueOf()
-    var endtime=enddate.valueOf()
+    var starttime=startdate.valueOf()/1000
+    var endtime=enddate.valueOf()/1000
     wx.showLoading({title: '修改中'})
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
@@ -318,7 +314,8 @@ Page({
         other:that.data.other,
         user_id:that.data.user_id,
         user_face:that.data.user_face,
-        user_name:that.data.user_name
+        user_name:that.data.user_name,
+        official:that.data.official
       },
       method: "POST",
       header: {
@@ -359,11 +356,7 @@ Page({
             if(res.confirm) console.log('用户选择确定')
           },
         })
-      },
-      // complete:function(res){
-      //   wx.hideLoading(),
-      //   wx.navigateBack()
-      // }
+      }
     })
   },
 
@@ -384,53 +377,5 @@ Page({
       || (year1 == year2 && month1 == month2 && day1 == day2) && hour1 > hour2
       || (year1 == year2 && month1 == month2 && day1 == day2 && hour1 == hour2) && min1 > min2)
     return !isFault
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

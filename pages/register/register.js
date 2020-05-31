@@ -21,26 +21,7 @@ Page({
   confirminput(e){
     this.data.confirm=e.detail.value;
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
   submit: function(e){
     var that=this
     if(this.data.sno.length!=9||this.data.sno[0]!=1){
@@ -71,8 +52,7 @@ Page({
     wx.showLoading({
       title: '注册中...',
     })
-    console.log(e);
-    that.setData({ disabled: true});console.log(that.data.phone);
+    that.setData({ disabled: true});
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/User/signup', //接口地址
       data: {
@@ -85,79 +65,44 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' 
       },
       success: function (res) {
+        wx.hideLoading();
         if(res.data.error_code != 0){
           console.log(res.data)
           wx.showModal({
             title: '提示！',
+            showCancel:false,
             content: res.data.msg,
             success: function(res){
               if(res.confirm) console.log('用户选择确定')
-              else console.log('用户选择取消')
             },
           })
         }
         else{
+          console.log(res.data.data)
           getApp().globalData.user=res.data.data
-          console.log(getApp().globalData.user)
           wx.showModal({
             title: '恭喜！',
             content: '注册成功',
             showCancel: false,
-            success(res){},
             complete: function(res){
               wx.reLaunch({
-                url: 'pages/activities/activities',
+                url: '/pages/recruit/recruit',
               })
             }
           })
         }
       },
       fail:function(res){
+        wx.hideLoading();
         wx.showModal({
-          title: '欸~',
-          content: '你这网不行啊~',
+          title: '提示！',
+          showCancel:false,
+          content: '亲，网络不好哦',
           success: function(res){
             if(res.confirm) console.log('用户选择确定')
-            else console.log('用户选择取消')
           },
         })
       }
     })
-
-
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

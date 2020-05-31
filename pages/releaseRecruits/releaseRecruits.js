@@ -58,7 +58,7 @@ Page({
 
     activity_name:'',
     activity_type:'',
-    state:'',
+    state:'1',
     place:'',
     reward:'',
     phone:'',
@@ -67,6 +67,7 @@ Page({
     startTime: '',//开始时分秒,格式hh:mm:ss
     endDate: '',
     endTime: '',
+    official:2
   },
   //时间-当值变化时触发的事件start
   onInput(event) {
@@ -147,8 +148,8 @@ Page({
    */ 
   submit(){  
     var that=this  
-    this.data.activity_type=2;
-    if(this.data.activity_name==''){
+    that.data.activity_type=2;
+    if(that.data.activity_name==''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -156,7 +157,7 @@ Page({
       })
       return
     }
-    else if(this.data.place == ''){
+    else if(that.data.place == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -164,7 +165,7 @@ Page({
       })
       return
     }
-    else if(this.data.reward== ''){
+    else if(that.data.reward== ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -172,7 +173,7 @@ Page({
       })
       return
     }
-    else if(this.data.phone == ''){
+    else if(that.data.phone == ''){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -182,9 +183,9 @@ Page({
     }
     //检查时间正确性
     var systime = util.formatTime(new Date())
-    var sdt = this.data.startDate+' '+this.data.startTime
-    var edt = this.data.endDate+' '+this.data.endTime
-    if(! this.isCorrectTime(systime,sdt)){
+    var sdt = that.data.startDate+' '+that.data.startTime
+    var edt = that.data.endDate+' '+that.data.endTime
+    if(! that.isCorrectTime(systime,sdt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -192,7 +193,7 @@ Page({
       })
       return
     }
-    else if(! this.isCorrectTime(systime,edt)){
+    else if(! that.isCorrectTime(systime,edt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -200,7 +201,7 @@ Page({
       })
       return
     }
-    else if(! this.isCorrectTime(sdt,edt)){
+    else if(! that.isCorrectTime(sdt,edt)){
       wx.showModal({
         showCancel: false,
         title: '提示',
@@ -209,107 +210,75 @@ Page({
       return
     }
     var is_urgent=false;
-    if(this.status=="加急") var is_urgent=true;
-    var toreleaserecruit={
-      state : this.data.state,
-      activity_name : this.data.activity_name,
-      activity_type:this.data.activity_type,
-      startDate:this.data.startDate,
-      endDate:this.data.endDate,
-      startTime:this.data.startTime,
-      endTime:this.data.endTime,
-      place : this.data.place,
-      reward : this.data.reward,
-      phone : this.data.phone,
-      other : this.data.other,
-    
-    }
+    if(that.status=="加急") var is_urgent=true;
+
+    var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00')
+    var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00')
+    var starttime=startdate.valueOf()/1000
+    var endtime=enddate.valueOf()/1000
    
-    console.log(toreleaserecruit);
     //{toreleaserecruit}传到后端  与后端交互
     wx.showLoading({
     title: '发布中...',
     })
-
+  
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
       data: {
-        user_id: getApp().globalData.userInfo.user_id,
-        activity_name: that.actname,
+        user_id: getApp().globalData.user.user_id,
+        activity_name: that.data.activity_name,
         activity_type: 2,
-        state: that.state,
-        starttime: that.startDate + that.startTime,
-        endtime: that.endDate + that.endTime,
-        place: that.place,
-        phone: that.phone,
-        picture: '',
-        audience: '',
-        other: that.other,
-        user_name: getApp().globalData.userInfo.user_name,
-        user_face: getApp().globalData.userInfo.user_face,
+        state: that.data.state,
+        starttime: starttime,
+        endtime: endtime,
+        place: that.data.place,
+        reward: that.data.reward,
+        phone: that.data.phone,
+        other: that.data.other,
+        user_name: getApp().globalData.user.user_name,
+        user_face: getApp().globalData.user.face_url,
+        official:getApp().globalData.user.official
       },
       method: "POST",
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      success(re){
-        console.log(re.data)
-        if(re.data.error_code != 0){
+      success: (res) => {
+        wx.hideLoading();
+        if(res.data.error_code != 0){
           wx.showModal({
             title: '提示！',
-            content: re.data.msg,
-            success: function(re){
-              if(re.confirm){console.log('用户点击确定')}
-              else{console.log('用户点击取消')}
+            showCancel:false,
+            content: res.data.msg,
+            success: function(res){
+              if(res.confirm){console.log('用户点击确定')}
             }
           })
         }else{
-          getApp.globalData.user=re.data.data,
           wx.showModal({
             title: '恭喜',
-            content: '注册成功',
+            content: '发布成功！',
             showCancel: false,
-            success(re){},
-            complete: function(re){
+            success(res){},
+            complete: function(res){
               wx.reLaunch({
-                url: '/pages/activities/activities',
+                url: '/pages/recruit/recruit',
               })
             }
           })
         }
       },
-      fail: function(res){
+      fail: (res) =>{
+        wx.hideLoading();
         wx.showModal({
-          title: '欸~',
-          content: '网络不在状态',
-          success: function(re){
-            if(re.confirm){console.log('用户点击确定')}
-            else{console.log('用户点击取消')}
+          title: '提示！',
+          showCancel:false,
+          content: '亲，网络不好哦',
+          success: function(res){
+            if(res.confirm){console.log('用户点击确定')}
           }
         })
-      },
-      complete: function(res){
-        wx.hideLoading()
       }
-    })
-    setTimeout(function () {
-      wx.hideLoading()
-      wx.showToast({
-        title: '发布成功',
-        icon: 'success',
-        duration: 1000
-      })
-    }, 2000)
-
-    try {
-      wx.setStorageSync('toreleaserecuit1',toreleaserecruit);
-    } 
-    catch (e) { console.log("what")}
-    wx.switchTab({
-      url: '/pages/recruit/recruit'
-    })
-    wx.hideLoading({
-      complete: (res) => {'发布中...'},
     })
   },
   onLoad: function (options) {

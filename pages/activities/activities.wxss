@@ -103,6 +103,7 @@
   height: 400rpx;
   margin-top: 20rpx;
   margin-left: 10rpx;
+
   position: relative;
 }
 
@@ -135,6 +136,7 @@
   margin-top: 10rpx;
   line-height: 42rpx;
   font-weight: 200rpx;
+  margin-right: 20rpx;
 }
 
 .detail{
