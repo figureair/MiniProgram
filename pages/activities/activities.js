@@ -58,7 +58,7 @@ Page({
   onLoad: function(options){
     var that=this
 
-    wx.showModal({
+    wx.showLoading({
       title: '加载中',
     })
     wx.request({
