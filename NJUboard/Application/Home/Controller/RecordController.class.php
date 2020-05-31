@@ -79,7 +79,6 @@ class RecordController extends BaseController {
         $result=array();
         $all_record=$Record->where($where)->select();
 
-        if($all_record){
             $User=M('user');
             foreach ($all_record as $key => $record) {
                 if($record['state']!=3){
@@ -97,14 +96,7 @@ class RecordController extends BaseController {
             $return_data['msg']='查询成功';
             $return_data['all_record']=$result;
             $this->ajaxReturn($return_data);
-        }
-        else{
-            $return_data=array();
-            $return_data['error_code']=2;
-            $return_data['msg']='没有该活动';
-
-            $this->ajaxReturn($return_data);
-        }
+  
 
     }
 
@@ -149,6 +141,8 @@ class RecordController extends BaseController {
 
              $this->ajaxReturn($return_data);
         }
+        $data=array();
+        $data['activity_id']=$_POST['activity_id'];
 
         $data['user_id']=$_POST['user_id'];
 
@@ -187,7 +181,6 @@ class RecordController extends BaseController {
                     $this->ajaxReturn($return_data);
             }
         }
-
         $data['state']=$_POST['state'];
 
         $result=$Record->add($data);
@@ -218,27 +211,16 @@ class RecordController extends BaseController {
 
             $return_data=array();
             $return_data['error_code']=1;
-            $return_data['msg']='参数不足: user_id';
+            $return_data['msg']='参数不足:user_id';
 
             $this->ajaxReturn($return_data);
         }
-        if(!$_POST['activity_type']){
-
-            $return_data=array();
-            $return_data['error_code']=1;
-            $return_data['msg']='参数不足: activity_type';
-
-            $this->ajaxReturn($return_data);
-        }
-
-
         //实例化数据库表
         $Record=M('record');
         $Activity=M('activity');
         //设置查询条件
         $where=array();
         $where['user_id']=$_POST['user_id'];
-        $where['activity_type']=$_POST['activity_type'];
         //实例化查询对象
         $records=$Record->where($where)->order('activity_id desc')->select();//->toArray()
 

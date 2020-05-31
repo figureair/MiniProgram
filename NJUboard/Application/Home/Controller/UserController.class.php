@@ -78,10 +78,11 @@ class UserController extends BaseController {
                 $return_data['data']['user_name']=$result['user_name'];
                 $return_data['data']['phone']=$result['phone'];
                 $return_data['data']['password']=$_POST['password'];
-                $return_data['data']['user_sno']=$user['user_sno'];
-                $return_data['data']['description']=$user['description'];
-                $return_data['data']['face_url']=$user['face_url'];
-                $return_data['data']['mailbox']=$return_data['mailbox'];
+                $return_data['data']['user_sno']=$result['user_sno'];
+                $return_data['data']['description']=$result['description'];
+                $return_data['data']['face_url']=$result['face_url'];
+                $return_data['data']['mailbox']=$result['mailbox'];
+                $return_data['data']['official']=$result['official'];
 
                 $this->ajaxReturn($return_data);
             }
@@ -140,7 +141,9 @@ class UserController extends BaseController {
                 $return_data['data']['user_sno']=$user['user_sno'];
                 $return_data['data']['description']=$user['description'];
                 $return_data['data']['face_url']=$user['face_url'];
-                $return_data['data']['mailbox']=$return_data['mailbox'];
+                $return_data['data']['mailbox']=$user['mailbox'];
+                $return_data['data']['official']=$user['official'];
+                
 
                 $this->ajaxReturn($return_data);
             }
@@ -243,6 +246,7 @@ class UserController extends BaseController {
                 $return_data['data']['description']=$result['description'];
                 $return_data['data']['face_url']=$result['face_url'];
                 $return_data['data']['mailbox']=$result['mailbox'];
+                $return_data['data']['official']=$result['official'];
 
                 $this->ajaxReturn($return_data);
             }
