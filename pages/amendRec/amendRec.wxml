@@ -1,79 +1,76 @@
 <!--pages/releaseRecruits/releaseRecruits.wxml-->
 <!-- 发布招募 -->
 <view class="content">
-  <view class="prompt">填写信息尽量简洁哦~</view>
+	<view class="prompt">填写信息尽量简洁哦~</view>
 
-<view class="word">工作状态：</view>
-<view>
-          <checkbox-group name="checkbox" class="check">
-          <label bindtap='clicks' wx:for="{{checks}}" wx:key="{{checks}}" wx:for-index="index" data-index="{{index}}" class='{{item.checked?"is_checked":"unchecked"}}'>
-            <checkbox value="{{item.name}}" data-val="{{item.name}}" hidden='false' checked='{{item.checked}}' /> {{item.name}}
-          </label>
-        </checkbox-group>
-        </view>
+	<view class="word">工作状态：</view>
+	<view>
+		<checkbox-group name="checkbox" class="check">
+			<label bindtap='clicks' wx:for="{{checks}}" wx:key="{{checks}}" wx:for-index="index" data-index="{{index}}" class='{{item.checked?"is_checked":"unchecked"}}'>
+				<checkbox value="{{item.name}}" data-val="{{item.name}}" hidden='false' checked='{{item.checked}}' /> {{item.name}}
+			</label>
+		</checkbox-group>
+	</view>
+	<view class="word">工作名称：</view>
+	<view class="inputview">
+		<input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput" value="{{activity_name}}"></input>
+	</view>
+
+	<view class="word">工作时间：</view>
+	<!-- 选择开始结束时间 -->
+	<view class="settime">
+		<!-- 选择开始时间 -->
+		<view class="setstart">
+			<view class="timeTitle">开始</view>
+			<picker class="showchoice" mode="date" value="{{startDate}}" start="2020-05-01" end="2030-09-01" bindchange="bindStartDateChange">
+				<view>
+					{{startDate}}
+				</view>
+			</picker>
+			<picker class="showchoice" mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+				<view>
+					{{startTime}}
+				</view>
+			</picker>
+		</view>
+		<!-- 分割线 -->
+		<view class="line"></view>
+		<!-- 选择结束时间 -->
+		<view class="setend">
+			<view class="timeTitle">结束</view>
+			<picker class="showchoice" mode="date" value="{{endDate}}" start="2020-05-20" end="2030-05-20" bindchange="bindEndDateChange">
+				<view>
+					{{endDate}}
+				</view>
+			</picker>
+			<picker class="showchoice" mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+				<view>
+					{{endTime}}
+				</view>
+			</picker>
+		</view>
+	</view>
+
+	<view class="word">工作地点：</view>
+	<view class="inputview">
+		<input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" value="{{place}}" bindinput="placeinput"></input>
+	</view>
+
+	<view class="word">工作报酬：</view>
+	<view class="inputview">
+		<input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" value="{{reward}}" bindinput="rewordinput"></input>
+	</view>
 
 
+	<view class="word">联系方式：</view>
+	<view class="inputview">
+		<input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" value="{{phone}}" bindinput="telinput"></input>
+	</view>
 
-  <view class="word">工作名称：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作名称，限25字" placeholder-class="plas" maxlength="25" bindinput="nameinput" value="{{activity_name}}"></input>
-  </view>
+	<view class="word">备注：</view>
+	<view class='textview'>
+		<textarea type="text" placeholder="请输入工作备注，限200字" placeholder-class="center" maxlength="200" bindinput="moreinput" value="{{other}}"></textarea>
+	</view>
 
-  <view class="word">工作时间：</view>
-  <!-- 选择开始结束时间 -->
-  <view class="settime">
-    <!-- 选择开始时间 -->
-    <view class="setstart">
-      <view class="timeTitle">开始</view>
-      <picker class="showchoice" mode="date" value="{{startDate}}" start="2020-05-01" end="2030-09-01" bindchange="bindStartDateChange">
-        <view>
-          {{startDate}}
-        </view>
-      </picker>
-      <picker class="showchoice" mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
-        <view>
-          {{startTime}}
-        </view>
-      </picker>
-    </view>
-    <!-- 分割线 -->
-    <view class="line"></view>
-    <!-- 选择结束时间 -->
-    <view class="setend">
-      <view class="timeTitle">结束</view>
-      <picker class="showchoice" mode="date" value="{{endDate}}" start="2020-05-20" end="2030-05-20" bindchange="bindEndDateChange" >
-        <view>
-          {{endDate}}
-        </view>
-      </picker>
-      <picker class="showchoice" mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
-        <view>
-          {{endTime}}
-        </view>
-      </picker>
-    </view>
-  </view>
-
-  <view class="word">工作地点：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作地点，限25字" placeholder-class="plas" maxlength="25" value="{{place}}" bindinput="placeinput"></input>
-  </view>
-
-  <view class="word">工作报酬：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作报酬，限25字" placeholder-class="plas" maxlength="25" value="{{reward}}" bindinput="rewordinput"></input>
-  </view>
-  
-
-    <view class="word">联系方式：</view>
-  <view class="inputview">
-    <input class="input" type="text" placeholder="请输入工作联系方式" placeholder-class="plas" maxlength="25" value="{{tel}}" bindinput="telinput"></input>
-  </view>
-
-      <view class="word">备注：</view>
-  <view class='textview'>
-    <textarea   type="text" placeholder="请输入工作备注，限200字" placeholder-class="center" maxlength="200" bindinput="moreinput" value="{{other}}"></textarea>
-  </view>
-  
- <view class="submit" bindtap="clickSubmit">保存修改</view>
-</view>   
+	<view class="submit" bindtap="clickSubmit">保存修改</view>
+</view>
