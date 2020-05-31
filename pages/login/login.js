@@ -93,17 +93,9 @@ Page({
         }
         else{
           getApp().globalData.user=res.data.data
-          wx.showModal({
-            title: '恭喜！',
-            content: '登录成功',
-            showCancel: false,
-            success(res){},
-            complete: function(res){
-              wx.reLaunch({
-                url: '/pages/recruit/recruit',
-              })
-            }
-          })
+          wx.reLaunch({
+            url: '/pages/recruit/recruit',
+          }) 
         }
        },
       fail:function(res){
