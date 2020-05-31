@@ -181,30 +181,22 @@ Page({
       var systime = util.formatTime(new Date())
       var sdt = this.data.startDate+' '+this.data.startTime
       var edt = this.data.endDate+' '+this.data.endTime
-      // if(! this.isCorrectTime(systime,sdt)){
-      //   wx.showModal({
-      //     showCancel: false,
-      //     title: '提示',
-      //     content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
-      //   })
-      //   return
-      // }
-      // else if(! this.isCorrectTime(systime,edt)){
-      //   wx.showModal({
-      //     showCancel: false,
-      //     title: '提示',
-      //     content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
-      //   })
-      //   return
-      // }
-      // else if(! this.isCorrectTime(sdt,edt)){
-      //   wx.showModal({
-      //     showCancel: false,
-      //     title: '提示',
-      //     content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
-      //   })
-      //   return
-      // }
+      if(! this.isCorrectTime(systime,edt)){
+        wx.showModal({
+          showCancel: false,
+          title: '提示',
+          content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
+        })
+        return
+      }
+      else if(! this.isCorrectTime(sdt,edt)){
+        wx.showModal({
+          showCancel: false,
+          title: '提示',
+          content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
+        })
+        return
+      }
       //用户输入正确，则询问是否确认提交并做处理
       this.handleSubmit()
     }
