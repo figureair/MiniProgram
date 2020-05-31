@@ -71,7 +71,8 @@ Page({
     user_id:'',
     user_face:'',
     user_name:'',
-    other:''
+    other:'',
+    official:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -128,7 +129,8 @@ Page({
             user_face:res.data.data.user_face,
             other:res.data.data.other,
             phone:res.data.data.phone,
-            place:res.data.data.place
+            place:res.data.data.place,
+            official:res.data.data.official
           })
         }
       },
@@ -294,8 +296,8 @@ Page({
     var that=this
     var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
     var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
-    var starttime=startdate.valueOf()
-    var endtime=enddate.valueOf()
+    var starttime=startdate.valueOf()/1000
+    var endtime=enddate.valueOf()/1000
     wx.showLoading({title: '修改中'})
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
@@ -312,7 +314,8 @@ Page({
         other:that.data.other,
         user_id:that.data.user_id,
         user_face:that.data.user_face,
-        user_name:that.data.user_name
+        user_name:that.data.user_name,
+        official:that.data.official
       },
       method: "POST",
       header: {
@@ -353,11 +356,7 @@ Page({
             if(res.confirm) console.log('用户选择确定')
           },
         })
-      },
-      // complete:function(res){
-      //   wx.hideLoading(),
-      //   wx.navigateBack()
-      // }
+      }
     })
   },
 

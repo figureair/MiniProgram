@@ -58,7 +58,7 @@ Page({
 
     activity_name:'',
     activity_type:'',
-    state:'',
+    state:'1',
     place:'',
     reward:'',
     phone:'',
@@ -67,8 +67,7 @@ Page({
     startTime: '',//开始时分秒,格式hh:mm:ss
     endDate: '',
     endTime: '',
-    startTimeStamp: '',
-    endTimeStamp: ''
+    official:2
   },
   //时间-当值变化时触发的事件start
   onInput(event) {
@@ -213,110 +212,49 @@ Page({
     var is_urgent=false;
     if(that.status=="加急") var is_urgent=true;
 
-    var toreleaserecruit={
-      state : that.data.state,
-      activity_name : that.data.activity_name,
-      activity_type:that.data.activity_type,
-      startDate:that.data.startDate,
-      endDate:that.data.endDate,
-      startTime:that.data.startTime,
-      endTime:that.data.endTime,
-      place : that.data.place,
-      reward : that.data.reward,
-      phone : that.data.phone,
-      other : that.data.other,
-    
-    }
+    var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00')
+    var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00')
+    var starttime=startdate.valueOf()/1000
+    var endtime=enddate.valueOf()/1000
    
-    console.log(toreleaserecruit);
     //{toreleaserecruit}传到后端  与后端交互
     wx.showLoading({
     title: '发布中...',
     })
-
-
-    var year = this.data.startDate.substr(0, 4);
-    var month = this.data.startDate.substr(5,2);
-    var day = this.data.startDate.substr(8,2);
-    var hour = this.data.startTime.substr(0,2);
-    var minute = this.data.startTime.substr(3,2);
-    var seconds =this.data.startTime.substr(6,2);
-    this.setData({
-      startTimeStamp: [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, seconds].map(formatNumber).join(':')
-    })
-    console.log('startTimeStamp:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-    console.log(that.data.startTimeStamp)
-    var timeTamp = Date.parse(that.data.startTimeStamp);
-    console.log('var timeTamp = Date.parse(repTime);')
-    console.log(timeTamp)
-    that.setData({
-      startTimeStamp: timeTamp/1000
-    })
-        
-    var year = this.data.endDate.substr(0, 4);
-    var month = this.data.endDate.substr(5,2);
-    var day = this.data.endDate.substr(8,2);
-    var hour = this.data.endTime.substr(0,2);
-    var minute = this.data.endTime.substr(3,2);
-    var seconds =this.data.endTime.substr(6,2);
-    this.setData({
-      endTimeStamp: [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, seconds].map(formatNumber).join(':')
-    })
-    console.log('endTimeStamp:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-    console.log(that.data.endTimeStamp)
-    var timeTamp = Date.parse(that.data.endTimeStamp);
-    console.log('var timeTamp = Date.parse(repTime);')
-    console.log(timeTamp)
-    that.setData({
-      endTimeStamp: timeTamp/1000
-    })
-    
-
-    console.log('that.data------------------------')
-    getApp().globalData.activity_data={}
-    getApp().globalData.activity_data=toreleaserecruit
-    console.log(getApp().globalData.activity_data)
-
-    console.log('sdt, edt')
-    console.log(sdt)
-    console.log(edt)
-
+  
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
       data: {
-        user_id: getApp().globalData.userInfo.user_id,
-        activity_name: getApp().globalData.activity_data.activity_name,
+        user_id: getApp().globalData.user.user_id,
+        activity_name: that.data.activity_name,
         activity_type: 2,
-        state: getApp().globalData.activity_data.state,
-        starttime: that.data.startTimeStamp,
-        endtime: that.data.endTimeStamp,
-        place: getApp().globalData.activity_data.place,
-        reward: getApp().globalData.activity_data.reward,
-        phone: getApp().globalData.activity_data.phone,
-        picture: '',
-        audience: '',
-        other: getApp().globalData.activity_data.other,
+        state: that.data.state,
+        starttime: starttime,
+        endtime: endtime,
+        place: that.data.place,
+        reward: that.data.reward,
+        phone: that.data.phone,
+        other: that.data.other,
         user_name: getApp().globalData.user.user_name,
         user_face: getApp().globalData.user.face_url,
+        official:getApp().globalData.user.official
       },
       method: "POST",
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
       success: (res) => {
-        console.log('res.data*************************************')
-        console.log(res.data)
+        wx.hideLoading();
         if(res.data.error_code != 0){
           wx.showModal({
             title: '提示！',
+            showCancel:false,
             content: res.data.msg,
             success: function(res){
               if(res.confirm){console.log('用户点击确定')}
-              else{console.log('用户点击取消')}
             }
           })
         }else{
-          getApp.globalData.user=res.data.data,
           wx.showModal({
             title: '恭喜',
             content: '发布成功！',
@@ -331,37 +269,16 @@ Page({
         }
       },
       fail: (res) =>{
+        wx.hideLoading();
         wx.showModal({
-          title: '欸~',
-          content: '网络不在状态',
+          title: '提示！',
+          showCancel:false,
+          content: '亲，网络不好哦',
           success: function(res){
             if(res.confirm){console.log('用户点击确定')}
-            else{console.log('用户点击取消')}
           }
         })
-      },
-      complete: (res) => {
-        wx.hideLoading()
       }
-    })
-    setTimeout(function () {
-      wx.hideLoading()
-      wx.showToast({
-        title: '发布成功',
-        icon: 'success',
-        duration: 1000
-      })
-    }, 2000)
-
-    try {
-      wx.setStorageSync('toreleaserecuit1',toreleaserecruit);
-    } 
-    catch (e) { console.log("what")}
-    wx.switchTab({
-      url: '/pages/recruit/recruit'
-    })
-    wx.hideLoading({
-      complete: (res) => {'发布中...'},
     })
   },
   onLoad: function (options) {

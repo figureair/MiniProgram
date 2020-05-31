@@ -78,15 +78,15 @@ Page({
           })
         }
         else{
+          console.log(res.data.data)
           getApp().globalData.user=res.data.data
           wx.showModal({
             title: '恭喜！',
             content: '注册成功',
             showCancel: false,
-            success(res){},
             complete: function(res){
               wx.reLaunch({
-                url: '/pages/history/history',
+                url: '/pages/recruit/recruit',
               })
             }
           })

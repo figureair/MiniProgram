@@ -220,8 +220,8 @@ Page({
           //将结束信息发送给服务器
           var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
           var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
-          var starttime=startdate.valueOf()
-          var endtime=enddate.valueOf()
+          var starttime=startdate.valueOf()/1000
+          var endtime=enddate.valueOf()/1000
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -299,8 +299,8 @@ Page({
           //将取消信息发送给服务器
           var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
           var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
-          var starttime=startdate.valueOf()
-          var endtime=enddate.valueOf()
+          var starttime=startdate.valueOf()/1000
+          var endtime=enddate.valueOf()/1000
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -354,11 +354,7 @@ Page({
                   if(res.confirm) console.log('用户选择确定')
                 },
               })
-            },
-            // complete:function(res){
-            //   wx.hideLoading(),
-            //   wx.navigateBack()
-            // }
+            }
           })
         }
       }
@@ -383,8 +379,8 @@ Page({
           //将报名者信息发送给服务器
           var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
           var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
-          var starttime=startdate.valueOf()
-          var endtime=enddate.valueOf()
+          var starttime=startdate.valueOf()/1000
+          var endtime=enddate.valueOf()/1000
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/update_activity', //接口地址
             data: {
@@ -438,11 +434,7 @@ Page({
                   if(res.confirm) console.log('用户选择确定')
                 },
               })
-            },
-            // complete:function(res){
-            //   wx.hideLoading(),
-            //   wx.navigateBack()
-            // }
+            }
           })
         }
       }
