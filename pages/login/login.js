@@ -122,6 +122,9 @@ Page({
               else console.log('用户选择取消')
             },
           })
+          wx.reLaunch({
+            url: '/pages/login/login',
+          })
         }
         else{
           //console.log(res.data)
