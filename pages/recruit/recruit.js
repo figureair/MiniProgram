@@ -108,6 +108,7 @@ Page({
             non_official_recruits:unofficial
           })
         }
+        console.log(that.data);
       },
       fail: function(res){
         wx.hideLoading();
@@ -126,7 +127,6 @@ Page({
   //转化为官方栏
   toOfficial : function(e){
     console.log('触发1')
-    var that=this
     
     var animation = wx.createAnimation({
       duration: 300,
@@ -142,7 +142,7 @@ Page({
   //转化为非官方栏信息
   toNotOfficial : function(e){
     console.log('触发2');
-    
+
     var animation = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease',
@@ -171,18 +171,18 @@ Page({
       cancelColor: '#6E6E6E',
       confirmText: '是的！',
       confirmColor: '#71CD63',
-      success : function(res){
+      success:(res)=>{
         if(res.confirm){
           wx.showLoading({
             title: '报名中'
           })
           //此处待补充，将报名者信息发送给服务器
           var that=this
-          if(that.is_official){
+          if(that.data.is_official){
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/user_signup', //接口地址
-            data: {
-              activity_id:that.data.official_recruits[idx].activity_id,
+            data:{
+              activity_id:that.data.official_recruits[idx].id,
               user_id:getApp().globalData.user.user_id,
               state:1
             },
@@ -229,7 +229,7 @@ Page({
             wx.request({
               url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/user_signup', //接口地址
               data: {
-                activity_id:that.data.non_official_recruits[idx].activity_id,
+                activity_id:that.data.non_official_recruits[idx].id,
                 user_id:getApp().globalData.user.user_id,
                 state:1
               },

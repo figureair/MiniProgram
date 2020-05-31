@@ -296,8 +296,8 @@ Page({
         picture: '',
         audience: '',
         other: getApp().globalData.activity_data.other,
-        user_name: getApp().globalData.userInfo.user_name,
-        user_face: getApp().globalData.userInfo.user_face,
+        user_name: getApp().globalData.user.user_name,
+        user_face: getApp().globalData.user.face_url,
       },
       method: "POST",
       header: {

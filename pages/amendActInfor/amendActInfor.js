@@ -9,25 +9,26 @@ Page({
    */
   data: {
     //注：已去掉target数据项！！！
-    activity_id:'1',
-    chooseEnd: false,//是否选择结束。页面数据，不需保存
-    chooseCancel: false,//是否选择取消活动。页面数据，不需保存
-    state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
-    picture: '',//海报链接
-    activity_name: '123',//活动名
-    startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
-    startTime: '23:00',//开始时分,格式hh:mm
-    endDate: '2020-06-16',
-    endTime: '23:00',
-    user_id:'1',
-    user_face:'',
-    user_name:''
+    // activity_id:'1',
+    // chooseEnd: false,//是否选择结束。页面数据，不需保存
+    // chooseCancel: false,//是否选择取消活动。页面数据，不需保存
+    // state: 1,//活动状态，1 为进行中，2 为已完成，3为加急，4为取消
+    // picture: '',//海报链接
+    // activity_name: '123',//活动名
+    // startDate: '2020-05-29',//开始年月日,格式yyyy-mm-dd
+    // startTime: '23:00',//开始时分,格式hh:mm
+    // endDate: '2020-06-16',
+    // endTime: '23:00',
+    // user_id:'1',
+    // user_face:'',
+    // user_name:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     this.setData({
       activity_id: options.id,//url传入的活动id，int
     })
@@ -180,30 +181,30 @@ Page({
       var systime = util.formatTime(new Date())
       var sdt = this.data.startDate+' '+this.data.startTime
       var edt = this.data.endDate+' '+this.data.endTime
-      if(! this.isCorrectTime(systime,sdt)){
-        wx.showModal({
-          showCancel: false,
-          title: '提示',
-          content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
-        })
-        return
-      }
-      else if(! this.isCorrectTime(systime,edt)){
-        wx.showModal({
-          showCancel: false,
-          title: '提示',
-          content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
-        })
-        return
-      }
-      else if(! this.isCorrectTime(sdt,edt)){
-        wx.showModal({
-          showCancel: false,
-          title: '提示',
-          content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
-        })
-        return
-      }
+      // if(! this.isCorrectTime(systime,sdt)){
+      //   wx.showModal({
+      //     showCancel: false,
+      //     title: '提示',
+      //     content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
+      //   })
+      //   return
+      // }
+      // else if(! this.isCorrectTime(systime,edt)){
+      //   wx.showModal({
+      //     showCancel: false,
+      //     title: '提示',
+      //     content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
+      //   })
+      //   return
+      // }
+      // else if(! this.isCorrectTime(sdt,edt)){
+      //   wx.showModal({
+      //     showCancel: false,
+      //     title: '提示',
+      //     content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
+      //   })
+      //   return
+      // }
       //用户输入正确，则询问是否确认提交并做处理
       this.handleSubmit()
     }
@@ -282,11 +283,7 @@ Page({
                   if(res.confirm) console.log('用户选择确定')
                 },
               })
-            },
-            // complete:function(res){
-            //   wx.hideLoading(),
-            //   wx.navigateBack()
-            // }
+            }
           })
         }
       }

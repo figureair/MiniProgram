@@ -127,7 +127,8 @@ Page({
             user_id:res.data.data.user_id,
             user_face:res.data.data.user_face,
             other:res.data.data.other,
-            phone:res.data.data.phone
+            phone:res.data.data.phone,
+            place:res.data.data.place
           })
         }
       },
@@ -142,6 +143,7 @@ Page({
         })
       },
     })
+    console.log(this.data)
     if(that.data.state==3){
       this.data.checks[2].checked=true
   }
@@ -270,30 +272,30 @@ Page({
     var systime = util.formatTime(new Date())
     var sdt = this.data.startDate+' '+this.data.startTime
     var edt = this.data.endDate+' '+this.data.endTime
-    if(! this.isCorrectTime(systime,sdt)){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
-      })
-      return
-    }
-    else if(! this.isCorrectTime(systime,edt)){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
-      })
-      return
-    }
-    else if(! this.isCorrectTime(sdt,edt)){
-      wx.showModal({
-        showCancel: false,
-        title: '提示',
-        content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
-      })
-      return
-    }
+    // if(! this.isCorrectTime(systime,sdt)){
+    //   wx.showModal({
+    //     showCancel: false,
+    //     title: '提示',
+    //     content: '活动时间选择错误哦，请确保开始时间不早于当前时间~'
+    //   })
+    //   return
+    // }
+    // else if(! this.isCorrectTime(systime,edt)){
+    //   wx.showModal({
+    //     showCancel: false,
+    //     title: '提示',
+    //     content: '活动时间选择错误哦，请确保结束时间不早于当前时间~'
+    //   })
+    //   return
+    // }
+    // else if(! this.isCorrectTime(sdt,edt)){
+    //   wx.showModal({
+    //     showCancel: false,
+    //     title: '提示',
+    //     content: '活动时间选择错误哦，请确保结束时间不早于开始时间~'
+    //   })
+    //   return
+    // }
     var is_urgent=false;
     if(this.status=="加急") var is_urgent=true;
     //传到后端  与后端交互
@@ -384,53 +386,5 @@ Page({
       || (year1 == year2 && month1 == month2 && day1 == day2) && hour1 > hour2
       || (year1 == year2 && month1 == month2 && day1 == day2 && hour1 == hour2) && min1 > min2)
     return !isFault
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

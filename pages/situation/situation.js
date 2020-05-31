@@ -10,55 +10,55 @@ Page({
     total: 0,
     totalchosen: 0,
     people: [
-      {
-        record_id: 0,
-        user_name : '刘峰',
-        phone: '13318566749',
-        mailbox: '181250001@smail.nju.edu.cn',
-        chosen: 1,
-      },
-      {
-        record_id: 0,
-        user_name : '特朗普',
-        phone: '18918566749',
-        mailbox: '181250002@smail.nju.edu.cn',
-        chosen: 1,
-      },
-      {
-        record_id: 0,
-        user_name : 'Taylor Swift',
-        phone: '13318566520',
-        mailbox: '1989@gmail.com',
-        chosen: 2,
-      },
-      {
-        record_id: 0,
-        user_name : '无名',
-        phone: '13318566749',
-        mailbox: '181250001@smail.nju.edu.cn',
-        chosen: 1,
-      },
-      {
-        record_id: 0,
-        user_name : '无名',
-        phone: '13318566749',
-        mailbox: '181250001@smail.nju.edu.cn',
-        chosen: 1,
-      },
-      {
-        record_id: 0,
-        user_name : '无名',
-        phone: '13318566749',
-        mailbox: '181250001@smail.nju.edu.cn',
-        chosen: 1,
-      },
-      {
-        record_id: 0,
-        user_name : '无名',
-        phone: '13318566749',
-        mailbox: '181250001@smail.nju.edu.cn',
-        chosen: 1,
-      },
+      // {
+      //   record_id: 0,
+      //   user_name : '刘峰',
+      //   phone: '13318566749',
+      //   mailbox: '181250001@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : '特朗普',
+      //   phone: '18918566749',
+      //   mailbox: '181250002@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : 'Taylor Swift',
+      //   phone: '13318566520',
+      //   mailbox: '1989@gmail.com',
+      //   chosen: 2,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : '无名',
+      //   phone: '13318566749',
+      //   mailbox: '181250001@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : '无名',
+      //   phone: '13318566749',
+      //   mailbox: '181250001@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : '无名',
+      //   phone: '13318566749',
+      //   mailbox: '181250001@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
+      // {
+      //   record_id: 0,
+      //   user_name : '无名',
+      //   phone: '13318566749',
+      //   mailbox: '181250001@smail.nju.edu.cn',
+      //   chosen: 1,
+      // },
     ]
   },
 
@@ -67,8 +67,7 @@ Page({
    */
   onLoad: function (options) {
     //从history传来的活动id
-    console.log(options.id);
-    
+    console.log(options);
     this.setData({
       activity_id: options.id,
     })
@@ -94,9 +93,16 @@ Page({
           })
         }
         else{
-          console.log(res.data)
+          var tmpchosen=0;
+          for(var i=0;i<res.data.all_record.length;i++){
+            if(res.data.all_record[i].chosen==2){
+              tmpchosen=tmpchosen+1;
+            }
+          }
           that.setData({
-            people:res.data.all_record
+            total:res.data.all_record.length,
+            people:res.data.all_record,
+            totalchosen:tmpchosen
           })
         }
       },
@@ -112,14 +118,6 @@ Page({
       },
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -138,41 +136,6 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
   //被选定
   choose:function(e){
     var that=this
@@ -182,7 +145,7 @@ Page({
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/choose', //接口地址
       data: {
-        record_id:that.data.people[idx].record_id
+        record_id:that.data.people[idx].id
       },
       method: "POST",
       header: {
@@ -200,9 +163,10 @@ Page({
           })
         }
         else{
-          this.setData({
+          var nowchosen=that.data.totalchosen+1
+          that.setData({
             [chosen] : 2,
-            totalchosen : this.data.totalchosen + 1
+            totalchosen : nowchosen
           })
         }
       },
@@ -222,13 +186,14 @@ Page({
 
   //取消选定
   cancel: function(e){
+    var that=this
     var idx = e.currentTarget.dataset.idx
     var chosen = 'people[' + idx + '].chosen'
     //与后端交互
     wx.request({
       url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/choose', //接口地址
       data: {
-        record_id:that.data[idx].record_id
+        record_id:that.data.people[idx].id
       },
       method: "POST",
       header: {
@@ -246,9 +211,10 @@ Page({
           })
         }
         else{
-          this.setData({
+          var nowchosen=that.data.totalchosen-1
+          that.setData({
             [chosen] : 1,
-            totalchosen : this.data.totalchosen - 1
+            totalchosen : nowchosen
           })
         }
       },

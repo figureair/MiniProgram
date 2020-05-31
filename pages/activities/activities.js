@@ -137,7 +137,7 @@ Page({
       cancelColor: '#6E6E6E',
       confirmText: '是的！',
       confirmColor: '#71CD63',
-      success : function(res){
+      success :(res)=>{
         if(res.confirm){
           wx.showLoading({
             title: '报名中'
@@ -147,7 +147,7 @@ Page({
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Record/user_signup', //接口地址
             data: {
-              activity_id:that.data.activities[idx].activity_id,
+              activity_id:that.data.activities[idx].id,
               user_id:getApp().globalData.user.user_id,
               state:1
             },
@@ -179,6 +179,7 @@ Page({
               }
             },
             fail:function(res){
+              wx.hideLoading();
               wx.showModal({
                 title: '提示！',
                 content: '亲，网络不好哦',
@@ -187,7 +188,7 @@ Page({
                   if(res.confirm) console.log('用户选择确定')
                 },
               })
-            },
+            }
           })
         }
       }

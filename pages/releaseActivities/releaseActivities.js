@@ -189,10 +189,8 @@ Page({
     })
     
 
-    //console.log('this.data~~~~~~~~~~~~~~~~~~~')
-    //console.log(that.data)
+
     that.data['state']=that.state
-    getApp().globalData.activity_data=that.data
     //询问是否确认提交并做处理
     wx.showModal({
       title: '确认',
@@ -211,39 +209,36 @@ Page({
           wx.request({
             url: 'https://njuboard.applinzi.com/NJUboard/index.php/Home/Activity/publish_new_activity',
             data: {
-              user_id: getApp().globalData.userInfo.user_id,
-              activity_name: getApp().globalData.activity_data.activity_name,
+              user_id: getApp().globalData.user.user_id,
+              activity_name: that.data.activity_name,
               activity_type: 1,
-              state: getApp().globalData.activity_data.state,
+              state: that.data.state,
               starttime: that.data.startTimeStamp,
               endtime: that.data.endTimeStamp,
               place: '',
               reward: '',
               phone: '',
-              picture: getApp().globalData.activity_data.picture,
+              picture: that.data.picture,
               audience: '',
               other: '',
-              user_face: getApp().globalData.userInfo.user_face,
-              user_name: getApp().globalData.userInfo.user_name,
+              user_face: getApp().globalData.user.face_url,
+              user_name: getApp().globalData.user.user_name,
             },
             method: "POST",
             header: {
               'content-type': "application/x-www-form-urlencoded"
             },
             success: (res) => {
-              console.log('res.data::::::::')
-              console.log(res.data)
               if(res.data.error_code != 0){
                 wx.showModal({
                   title: '提示！',
+                  showCancel:false,
                   content: res.data.msg,
                   success: function(res){
                     if(res.confirm){console.log('用户点击确定')}
-                    else{console.log('用户点击取消')}
                   }
                 })
               }else{
-                //getApp().globalData.user=res.data.data,
                 wx.showModal({
                   title: '恭喜',
                   content: '发布成功！',
@@ -259,31 +254,16 @@ Page({
             },
             fail: function(res){
               wx.showModal({
-                title: '欸~',
-                content: '网络不在状态',
+                title: '提示！',
+                showCancel:false,
+                content: '亲，你的网络不好哦',
                 success: function(res){
                   if(res.confirm){console.log('用户点击确定')}
-                  else{console.log('用户点击取消')}
                 }
               })
-            },
-            complete: function(res){
-              wx.hideLoading()
             }
           })
-
-          setTimeout(function () {
-            wx.hideLoading()
-            wx.showToast({
-              title: '发布成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }, 2000)
         }
-      },
-      fail(res){
-
       }
     })
   },
