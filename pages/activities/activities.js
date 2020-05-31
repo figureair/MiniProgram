@@ -90,7 +90,15 @@ Page({
           that.setData({
             activities: activity
           })
-          console.log(that.data.activities)
+          
+          for(var i = 0; i <that.data.activities.length; i++){
+            var starttime = 'activities[' + i + '].starttime'
+            var endtime = 'activities[' + i + '].endtime'
+            that.setData({
+              [starttime] : that.data.activities[i].starttime.substr(0,16) ,
+              [endtime] : that.data.activities[i].endtime.substr(0,16)
+            })
+          }
         }
       },
       fail: function(res){
@@ -105,6 +113,7 @@ Page({
         })
       }
     })
+    
   },
 
   //点击海报查看推文，尚未实现，有待商量

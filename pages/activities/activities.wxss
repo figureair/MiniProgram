@@ -103,6 +103,7 @@
   height: 400rpx;
   margin-top: 20rpx;
   margin-left: 10rpx;
+  margin-right: 20rpx;
   position: relative;
 }
 

@@ -109,6 +109,24 @@ Page({
           })
         }
         console.log(that.data);
+        //去掉时间中的秒
+        for(var i = 0; i <that.data.official_recruits.length; i++){
+          var starttime = 'official_recruits[' + i + '].starttime'
+          var endtime = 'official_recruits[' + i + '].endtime'
+          that.setData({
+            [starttime] : that.data.official_recruits[i].starttime.substr(0,16) ,
+            [endtime] : that.data.official_recruits[i].endtime.substr(0,16)
+          })
+        }
+        //去掉时间中的秒
+        for(var i = 0; i <that.data.non_official_recruits.length; i++){
+          var starttime = 'non_official_recruits[' + i + '].starttime'
+          var endtime = 'non_official_recruits[' + i + '].endtime'
+          that.setData({
+            [starttime] : that.data.non_official_recruits[i].starttime.substr(0,16) ,
+            [endtime] : that.data.non_official_recruits[i].endtime.substr(0,16)
+          })
+        }
       },
       fail: function(res){
         wx.hideLoading();

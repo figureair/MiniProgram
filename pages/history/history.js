@@ -129,6 +129,35 @@ Page({
     this.onLoad()
   },
 
+  //转为我参加的
+  toMyParticipation : function(e){
+    var that =this
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease',
+    });
+    animation.translate(0, 0).step()
+    that.setData({
+      is_MyParticipation : true,
+      ani : animation.export()
+    })
+  },
+
+  //转为我发布的
+  toMyRelease : function(e){
+    var that = this
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    });
+    var systemInfo = wx.getSystemInfoSync(); //下面转化为rpx用
+    animation.translate(375 / 750 * systemInfo.windowWidth, 0).step()
+    this.setData({
+      is_MyParticipation : false,
+      ani: animation.export()
+    })
+  },
+
   onLoad: function(){
     var that =this
     wx.request({
@@ -154,6 +183,16 @@ Page({
           that.setData({
             participations: res.data.data
           })
+          //去掉时间中的秒
+          for(var i = 0; i <that.data.participations.length; i++){
+            console.log("看这！"+ that.data.participations[i].starttime.substr(0,16));
+            var starttime = 'participations[' + i + '].starttime'
+            var endtime = 'participations[' + i + '].endtime'
+            that.setData({
+              [starttime] : that.data.participations[i].starttime.substr(0,16) ,
+              [endtime] : that.data.participations[i].endtime.substr(0,16)
+            })
+          }
         }
       },
       fail: (res) => {
@@ -190,6 +229,15 @@ Page({
           that.setData({
             releases: res.data.data
           })
+          //去掉时间中的秒
+          for(var i = 0; i <that.data.releases.length; i++){
+            var starttime = 'releases[' + i + '].starttime'
+            var endtime = 'releases[' + i + '].endtime'
+            that.setData({
+              [starttime] : that.data.releases[i].starttime.substr(0,16) ,
+              [endtime] : that.data.releases[i].endtime.substr(0,16)
+            })
+          }
         }
       },
       fail: function(res){
@@ -204,35 +252,6 @@ Page({
       }
     })
     console.log(this.data)
-  },
-
-  //转为我参加的
-  toMyParticipation : function(e){
-    var that =this
-    var animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease',
-    });
-    animation.translate(0, 0).step()
-    that.setData({
-      is_MyParticipation : true,
-      ani : animation.export()
-    })
-  },
-
-  //转为我发布的
-  toMyRelease : function(e){
-    var that = this
-    var animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease',
-    });
-    var systemInfo = wx.getSystemInfoSync(); //下面转化为rpx用
-    animation.translate(375 / 750 * systemInfo.windowWidth, 0).step()
-    this.setData({
-      is_MyParticipation : false,
-      ani: animation.export()
-    })
   },
 
   //点击详情按钮跳转到活动对应的微信推文
