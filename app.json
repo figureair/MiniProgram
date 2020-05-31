@@ -2,8 +2,8 @@
   "usingComponents": {
   },
   "pages": [
-    "pages/history/history",
     "pages/login/login",
+    "pages/history/history",
     "pages/register/register",
     "pages/releaseActivities/releaseActivities",
     "pages/recruit/recruit",
