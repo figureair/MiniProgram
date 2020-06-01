@@ -41,7 +41,7 @@
 
 			<!-- 我参加的相关按钮:退出报名与详细信息 -->
 			<view wx:if="{{is_MyParticipation }}" class="btns">
-				<view wx:if="{{ item.activity_type ==1 }}" class="btn detailbtn" data-idx="{{index}}" bindtap="toDetail">详情</view>
+				<view wx:if="{{ item.activity_type ==1 }}" class="btn detailbtn" data-idx="{{index}}" bindtap="toDetail">查看推文</view>
 				<view class="btn" bindtap="cancel" data-idx="{{index}}">退出</view>
 			</view>
 			<!-- 我发布的相关按钮:修改和报名情况 -->

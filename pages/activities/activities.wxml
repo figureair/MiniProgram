@@ -13,12 +13,12 @@
 	</view>
 	<!-- 列表提示栏 -->
 	<view class="list_prompt">
-			<text>活动列表（点击海报可进入活动推文）</text>
+			<text>活动列表（点击海报可查看大图和保存哦）</text>
 	</view>
 	<!-- 卡片 -->
 	<view wx:for="{{ activities }}" >
 	<view class="card" enable-flex="true" wx:if="{{item.state==1}}">
-    <image class="poster" src="{{ item.picture }}" data-idx="{{ index }}" bindtap="toDetail"></image>
+    <image class="poster" src="{{ item.picture }}" data-idx="{{ index }}" bindtap="zoomIn"></image>
 		<view class="info" >
 			<view class="headAndName">
 				<image src="{{ item.user_face }}" class="head"></image>

@@ -103,7 +103,7 @@ Page({
     }
   },
 
-  //点击海报查看推文，尚未实现，有待商量
+  //点击海报跳转到推文，待实现，暂不使用
   toDetail: function(e){
     var idx = e.currentTarget.dataset.idx
     var url = this.data.activities[idx].detail
@@ -114,6 +114,18 @@ Page({
       confirmText: '好的',
       confirmColor: '#71CD63',
       showCancel: false
+    })
+  },
+
+  //点击海报查看大图
+  zoomIn : function(e){
+    var idx = e.currentTarget.dataset.idx
+    var url = this.data.activities[idx].picture
+    var cur = this.data.activities[idx].picture;
+    var lis = [ this.data.activities[idx].picture ] ;
+    wx.previewImage({
+      current: cur, //当前图片地址
+      urls: lis,  //所有要预览的图片的地址集合数组形式
     })
   },
 
