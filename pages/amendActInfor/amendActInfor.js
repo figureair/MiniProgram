@@ -218,8 +218,10 @@ Page({
           wx.showLoading({title: '结束中'})
           that.setData({state: 2})
           //将结束信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -297,8 +299,10 @@ Page({
           wx.showLoading({title: '取消中'})
           that.setData({state: 4})
           //将取消信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -377,8 +381,10 @@ Page({
           //是否加急
           if(that.data.chooseUrgent){ that.setData({ state: 3 }) }
           //将报名者信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
