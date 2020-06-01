@@ -4,24 +4,24 @@
 	<image class="entryAvatar" src="{{face_url}}" ></image>
 </view>
 
-<view class="entry" bindblur="bindChangeNickname">
+<view class="entry">
 	<text class="narrowEntryText">修改昵称</text>
-	<input class="entryInput"  value="{{user_name}}"></input>
+	<input class="entryInput" bindblur="bindChangeNickname" value="{{user_name}}"></input>
 </view>
 
-<view class="entry" bindblur="bindDescriptionChange">
+<view class="entry">
 	<text class="wideEntryText">修改简介</text>
-	<textarea class="textArea"  value="{{description}}"></textarea>
+	<textarea class="textArea" bindblur="bindDescriptionChange" value="{{description}}"></textarea>
 </view>
 
-<view class="entry" bindblur="bindChangePhoneNumber">
+<view class="entry">
 	<text class="narrowEntryText">换绑手机</text>
-	<input class="entryInput" type="number"  value="{{phone}}"></input>
+	<input class="entryInput" type="number" bindblur="bindChangePhoneNumber" value="{{phone}}"></input>
 </view>
 
-<view class="entry" bindblur="bindChangeEmailAddress">
+<view class="entry">
 	<text class="narrowEntryText">换绑邮箱</text>
-	<input class="entryInput"  value="{{mailbox}}"></input>
+	<input class="entryInput" bindblur="bindChangeEmailAddress" value="{{mailbox}}"></input>
 </view>
 
 <button class="save" style="width: 700rpx" bindtap="saveChanges">保存</button>
