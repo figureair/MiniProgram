@@ -28,9 +28,12 @@ Page({
    */
   onLoad: function (options) {
     var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
+    var timestamp = Date.parse(new Date()) / 1000
+    timestamp = timestamp + 24 * 60 * 60 
+    var systime = util.formatTimeTwo(timestamp,'Y-M-D h:m:s')
     //设置默认开始,结束年月日
     var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
+    var st = "00:00" //systime.substr(11,2)+':'+systime.substr(14,2)
     var ed = sd
     var et = "23:59"
     this.setData({
