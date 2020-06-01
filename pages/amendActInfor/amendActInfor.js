@@ -220,8 +220,8 @@ Page({
           //将结束信息发送给服务器
           var tmpstartDate=that.data.startDate.replace(/-/g,'/')
           var tmpendDate=that.data.endDate.replace(/-/g,'/')
-          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -301,8 +301,8 @@ Page({
           //将取消信息发送给服务器
           var tmpstartDate=that.data.startDate.replace(/-/g,'/')
           var tmpendDate=that.data.endDate.replace(/-/g,'/')
-          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -383,8 +383,8 @@ Page({
           //将报名者信息发送给服务器
           var tmpstartDate=that.data.startDate.replace(/-/g,'/')
           var tmpendDate=that.data.endDate.replace(/-/g,'/')
-          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({

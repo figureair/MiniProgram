@@ -214,8 +214,8 @@ Page({
 
     var tmpstartDate=that.data.startDate.replace(/-/g,'/')
     var tmpendDate=that.data.endDate.replace(/-/g,'/')
-    var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00:000')
-    var enddate=new Date(tmpendDate+' '+that.data.endTime+':00:000')
+    var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+    var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
     var starttime=startdate.valueOf()/1000
     var endtime=enddate.valueOf()/1000
    
