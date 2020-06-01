@@ -3,6 +3,7 @@
 
 .scroll{
   margin-bottom: 40rpx;
+  height: 100vh;
 }
 
 /*以下为顶部图片*/
@@ -63,7 +64,7 @@
   margin-left: 25rpx;
   margin-top: 25rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .content{
@@ -98,7 +99,7 @@
   border-radius: 50rpx;
   text-align: center;
   line-height: 50rpx;
-  position: absolute;
+  justify-self: flex-start;
   top: 45rpx;
   right: 25rpx;
 }
@@ -129,13 +130,35 @@
   height: 72rpx;
   width: 210rpx;
   line-height: 72rpx;
-  position: absolute;
   border-radius: 18rpx;
-  bottom: 44rpx;
-  right: 25rpx;
+  margin-top: 25rpx;
+  margin-left: 5rpx;
 }
 
 .detailbtn{
   bottom: 134rpx;
-  
+}
+
+/*所有按钮组*/
+.btns{
+  justify-self: self-end;
+}
+
+.right{
+  position: relative;
+  width: 262rpx;
+  display: flex;
+  flex-direction: column;
+  padding-top: 45rpx;
+  padding-right: 20rpx;
+  padding-bottom: 44rpx;
+  padding-left: 10rpx;
+  justify-content: space-between;
+}
+
+.bottom{
+  text-align: center;
+  font-size: 24rpx;
+  color: #B8B8B8;
+  margin: 25rpx;
 }

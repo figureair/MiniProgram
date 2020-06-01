@@ -7,57 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uprefresh: false,
     total: 0,
     totalchosen: 0,
     people: [
-      // {
-      //   record_id: 0,
-      //   user_name : '刘峰',
-      //   phone: '13318566749',
-      //   mailbox: '181250001@smail.nju.edu.cn',
-      //   chosen: 1,
-      // },
-      // {
-      //   record_id: 0,
-      //   user_name : '特朗普',
-      //   phone: '18918566749',
-      //   mailbox: '181250002@smail.nju.edu.cn',
-      //   chosen: 1,
-      // },
       // {
       //   record_id: 0,
       //   user_name : 'Taylor Swift',
       //   phone: '13318566520',
       //   mailbox: '1989@gmail.com',
       //   chosen: 2,
-      // },
-      // {
-      //   record_id: 0,
-      //   user_name : '无名',
-      //   phone: '13318566749',
-      //   mailbox: '181250001@smail.nju.edu.cn',
-      //   chosen: 1,
-      // },
-      // {
-      //   record_id: 0,
-      //   user_name : '无名',
-      //   phone: '13318566749',
-      //   mailbox: '181250001@smail.nju.edu.cn',
-      //   chosen: 1,
-      // },
-      // {
-      //   record_id: 0,
-      //   user_name : '无名',
-      //   phone: '13318566749',
-      //   mailbox: '181250001@smail.nju.edu.cn',
-      //   chosen: 1,
-      // },
-      // {
-      //   record_id: 0,
-      //   user_name : '无名',
-      //   phone: '13318566749',
-      //   mailbox: '181250001@smail.nju.edu.cn',
-      //   chosen: 1,
       // },
     ]
   },
@@ -134,6 +93,25 @@ Page({
       total : sum,
       totalchosen : totalcho
     })
+  },
+
+  //下拉刷新
+  onPullDownRefresh: function(){
+    if(this.data.uprefresh == false){
+      this.setData({
+        uprefresh: true
+      })
+    }
+    console.log("下拉刷新");
+    var options = {
+      id: this.data.activity_id
+    }
+    this.onLoad(options)
+    if(this.data.uprefresh == true){
+      this.setData({
+        uprefresh: false
+      })
+    }
   },
 
   //被选定

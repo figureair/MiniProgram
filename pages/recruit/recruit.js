@@ -5,6 +5,7 @@ Page({
 
   /* 页面的初始数据 */
   data: {
+    uprefresh: false,
     is_official : true, 
     official_recruits:[
       // {
@@ -18,28 +19,6 @@ Page({
       //   tel : "12345677899",
       //   more : "搬搬道具，听现场指挥就行"
       // },
-      // {
-      //   state: 3,
-      //   head : "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3085317021,500690793&fm=26&gp=0.jpg",
-      //   name : "街舞社",
-      //   work : "找人录像",
-      //   time : "12月30日-12月31日 19：00 - 22：00",
-      //   place : "四五六食堂门前空地",
-      //   reword : "没有",
-      //   tel : "12345677899",
-      //   more : "帮忙录个像，很简单的！"
-      // },
-      // {
-      //   state: 1,//正在进行
-      //   head : "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=253073685,3587850098&fm=15&gp=0.jpg",
-      //   name : "南京大学学生会",
-      //   work : "音乐作品征集比赛海报设计",
-      //   time : "5月25号前完成",
-      //   place : "无",
-      //   reword : "100-200元",
-      //   tel : "12345677899",
-      //   more : "我们会在报名者中筛选合适的设计师，请报名者尽快将个人作品发送至邮箱181250001@smail.nju.edu.cn，我们明天会以短信形式通知入选者"
-      // },
     ],
     non_official_recruits:[
       // {
@@ -52,18 +31,7 @@ Page({
       //   reword : "800-1000元",
       //   tel : "12345677899",
       //   more : "需要有点技术，把个人作品发到181250006@smail.nju.edu.cn我看看吧"
-      // },
-      // {
-      //   state: 1,
-      //   head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588321392410&di=808f39e737ae40b465d6203f649d56bd&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F7405829970%2F0",
-      //   name : "一位渣渣",
-      //   work : "找人教我数据科学",
-      //   time : "到本学期结束",
-      //   place : "我家",
-      //   reword : "每节课100元",
-      //   tel : "12345677899",
-      //   more : "救救我吧，真学不会！"
-      // },
+      // }
     ]
   },
 
@@ -140,6 +108,22 @@ Page({
         })
       }
     })
+  },
+
+  //下拉刷新
+  onPullDownRefresh: function(){
+    if(this.data.uprefresh == false){
+      this.setData({
+        uprefresh: true
+      })
+    }
+    console.log("下拉刷新");
+    this.onLoad()
+    if(this.data.uprefresh == true){
+      this.setData({
+        uprefresh: false
+      })
+    }
   },
 
   //转化为官方栏

@@ -1,7 +1,7 @@
 <!--招募页 author: zzn-->
 <!--official_recruits列表的条件化筛选展示 lbh-->
 
-<scroll-view scroll-y="true" class="scroll">
+<scroll-view scroll-y="true" class="scroll" refresher-enabled="true" bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{uprefresh}}" >
 	<!-- 顶部图片与发布按钮 -->
 	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/work.jpg" class="top_pic"></image>
 	<view class="releaseblock">
@@ -41,4 +41,5 @@
 			<view class="signup" data-idx="{{index}}" bindtap="signUp">马上报名</view>
 		</view>
 	</view>
+	<view class="bottom">已加载全部内容</view>
 </scroll-view>

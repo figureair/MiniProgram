@@ -1,6 +1,10 @@
 /* pages/actInfor/actInfor.wxss */
 /*author: zzn*/
 
+page{
+  height: 100vh;
+}
+
 .top{
   background-color: #F1F1F1;
   position: fixed;
@@ -30,6 +34,7 @@
 .scroll{
   margin-bottom: 40rpx;
   margin-top: 125rpx;
+  height: 100vh;
 }
 
 .card{
@@ -97,4 +102,11 @@
   height: 30rpx;
   line-height: 30rpx;
   margin-top: 30rpx;
+}
+
+.bottom{
+  text-align: center;
+  font-size: 24rpx;
+  color: #B8B8B8;
+  margin: 25rpx;
 }

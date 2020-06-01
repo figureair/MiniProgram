@@ -2,7 +2,7 @@
 <!-- 活动页面 author: zzn-->
 <!--activities列表的条件化筛选展示 lbh-->
 
-<scroll-view scroll-y="true" class="scroll">
+<scroll-view scroll-y="true" class="scroll" refresher-enabled="true" bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{uprefresh}}" >
 	<!-- 顶部图片与发布按钮 -->
 	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/run.jpg" class="top_pic"></image>
 	<view class="releaseblock">
@@ -32,4 +32,5 @@
 		</view>
 	</view>
 	</view>
+	<view class="bottom">已加载全部内容</view>
 </scroll-view>

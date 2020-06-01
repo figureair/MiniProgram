@@ -169,3 +169,10 @@
   margin-bottom: 30rpx;
   border-radius: 18rpx;
 }
+
+.bottom{
+  text-align: center;
+  font-size: 24rpx;
+  color: #B8B8B8;
+  margin: 25rpx;
+}

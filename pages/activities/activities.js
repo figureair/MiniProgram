@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uprefresh: false,
     activities: [
       // {
       //   state: 1,//该活动正在进行
@@ -17,36 +18,6 @@ Page({
       //   actname : "十大歌手总决赛",
       //   time : "5月28日",
       //   target : "全体在校本科生",
-      //   detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
-      // },
-      // {
-      //   state: 0,//该活动正在进行
-      //   poster: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589972393115&di=9498157ada15fcdd5cabd376af9fead0&imgtype=0&src=http%3A%2F%2Fimg.sccnn.com%2Fbimg%2F337%2F25500.jpg',
-      //   head : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3881515574,3022954722&fm=26&gp=0.jpg",
-      //   name : "书法社",
-      //   actname : "中国梦主题书法大赛",
-      //   time : "5月30日",
-      //   target : "全体在校本科生",
-      //   detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
-      // },
-      // {
-      //   state: 1,//该活动正在进行
-      //   poster: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589972908409&di=ed7e877f7be1e6d1aa0d605dcdfa78cc&imgtype=0&src=http%3A%2F%2Fpicd57.huitu.com%2Fpic%2F20161026%2F20161026202903601800_0.jpg',
-      //   head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589973004547&di=b022505e0d63833bfd4aaaa252cb90db&imgtype=0&src=http%3A%2F%2Fwww.16buzhi.com%2Fuploads%2Fallimg%2F170809%2F1-1FP9161912.jpg",
-      //   name : "乒乓球社",
-      //   actname : "寻找校园乒乓高手",
-      //   time : "5月1日",
-      //   target : "全体在校本科生",
-      //   detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
-      // },
-      // {
-      //   state: 1,//该活动正在进行
-      //   poster: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589972908409&di=ed7e877f7be1e6d1aa0d605dcdfa78cc&imgtype=0&src=http%3A%2F%2Fpicd57.huitu.com%2Fpic%2F20161026%2F20161026202903601800_0.jpg',
-      //   head : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589973004547&di=b022505e0d63833bfd4aaaa252cb90db&imgtype=0&src=http%3A%2F%2Fwww.16buzhi.com%2Fuploads%2Fallimg%2F170809%2F1-1FP9161912.jpg",
-      //   name : "乒乓球社",
-      //   actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-      //   time : "5月1日",
-      //   target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
       //   detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw',
       // },
     ]
@@ -113,7 +84,23 @@ Page({
         })
       }
     })
-    
+    wx.stopPullDownRefresh()
+  },
+
+  //下拉刷新
+  onPullDownRefresh: function(){
+    if(this.data.uprefresh == false){
+      this.setData({
+        uprefresh: true
+      })
+    }
+    console.log("下拉刷新");
+    this.onLoad()
+    if(this.data.uprefresh == true){
+      this.setData({
+        uprefresh: false
+      })
+    }
   },
 
   //点击海报查看推文，尚未实现，有待商量
