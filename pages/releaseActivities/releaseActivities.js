@@ -41,12 +41,6 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
 
   //获取用户输入的活动名称
   actnameInput: function(e){
@@ -58,8 +52,6 @@ Page({
 
   //上传图片
   addPoster: function(e){
-    console.log("click");
-    
     var that = this
     wx.chooseImage({
       count : 1,
@@ -67,8 +59,30 @@ Page({
       sourceType: ['album'],
       success(res){
         var img = res.tempFilePaths//上传图片的url，数组形式
-        that.setData({
-          picture: img[0]
+        wx.showLoading({
+          title: '上传中',
+        })
+        //上传到阿里云，文件名为“时间戳.png”
+        var timestamp = (new Date()).valueOf();
+        wx.uploadFile({
+          url: 'http://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          filePath: img[0],
+          name: 'file',
+          formData: {
+            name: img[0],
+            key: 'poster/' + timestamp + '.png',
+            policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0xMC0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==',
+            OSSAccessKeyId: 'LTAI4G5zrEQzsX5M4fYT6Da9',
+            signature: '+DV768i89SMU2elNB5+uyDp0gNI=',
+            success_action_status: "200"
+          },
+          success: function (res) {
+            console.log("上传成功")
+            that.setData({
+              picture: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com/poster/' + timestamp + '.png'
+            })
+            wx.hideLoading()
+          }
         })
       }
     })

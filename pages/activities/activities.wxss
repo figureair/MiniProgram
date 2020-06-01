@@ -98,7 +98,7 @@
 .info{
   display: flex;
   flex-direction: column;
-  width: 400rpx;
+  width: 390rpx;
   height: 400rpx;
   margin-top: 20rpx;
   margin-left: 10rpx;

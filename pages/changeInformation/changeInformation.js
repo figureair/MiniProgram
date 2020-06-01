@@ -25,8 +25,27 @@ Page({
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         var img = res.tempFilePaths
-        that.setData({
-          face_url: img[0]
+        //上传到阿里云，文件名为“时间戳.png”
+        var timestamp = (new Date()).valueOf();
+        wx.uploadFile({
+          url: 'http://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          filePath: img[0],
+          name: 'file',
+          formData: {
+            name: img[0],
+            key: 'user_face/' + that.data.user_id + ':' + timestamp + '.png',
+            policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0xMC0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==',
+            OSSAccessKeyId: 'LTAI4G5zrEQzsX5M4fYT6Da9',
+            signature: '+DV768i89SMU2elNB5+uyDp0gNI=',
+            success_action_status: "200"
+          },
+          success: function (res) {
+            console.log("上传成功")
+            that.setData({
+              face_url: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com/user_face/'+ that.data.user_id + ':' + timestamp + '.png'
+            })
+            wx.hideLoading()
+          }
         })
       }
     })
