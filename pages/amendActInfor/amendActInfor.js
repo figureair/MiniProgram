@@ -83,13 +83,6 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
   //选择状态，注:此处不改变活动的state，只改变选中的按钮，在提交修改submit()中才修改活动state
   changeState: function(e){
     var totype = e.currentTarget.dataset.totype
@@ -121,12 +114,12 @@ Page({
         //上传到阿里云，文件名为“时间戳.png”
         var timestamp = (new Date()).valueOf();
         wx.uploadFile({
-          url: 'http://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          url: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
           filePath: img[0],
           name: 'file',
           formData: {
             name: img[0],
-            key:  'poster/' + timestamp + '.png',
+            key: 'poster/' + timestamp + '.png',
             policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0xMC0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==',
             OSSAccessKeyId: 'LTAI4G5zrEQzsX5M4fYT6Da9',
             signature: '+DV768i89SMU2elNB5+uyDp0gNI=',

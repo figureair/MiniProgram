@@ -65,7 +65,7 @@ Page({
         //上传到阿里云，文件名为“时间戳.png”
         var timestamp = (new Date()).valueOf();
         wx.uploadFile({
-          url: 'http://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          url: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
           filePath: img[0],
           name: 'file',
           formData: {
