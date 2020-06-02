@@ -1,16 +1,7 @@
 // pages/releaseRecruits/releaseRecruits.js
 
 var util = require('../../utils/util.js');
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
 
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
-}
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -69,8 +60,28 @@ Page({
     endTime: '',
     official:2
   },
+  onLoad: function (options) {
+    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
+    var timestamp = Date.parse(new Date()) / 1000
+    timestamp = timestamp + 24 * 60 * 60 
+    var systime = util.formatTimeTwo(timestamp,'Y-M-D h:m:s')
+    //设置默认开始,结束年月日
+    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
+    var st = "00:00" //systime.substr(11,2)+':'+systime.substr(14,2)
+    var ed = sd
+    var et = "23:59"
+    
+    this.setData({
+      startDate: sd,
+      startTime: st,
+      endDate: ed,
+      endTime: et,
+    })
+    
+  },
   //时间-当值变化时触发的事件start
   onInput(event) {
+    
     var newTime = new Date(event.detail);
     if(this.data.show==0){
       newTime =null;
@@ -128,6 +139,7 @@ Page({
   },
   //输入框
   nameinput(e){
+    console.log(this.data)
     this.data.activity_name=e.detail.value;
   },
   telinput(e){
@@ -212,10 +224,8 @@ Page({
     var is_urgent=false;
     if(that.status=="加急") var is_urgent=true;
 
-    var tmpstartDate=that.data.startDate.replace(/-/g,'/')
-    var tmpendDate=that.data.endDate.replace(/-/g,'/')
-    var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
-    var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
+    var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00')
+    var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00')
     var starttime=startdate.valueOf()/1000
     var endtime=enddate.valueOf()/1000
    
@@ -283,20 +293,7 @@ Page({
       }
     })
   },
-  onLoad: function (options) {
-    var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
-    //设置默认开始,结束年月日
-    var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
-    var ed = sd
-    var et = "23:59"
-    this.setData({
-      startDate: sd,
-      startTime: st,
-      endDate: ed,
-      endTime: et,
-    })
-  },
+
   isCorrectTime: function(t1, t2){
     var year1 = t1.substr(0,4)
     var month1 = t1.substr(5,2)

@@ -146,7 +146,7 @@ textarea {
   width: 100rpx;
   position: absolute;
   top:1900rpx;
-  margin-bottom: 70rpx;
+  margin-bottom: 100rpx;
   right: 40rpx;
 }
 label{

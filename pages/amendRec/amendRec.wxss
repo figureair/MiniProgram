@@ -204,7 +204,7 @@ textarea {
   line-height: 72rpx;
   top: 30rpx;
   left: 3rpx;
-  margin-bottom: 80rpx;
+  margin-bottom: 100rpx;
   border-radius: 18rpx;
 }
 .word{
