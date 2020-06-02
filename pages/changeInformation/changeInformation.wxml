@@ -1,7 +1,7 @@
 <!--pages/changeInformation.wxml-->
-<view class="entry">
+<view class="entry" bindtap="changeAvatar">
 	<text class="wideEntryText">修改头像</text>
-	<image class="entryAvatar" src="{{face_url}}" bindtap="changeAvatar"></image>
+	<image class="entryAvatar" src="{{face_url}}" ></image>
 </view>
 
 <view class="entry">

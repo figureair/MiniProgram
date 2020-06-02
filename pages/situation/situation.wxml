@@ -1,7 +1,6 @@
 <!--pages/actInfor/actInfor.wxml-->
 <!-- 活动/招募报名人信息 author: zzn-->
 
-<scroll-view class="scroll">
 <view class="top" z-index="0">
   <view class="totalInfor" >
     <text>报名总人数: {{ total }}</text> 
@@ -9,6 +8,7 @@
   </view>
 </view>
 
+<scroll-view class="scroll" refresher-enabled="true" bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{uprefresh}}" >
   <view class="card" wx:for="{{ people }}">
     <view class="content">
       <text class="name">{{ item.user_name }}</text>

@@ -28,9 +28,12 @@ Page({
    */
   onLoad: function (options) {
     var systime = util.formatTime(new Date());//yyyy/mm/dd hh:mm:ss
+    var timestamp = Date.parse(new Date()) / 1000
+    timestamp = timestamp + 24 * 60 * 60 
+    var systime = util.formatTimeTwo(timestamp,'Y-M-D h:m:s')
     //设置默认开始,结束年月日
     var sd = systime.substr(0,4)+'-'+systime.substr(5,2)+'-'+systime.substr(8,2)
-    var st = systime.substr(11,2)+':'+systime.substr(14,2)
+    var st = "00:00" //systime.substr(11,2)+':'+systime.substr(14,2)
     var ed = sd
     var et = "23:59"
     this.setData({
@@ -41,12 +44,6 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
 
   //获取用户输入的活动名称
   actnameInput: function(e){
@@ -58,8 +55,6 @@ Page({
 
   //上传图片
   addPoster: function(e){
-    console.log("click");
-    
     var that = this
     wx.chooseImage({
       count : 1,
@@ -67,8 +62,30 @@ Page({
       sourceType: ['album'],
       success(res){
         var img = res.tempFilePaths//上传图片的url，数组形式
-        that.setData({
-          picture: img[0]
+        wx.showLoading({
+          title: '上传中',
+        })
+        //上传到阿里云，文件名为“时间戳.png”
+        var timestamp = (new Date()).valueOf();
+        wx.uploadFile({
+          url: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          filePath: img[0],
+          name: 'file',
+          formData: {
+            name: img[0],
+            key: 'poster/' + timestamp + '.png',
+            policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0xMC0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==',
+            OSSAccessKeyId: 'LTAI4G5zrEQzsX5M4fYT6Da9',
+            signature: '+DV768i89SMU2elNB5+uyDp0gNI=',
+            success_action_status: "200"
+          },
+          success: function (res) {
+            console.log("上传成功")
+            that.setData({
+              picture: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com/poster/' + timestamp + '.png'
+            })
+            wx.hideLoading()
+          }
         })
       }
     })
@@ -149,8 +166,10 @@ Page({
       return
     }
     console.log(that.data)
-    var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00')
-    var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00')
+    var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+    var tmpendDate=that.data.endDate.replace(/-/g,'/')
+    var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+    var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
     var starttime=startdate.valueOf()/1000
     var endtime=enddate.valueOf()/1000
     console.log(starttime)

@@ -83,13 +83,6 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
   //选择状态，注:此处不改变活动的state，只改变选中的按钮，在提交修改submit()中才修改活动state
   changeState: function(e){
     var totype = e.currentTarget.dataset.totype
@@ -118,8 +111,27 @@ Page({
       sourceType: ['album'],
       success(res){
         var img = res.tempFilePaths//上传图片的url，数组形式
-        that.setData({
-          picture: img[0]
+        //上传到阿里云，文件名为“时间戳.png”
+        var timestamp = (new Date()).valueOf();
+        wx.uploadFile({
+          url: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com', 
+          filePath: img[0],
+          name: 'file',
+          formData: {
+            name: img[0],
+            key: 'poster/' + timestamp + '.png',
+            policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0xMC0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==',
+            OSSAccessKeyId: 'LTAI4G5zrEQzsX5M4fYT6Da9',
+            signature: '+DV768i89SMU2elNB5+uyDp0gNI=',
+            success_action_status: "200"
+          },
+          success: function (res) {
+            console.log("上传成功")
+            that.setData({
+              picture: 'https://miniprogram-pics.oss-cn-shenzhen.aliyuncs.com/poster/' + timestamp + '.png'
+            })
+            wx.hideLoading()
+          }
         })
       }
     })
@@ -218,8 +230,10 @@ Page({
           wx.showLoading({title: '结束中'})
           that.setData({state: 2})
           //将结束信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -297,8 +311,10 @@ Page({
           wx.showLoading({title: '取消中'})
           that.setData({state: 4})
           //将取消信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({
@@ -377,8 +393,10 @@ Page({
           //是否加急
           if(that.data.chooseUrgent){ that.setData({ state: 3 }) }
           //将报名者信息发送给服务器
-          var startdate=new Date(that.data.startDate+' '+that.data.startTime+':00:000')
-          var enddate=new Date(that.data.endDate+' '+that.data.endTime+':00:000')
+          var tmpstartDate=that.data.startDate.replace(/-/g,'/')
+          var tmpendDate=that.data.endDate.replace(/-/g,'/')
+          var startdate=new Date(tmpstartDate+' '+that.data.startTime+':00')
+          var enddate=new Date(tmpendDate+' '+that.data.endTime+':00')
           var starttime=startdate.valueOf()/1000
           var endtime=enddate.valueOf()/1000
           wx.request({

@@ -234,6 +234,18 @@ class UserController extends BaseController {
             $result=$User->where($where)->save($data);
             if($result){
                 $result=$User->where($where)->find();
+                $Activity=M('activity');
+            	$where=array();
+                $where['user_id']=$result['id'];
+                $tmp=$Activity->where($where)->select();
+                $data=array();
+                $data['user_face']=$result['face_url'];
+                $data['user_name']=$result['user_name'];
+                foreach ($tmp as $key => $value) {
+                    $change=array();
+                    $change['id']=$value['id'];
+                	$res=$Activity->where($change)->save($data);
+                }
                 $return_data=array();
                 $return_data['error_code']=0;
                 $return_data['msg']='修改个人信息成功';

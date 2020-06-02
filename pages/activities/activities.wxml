@@ -2,7 +2,7 @@
 <!-- 活动页面 author: zzn-->
 <!--activities列表的条件化筛选展示 lbh-->
 
-<scroll-view scroll-y="true" class="scroll">
+<scroll-view scroll-y="true" class="scroll" refresher-enabled="true" bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{uprefresh}}" >
 	<!-- 顶部图片与发布按钮 -->
 	<image src="https://seec-invictus.oss-cn-beijing.aliyuncs.com/wx/run.jpg" class="top_pic"></image>
 	<view class="releaseblock">
@@ -13,12 +13,12 @@
 	</view>
 	<!-- 列表提示栏 -->
 	<view class="list_prompt">
-			<text>活动列表（点击海报可进入活动推文）</text>
+			<text>活动列表（点击海报可查看大图和保存哦）</text>
 	</view>
 	<!-- 卡片 -->
 	<view wx:for="{{ activities }}" >
 	<view class="card" enable-flex="true" wx:if="{{item.state==1}}">
-    <image class="poster" src="{{ item.picture }}" data-idx="{{ index }}" bindtap="toDetail"></image>
+    <image class="poster" src="{{ item.picture }}" data-idx="{{ index }}" bindtap="zoomIn"></image>
 		<view class="info" >
 			<view class="headAndName">
 				<image src="{{ item.user_face }}" class="head"></image>
@@ -32,4 +32,5 @@
 		</view>
 	</view>
 	</view>
+	<view class="bottom">已加载全部内容</view>
 </scroll-view>

@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uprefresh: false,
     paStatus: ['','进行中','已完结','已退出','已取消'],  //参加的项目的状态
     reStatus: ['','进行中','已完结','加急','已取消'],  //发布的项目的状态 
     statecolor: ['','orange','green','red','red'],
@@ -26,33 +27,6 @@ Page({
     //     tel : "12345677899",
     //     more : "搬搬道具，听现场指挥就行"
     //   },
-    //   {
-    //     state: 2, //已完成
-    //     activity_type: 1,
-    //     name : "南京大学学生会",
-    //     actname : "十大歌手总决赛",
-    //     time : "5月28日",
-    //     target : "全体在校本科生",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
-    //   {
-    //     state: 3, //已退出
-    //     activity_type: 1, 
-    //     name : "南大团委",
-    //     actname : "十大歌手总决赛",
-    //     time : "5月28日",
-    //     target : "全体在校本科生",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
-    //   {
-    //     state: 4, //已取消
-    //     activity_type: 1, 
-    //     name : "南大团委",
-    //     actname : "十大歌手总决赛",
-    //     time : "5月28日",
-    //     target : "全体在校本科生",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
     ],
     releases:[
     //   {
@@ -71,91 +45,7 @@ Page({
     //     target : "",
     //     detail: "",
     //   },
-    //   {
-    //     state: 2, // 已完成
-    //     activity_type: 1, //种类，包括“活动”和“招募”
-    //     name : "南大团委",
-    //     time : "5月30日 22：00前完成",
-    //     //以下为招募专属信息
-    //     work : "",
-    //     place : "",
-    //     reword : "",
-    //     tel : "",
-    //     more : "",
-    //     //以下为活动信息
-    //     actname : "十大歌手总决赛",
-    //     target : "全体在校本科生",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
-    //   {
-    //     state: 1, // 加急
-    //     activity_type: 1, //种类，包括“活动”和“招募”
-    //     name : "南大团委",
-    //     time : "5月30日 22：00前完成",
-    //     //以下为招募专属信息
-    //     work : "",
-    //     place : "",
-    //     reword : "",
-    //     tel : "",
-    //     more : "",
-    //     //以下为活动信息
-    //     actname : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-    //     target : "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈终于凑满二五个字了",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
-    //   {
-    //     state: 4, // 已取消
-    //     activity_type: 1, //种类，包括“活动”和“招募”
-    //     name : "南大团委",
-    //     time : "5月30日 22：00前完成",
-    //     //以下为招募专属信息
-    //     work : "",
-    //     place : "",
-    //     reword : "",
-    //     tel : "",
-    //     more : "",
-    //     //以下为活动信息
-    //     actname : "十大歌手总决赛",
-    //     target : "全体在校本科生",
-    //     detail: 'https://mp.weixin.qq.com/s/VeBQtkb7rvgEaKpKuZEBSw'
-    //   },
     ]
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    this.onLoad()
-  },
-
-  //转为我参加的
-  toMyParticipation : function(e){
-    var that =this
-    var animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease',
-    });
-    animation.translate(0, 0).step()
-    that.setData({
-      is_MyParticipation : true,
-      ani : animation.export()
-    })
-  },
-
-  //转为我发布的
-  toMyRelease : function(e){
-    var that = this
-    var animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease',
-    });
-    var systemInfo = wx.getSystemInfoSync(); //下面转化为rpx用
-    animation.translate(375 / 750 * systemInfo.windowWidth, 0).step()
-    this.setData({
-      is_MyParticipation : false,
-      ani: animation.export()
-    })
   },
 
   onLoad: function(){
@@ -185,7 +75,6 @@ Page({
           })
           //去掉时间中的秒
           for(var i = 0; i <that.data.participations.length; i++){
-            console.log("看这！"+ that.data.participations[i].starttime.substr(0,16));
             var starttime = 'participations[' + i + '].starttime'
             var endtime = 'participations[' + i + '].endtime'
             that.setData({
@@ -252,6 +141,58 @@ Page({
       }
     })
     console.log(this.data)
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.onLoad()
+  },
+
+  //下拉刷新
+  onPullDownRefresh: function(){
+    if(this.data.uprefresh == false){
+      this.setData({
+        uprefresh: true
+      })
+    }
+    console.log("下拉刷新");
+    this.onLoad()
+    if(this.data.uprefresh == true){
+      this.setData({
+        uprefresh: false
+      })
+    }
+  },
+
+  //转为我参加的
+  toMyParticipation : function(e){
+    var that =this
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease',
+    });
+    animation.translate(0, 0).step()
+    that.setData({
+      is_MyParticipation : true,
+      ani : animation.export()
+    })
+  },
+
+  //转为我发布的
+  toMyRelease : function(e){
+    var that = this
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    });
+    var systemInfo = wx.getSystemInfoSync(); //下面转化为rpx用
+    animation.translate(375 / 750 * systemInfo.windowWidth, 0).step()
+    this.setData({
+      is_MyParticipation : false,
+      ani: animation.export()
+    })
   },
 
   //点击详情按钮跳转到活动对应的微信推文

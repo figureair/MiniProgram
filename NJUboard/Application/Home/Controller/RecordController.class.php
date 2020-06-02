@@ -228,7 +228,7 @@ class RecordController extends BaseController {
             $where=array();
             $where['id']=$record['activity_id'];
             $activity=$Activity->where($where)->find();
-            $records[$key]['sponsor_id']=$activity['user_id'];
+            $records[$key]['user_id']=$activity['user_id'];
             $records[$key]['activity_name']=$activity['activity_name'];
             $records[$key]['activity_type']=$activity['activity_type'];
             $records[$key]['activity_state']=$activity['state'];
@@ -240,8 +240,8 @@ class RecordController extends BaseController {
             $records[$key]['picture']=$activity['picture'];
             $records[$key]['audience']=$activity['audience'];
             $records[$key]['other']=$activity['other'];
-            $records[$key]['sponsor_face']=$activity['user_face'];
-            $records[$key]['sponsor_name']=$activity['user_name'];
+            $records[$key]['user_face']=$activity['user_face'];
+            $records[$key]['user_name']=$activity['user_name'];
         }
 
         $return_data=array();
